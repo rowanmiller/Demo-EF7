@@ -1,0 +1,50 @@
+﻿<Page
+    x:Class="UnicornClicker.HistoryPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:UnicornClicker"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Grid Margin="5,0,5,0">
+                    <Image Height="45" Source="Assets/basecircle.png" />
+                    <Image Height="45" Source="Assets/back.png" Tapped="Back_Tapped" />
+                </Grid>
+                <TextBlock FontSize="30" Text="Your Top Scores" />
+            </StackPanel>
+            <ListView Margin="5,10,5,0" Name="GameList" HorizontalContentAlignment="Stretch">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Border BorderBrush="White" BorderThickness="2" CornerRadius="10" Padding="5" Margin="5,5,5,0">
+                            <StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock FontSize="25" Text="Clicks per Second:" Margin="0,0,10,0" />
+                                    <TextBlock FontSize="25" Text="{Binding ClicksPerSecond}" />
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock FontSize="18" Text="Played:" Margin="0,0,5,0" />
+                                    <TextBlock FontSize="18" Text="{Binding Played}" />
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock FontSize="18" Text="Duration:" Margin="0,0,5,0" />
+                                    <TextBlock FontSize="18" Text="{Binding Duration}" Margin="0,0,5,0" />
+                                    <TextBlock FontSize="18" Text="seconds" />
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock FontSize="18" Text="Clicks:" Margin="0,0,5,0" />
+                                    <TextBlock FontSize="18" Text="{Binding Clicks}" />
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </StackPanel>
+    </Grid>
+</Page>
