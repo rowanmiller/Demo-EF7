@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>System.Data.SqlClient</name>
+    </assembly>
+    <members>
+        <member name="T:BidMethodAttribute">
+            <summary>
+            This attribute is used by FxCopBid rule to mark methods that accept format string and list of arguments that match it
+            FxCopBid rule uses this attribute to check if the method needs to be included in checks and to read type mappings
+            between the argument type to printf Type spec.
+            
+            If you need to rename/remove the attribute or change its properties, make sure to update the FxCopBid rule!
+            </summary>
+        </member>
+        <member name="M:BidMethodAttribute.#ctor">
+            <summary>
+            enabled by default
+            </summary>
+        </member>
+        <member name="P:BidMethodAttribute.Enabled">
+            <summary>
+            if Enabled is true, FxCopBid rule will validate all calls to this method and require that it will have string argument;
+            otherwise, this method is ignored.
+            </summary>
+        </member>
+        <member name="T:BidArgumentTypeAttribute">
+            <summary>
+            This attribute is used by FxCopBid rule to tell FXCOP the 'real' type sent to the native trace call for this argument. For
+            example, if Bid.Trace accepts enumeration value, but marshals it as string to the native trace method, set this attribute
+            on the argument and set ArgumentType = typeof(string)
+            
+            It can be applied on a parameter, to let FxCopBid rule know the format spec type used for the argument, or it can be applied on a method,
+            to insert additional format spec arguments at specific location.
+            
+            If you need to rename/remove the attribute or change its properties, make sure to update the FxCopBid rule!
+            </summary>
+        </member>
+    </members>
+</doc>

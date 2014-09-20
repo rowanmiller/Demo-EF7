@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.Framework.DependencyInjection</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.Framework.DependencyInjection.ActivatorUtilities">
+            <summary>
+            Helper code for the various activator services.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Framework.DependencyInjection.ActivatorUtilities.GetServiceOrCreateInstance(System.IServiceProvider,System.Type)">
+            <summary>
+            Retrieve an instance of the given type from the service provider. If one is not found then instantiate it directly.
+            </summary>
+            <param name="services"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Framework.DependencyInjection.ActivatorUtilities.CreateInstance(System.IServiceProvider,System.Type)">
+            <summary>
+            Instantiate an object of the given type, using constructor service injection if possible.
+            </summary>
+            <param name="services"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Framework.DependencyInjection.ActivatorUtilities.CreateInstance``1(System.IServiceProvider)">
+            <summary>
+            Instantiate an object of the given type, using constructor service injection if possible.
+            </summary>
+            <param name="services"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Framework.DependencyInjection.ActivatorUtilities.CreateFactory(System.Type)">
+            <summary>
+            Creates a factory to instantiate a type using constructor service injection if possible.
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Microsoft.Framework.DependencyInjection.IServiceScope">
+            <summary>
+            The <see cref="M:System.IDisposable.Dispose"/> method ends the scope lifetime. Once Dispose
+            is called, any scoped services that have been resolved from
+            <see cref="P:Microsoft.Framework.DependencyInjection.IServiceScope.ServiceProvider"/> will be
+            disposed.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Framework.DependencyInjection.IServiceScope.ServiceProvider">
+            <summary>
+            The <see cref="T:System.IServiceProvider"/> used to resolve dependencies from the scope.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Framework.DependencyInjection.IServiceScopeFactory.CreateScope">
+            <summary>
+            Create an <see cref="T:Microsoft.Framework.DependencyInjection.IServiceScope"/> which
+            contains an <see cref="T:System.IServiceProvider"/> used to resolve dependencies from a
+            newly created scope.
+            </summary>
+            <returns>
+            An <see cref="T:Microsoft.Framework.DependencyInjection.IServiceScope"/> controlling the
+            lifetime of the scope. Once this is disposed, any scoped services that have been resolved
+            from the <see cref="P:Microsoft.Framework.DependencyInjection.IServiceScope.ServiceProvider"/>
+            will also be disposed.
+            </returns>
+        </member>
+        <member name="T:Microsoft.Framework.DependencyInjection.ServiceProvider">
+            <summary>
+            The default IServiceProvider.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Framework.DependencyInjection.ServiceProvider.GetService(System.Type)">
+            <summary>
+            Gets the service object of the specified type.
+            </summary>
+            <param name="serviceType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Framework.DependencyInjection.ServiceProviderExtensions.GetService``1(System.IServiceProvider)">
+            <summary>
+            Retrieve a service of type T from the IServiceProvider.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="provider"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Framework.DependencyInjection.ServiceProviderExtensions.GetServiceOrDefault``1(System.IServiceProvider)">
+            <summary>
+            Retrieve a service of type T from the IServiceProvider.
+            Return T's default value if no service of type T is available.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="provider"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Framework.DependencyInjection.ServiceProviderExtensions.GetServiceOrNull(System.IServiceProvider,System.Type)">
+            <summary>
+            Retrieve a service of type serviceType from the IServiceProvider.
+            Return null if no service of type serviceType is available.
+            </summary>
+            <param name="provider"></param>
+            <param name="serviceType"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

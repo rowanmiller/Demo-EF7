@@ -1,0 +1,228 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.Data.SQLite</name>
+    </assembly>
+    <members>
+        <member name="P:Microsoft.Data.SQLite.Strings.ArgumentIsNullOrWhitespace">
+            <summary>
+            The argument '{argumentName}' cannot be null, empty or contain only white space.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.SQLite.Strings.FormatArgumentIsNullOrWhitespace(System.Object)">
+            <summary>
+            The argument '{argumentName}' cannot be null, empty or contain only white space.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.SQLite.Strings.BatchNotSupported">
+            <summary>
+            CommandText contains more than one SQL statement. Queries must be a single statement. Batch queries are not supported.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.SQLite.Strings.FormatBatchNotSupported">
+            <summary>
+            CommandText contains more than one SQL statement. Queries must be a single statement. Batch queries are not supported.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.SQLite.Strings.CallRequiresOpenConnection">
+            <summary>
+            {methodName} can only be called when the connection is open.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.SQLite.Strings.FormatCallRequiresOpenConnection(System.Object)">
+            <summary>
+            {methodName} can only be called when the connection is open.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.SQLite.Strings.CallRequiresSetCommandText">
+            <summary>
+            CommandText must be set before {methodName} can be called.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.SQLite.Strings.FormatCallRequiresSetCommandText(System.Object)">
+            <summary>
+            CommandText must be set before {methodName} can be called.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.SQLite.Strings.CollectionIsNotParent">
+            <summary>
+            The SQLiteParameter is already contained by another SQLiteParameterCollection.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.SQLite.Strings.FormatCollectionIsNotParent">
+            <summary>
+            The SQLiteParameter is already contained by another SQLiteParameterCollection.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.SQLite.Strings.CollectionIsParent">
+            <summary>
+            The SQLiteParameter is already contained by this SQLiteParameterCollection.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.SQLite.Strings.FormatCollectionIsParent">
+            <summary>
+            The SQLiteParameter is already contained by this SQLiteParameterCollection.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.SQLite.Strings.ConnectionStringRequiresClosedConnection">
+            <summary>
+            ConnectionString cannot be set when the connection is open.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.SQLite.Strings.FormatConnectionStringRequiresClosedConnection">
+            <summary>
+            ConnectionString cannot be set when the connection is open.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.SQLite.Strings.DataReaderClosed">
+            <summary>
+            Invalid attempt to {operation} when reader is closed.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.SQLite.Strings.FormatDataReaderClosed(System.Object)">
+            <summary>
+            Invalid attempt to {operation} when reader is closed.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.SQLite.Strings.InvalidCommandType">
+            <summary>
+            The CommandType '{commandType}' is invalid.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.SQLite.Strings.FormatInvalidCommandType(System.Object)">
+            <summary>
+            The CommandType '{commandType}' is invalid.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.SQLite.Strings.InvalidConnectionOptionValue">
+            <summary>
+            Invalid '{keyword}' value in the connection string: {value}.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.SQLite.Strings.FormatInvalidConnectionOptionValue(System.Object,System.Object)">
+            <summary>
+            Invalid '{keyword}' value in the connection string: {value}.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.SQLite.Strings.InvalidIsolationLevel">
+            <summary>
+            The IsolationLevel '{isolationLevel}' is invalid.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.SQLite.Strings.FormatInvalidIsolationLevel(System.Object)">
+            <summary>
+            The IsolationLevel '{isolationLevel}' is invalid.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.SQLite.Strings.InvalidParameterDirection">
+            <summary>
+            The ParameterDirection '{direction}' is invalid.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.SQLite.Strings.FormatInvalidParameterDirection(System.Object)">
+            <summary>
+            The ParameterDirection '{direction}' is invalid.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.SQLite.Strings.KeywordNotSupported">
+            <summary>
+            Keyword not supported: '{keyword}'.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.SQLite.Strings.FormatKeywordNotSupported(System.Object)">
+            <summary>
+            Keyword not supported: '{keyword}'.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.SQLite.Strings.OpenReaderExists">
+            <summary>
+            There is already an open DataReader associated with this Command which must be closed first.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.SQLite.Strings.FormatOpenReaderExists">
+            <summary>
+            There is already an open DataReader associated with this Command which must be closed first.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.SQLite.Strings.OpenRequiresSetConnectionString">
+            <summary>
+            ConnectionString must be set before Open can be called.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.SQLite.Strings.FormatOpenRequiresSetConnectionString">
+            <summary>
+            ConnectionString must be set before Open can be called.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.SQLite.Strings.ParallelTransactionsNotSupported">
+            <summary>
+            SQLiteConnection does not support nested transactions.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.SQLite.Strings.FormatParallelTransactionsNotSupported">
+            <summary>
+            SQLiteConnection does not support nested transactions.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.SQLite.Strings.ParameterNotFound">
+            <summary>
+            A SQLiteParameter with ParameterName '{parameterName}' is not contained by this SQLiteParameterCollection.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.SQLite.Strings.FormatParameterNotFound(System.Object)">
+            <summary>
+            A SQLiteParameter with ParameterName '{parameterName}' is not contained by this SQLiteParameterCollection.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.SQLite.Strings.RequiresSet">
+            <summary>
+            {propertyName} must be set.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.SQLite.Strings.FormatRequiresSet(System.Object)">
+            <summary>
+            {propertyName} must be set.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.SQLite.Strings.TransactionCompleted">
+            <summary>
+            This SQLiteTransaction has completed; it is no longer usable.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.SQLite.Strings.FormatTransactionCompleted">
+            <summary>
+            This SQLiteTransaction has completed; it is no longer usable.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.SQLite.Strings.TransactionConnectionMismatch">
+            <summary>
+            The transaction object is not associated with the connection object.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.SQLite.Strings.FormatTransactionConnectionMismatch">
+            <summary>
+            The transaction object is not associated with the connection object.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.SQLite.Strings.TransactionRequired">
+            <summary>
+            Execute requires the command to have a transaction object when the connection assigned to the command is in a pending local transaction.  The Transaction property of the command has not been initialized.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.SQLite.Strings.FormatTransactionRequired">
+            <summary>
+            Execute requires the command to have a transaction object when the connection assigned to the command is in a pending local transaction.  The Transaction property of the command has not been initialized.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.SQLite.Strings.UnknownDataType">
+            <summary>
+            No mapping exists from object type {typeName} to a known managed provider native type.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.SQLite.Strings.FormatUnknownDataType(System.Object)">
+            <summary>
+            No mapping exists from object type {typeName} to a known managed provider native type.
+            </summary>
+        </member>
+    </members>
+</doc>
