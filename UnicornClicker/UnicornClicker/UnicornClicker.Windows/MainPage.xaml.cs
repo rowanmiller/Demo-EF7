@@ -22,9 +22,44 @@ namespace UnicornClicker
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        private GameController _gameController;
+
         public MainPage()
         {
             this.InitializeComponent();
+
+            _gameController = new GameController
+            {
+                DisplayClickCount = (s) => this.ClickCount.Text = s,
+                DisplayCountdown = (s) => this.Countdown.Text = s,
+                DisplayTimeLeft = (s) => this.Time.Text = s,
+                UpdateUIForGameStarted = () => this.Play.Visibility = Visibility.Collapsed,
+                UpdateUIForGameEnded = () =>
+                {
+                    this.Play.Visibility = Visibility.Visible;
+                    LoadHistory();
+                }
+            };
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            LoadHistory();
+        }
+
+        private void Play_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            _gameController.StartNewGame();
+        }
+
+        private void Image_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            _gameController.HandleClick();
+        }
+
+        private void LoadHistory()
+        {
+            this.GameList.ItemsSource = GameService.GetTopGames();
         }
     }
 }
