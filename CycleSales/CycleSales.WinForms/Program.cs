@@ -17,6 +17,8 @@ namespace CycleSalesInternalApp
         [STAThread]
         static void Main()
         {
+            CycleSales.CycleSalesModel.DatabaseBootstrapper.EnsureInitialized();
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainForm());
