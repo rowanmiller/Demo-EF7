@@ -12,7 +12,10 @@ namespace CycleSales.CycleSalesModel
     {
         private bool _useInMemory;
 
-        public CycleSalesContext(bool useInMemory = false)
+        public CycleSalesContext()
+        { }
+
+        public CycleSalesContext(bool useInMemory)
         {
             _useInMemory = useInMemory;
         }
@@ -27,9 +30,9 @@ namespace CycleSales.CycleSalesModel
             }
             else
             {
-                options.UseSqlServer(ConfigurationManager.ConnectionStrings["CycleSalesConnection"].ConnectionString);
+                // Should come from app/web.config but hard coding to work around issue in Migrations
+                options.UseSqlServer(@"Server=.\SQLEXPRESS;Database=CycleSales;integrated security=True;");
             }
-
         }
 
         protected override void OnModelCreating(ModelBuilder builder)

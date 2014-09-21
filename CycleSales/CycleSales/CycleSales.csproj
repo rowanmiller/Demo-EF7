@@ -36,6 +36,9 @@
     <Reference Include="EntityFramework.AzureTableStorage">
       <HintPath>..\packages\EntityFramework.AzureTableStorage.7.0.0-beta1-10961\lib\net45\EntityFramework.AzureTableStorage.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework.Commands">
+      <HintPath>..\packages\EntityFramework.Commands.7.0.0-beta1-10961\lib\net451\EntityFramework.Commands.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework.InMemory">
       <HintPath>..\packages\EntityFramework.InMemory.7.0.0-beta1-10961\lib\net45\EntityFramework.InMemory.dll</HintPath>
     </Reference>
@@ -135,12 +138,19 @@
   <ItemGroup>
     <Compile Include="CycleSalesModel\Bike.cs" />
     <Compile Include="CycleSalesModel\CycleSalesContext.cs" />
+    <Compile Include="CycleSalesModel\DatabaseBootstrapper.cs" />
     <Compile Include="CycleSalesModel\PriceService.cs" />
+    <Compile Include="Migrations\201409210038308_Initial.cs" />
+    <Compile Include="Migrations\201409210038308_Initial.designer.cs">
+      <DependentUpon>201409210038308_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\CycleSalesContextModelSnapshot.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WarrantyModel\WarrantyContext.cs" />
     <Compile Include="WarrantyModel\WarrantyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -37,6 +37,7 @@
             this.textModelNo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textSerialNo = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.groupWarrantyDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.warrantyBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -235,11 +236,21 @@
             this.textSerialNo.Size = new System.Drawing.Size(231, 29);
             this.textSerialNo.TabIndex = 1;
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(242, 101);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(260, 24);
+            this.label9.TabIndex = 23;
+            this.label9.Text = "Hint: try TTT200 and FR12789";
+            // 
             // WarrantyForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(565, 713);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.groupWarrantyDetails);
             this.Controls.Add(this.but_Lookup);
             this.Controls.Add(this.label3);
@@ -280,6 +291,7 @@
         private System.Windows.Forms.TextBox textSerialNo;
         private System.Windows.Forms.BindingSource warrantyBindingSource;
         private System.Windows.Forms.Label labelInfo;
+        private System.Windows.Forms.Label label9;
 
     }
 }
