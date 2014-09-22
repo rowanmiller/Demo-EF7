@@ -39,9 +39,6 @@
     <Reference Include="EntityFramework.Commands">
       <HintPath>..\packages\EntityFramework.Commands.7.0.0-beta1-10961\lib\net451\EntityFramework.Commands.dll</HintPath>
     </Reference>
-    <Reference Include="EntityFramework.InMemory">
-      <HintPath>..\packages\EntityFramework.InMemory.7.0.0-beta1-10961\lib\net45\EntityFramework.InMemory.dll</HintPath>
-    </Reference>
     <Reference Include="EntityFramework.Migrations">
       <HintPath>..\packages\EntityFramework.Migrations.7.0.0-beta1-10961\lib\portable-net451+win81+wpa81\EntityFramework.Migrations.dll</HintPath>
     </Reference>

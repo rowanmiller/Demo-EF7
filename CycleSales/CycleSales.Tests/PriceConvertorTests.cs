@@ -1,8 +1,7 @@
-﻿using System;
-using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using CycleSales.CycleSalesModel;
+﻿using CycleSales.CycleSalesModel;
 using Microsoft.Data.Entity;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Linq;
 
 namespace CycleSales.Tests
 {
@@ -12,7 +11,14 @@ namespace CycleSales.Tests
         [TestMethod]
         public void SimpleConversion()
         {
-            using (var db = new CycleSalesContext(useInMemory: true))
+            var options = new DbContextOptions()
+                .UseInMemoryStore();
+
+            // TODO This is to prevent the DbContext also running OnConfiguring (which registers SQL Server)
+            //      Need to spend some more time thinking about this pattern.
+            options.Lock();
+
+            using (var db = new CycleSalesContext(options))
             {
                 // Arange
                 db.Bikes.Add(new Bike { Bike_Id = 1, Retail = 100M });
