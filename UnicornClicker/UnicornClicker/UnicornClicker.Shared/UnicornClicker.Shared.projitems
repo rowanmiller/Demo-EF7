@@ -17,7 +17,7 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)GameContext.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Game.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)GameController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GameService.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -26,6 +26,5 @@
     <Content Include="$(MSBuildThisFileDirectory)Assets\favs.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\refresh.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\transport.play.png" />
-    <Content Include="$(MSBuildThisFileDirectory)Assets\Unicorn.png" />
   </ItemGroup>
 </Project>

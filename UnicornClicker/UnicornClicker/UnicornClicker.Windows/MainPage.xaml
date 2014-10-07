@@ -13,7 +13,7 @@
             <ColumnDefinition Width="400" />
         </Grid.ColumnDefinitions>
 
-        <Grid Grid.Column="0">
+        <Grid Name="GamePane" Grid.Column="0">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="100" />
@@ -21,33 +21,59 @@
                     <RowDefinition Height="100" />
                 </Grid.RowDefinitions>
 
-                <Button Name="Play" Grid.Row="0" Margin="15" FontSize="30" Tapped="Play_Tapped">New Game</Button>
+                <Button 
+                    Name="Play" 
+                    Grid.Row="0" 
+                    Margin="15" 
+                    FontSize="30" 
+                    Tapped="Play_Tapped" 
+                    Content="New Game"
+                    Visibility="{Binding GameControlsVisibility}"/>
 
                 <Grid Grid.Row="1">
-                    <Image Source="Assets/Unicorn.png" Tapped="Image_Tapped"  />
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    
+                    <Image 
+                        Source="Assets/Unicorn.png" 
+                        Tapped="Image_Tapped" 
+                        Grid.ColumnSpan="3"
+                        Grid.RowSpan="2" />
+                    
                     <TextBlock 
+                        Text="{Binding Countdown}"
+                        Grid.Column="1"
+                        Grid.Row="0"
                         Name="Countdown"
-                        FontSize="150"
+                        FontSize="200"
                         VerticalAlignment="Center" 
-                        HorizontalAlignment="Center" />
+                        HorizontalAlignment="Right" />
                 </Grid>
 
                 <StackPanel Grid.Row="2" Margin="15">
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Margin="0,0,10,0" FontSize="30" Text="Time Left: " />
-                        <TextBlock FontSize="30" Name="Time" />
+                        <TextBlock FontSize="30" Name="Time" Text="{Binding SecondsRemaining}" />
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Margin="0,0,10,0" FontSize="30" Text="Clicks: " />
-                        <TextBlock FontSize="30" Name="ClickCount" />
+                        <TextBlock FontSize="30" Name="ClickCount" Text="{Binding ClickCount}" />
                     </StackPanel>
                 </StackPanel>
             </Grid>
         </Grid>
 
-        <StackPanel Grid.Column="1" Background="#FF494646">
-            <TextBlock FontSize="30" Text="Your Top Scores" />
-            <ListView Margin="5,10,5,0" Name="GameList" HorizontalContentAlignment="Stretch">
+        <StackPanel Name="ScorePane" Grid.Column="1" Background="#FF494646">
+            <TextBlock FontSize="30" Text="Your Top Scores" Margin="15" />
+            <ListView ItemsSource="{Binding .}" Margin="5,10,5,0" Name="GameList" HorizontalContentAlignment="Stretch">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <Border BorderBrush="White" BorderThickness="2" CornerRadius="10" Padding="5" Margin="5,5,5,0">

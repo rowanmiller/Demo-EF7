@@ -12,15 +12,15 @@
         <StackPanel>
             <StackPanel Orientation="Horizontal">
                 <TextBlock Margin="0,0,10,0" FontSize="30" Text="Time Left: " />
-                <TextBlock FontSize="30" Name="Time" />
+                <TextBlock FontSize="30"  Text="{Binding SecondsRemaining}" />
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <TextBlock Margin="0,0,10,0" FontSize="30" Text="Clicks: " />
-                <TextBlock FontSize="30" Name="ClickCount" />
+                <TextBlock FontSize="30" Text="{Binding ClickCount}" />
             </StackPanel>
             <Image Source="Assets/Unicorn.png" Tapped="Image_Tapped"  />
             <Grid>
-            <StackPanel Orientation="Horizontal" Name="Navigation" Visibility="Collapsed">
+            <StackPanel Orientation="Horizontal" Name="Navigation" Visibility="{Binding GameControlsVisibility}">
                     <Grid Margin="5,0,5,0">
                         <Image Height="45" Source="Assets/basecircle.png" />
                         <Image Height="45" Source="Assets/back.png" Tapped="Back_Tapped" />
@@ -33,7 +33,7 @@
             <TextBlock 
                 Name="Countdown"
                 FontSize="150"
-                Text="3" 
+                Text="{Binding Countdown}" 
                 VerticalAlignment="Center" 
                 HorizontalAlignment="Center" />
             </Grid>

@@ -1,63 +1,47 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
-using Windows.UI.Xaml;
+﻿using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
-
-// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace UnicornClicker
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
     public sealed partial class MainPage : Page
     {
-        private GameController _gameController;
+        private GameViewModel _game;
 
         public MainPage()
         {
             this.InitializeComponent();
 
-            _gameController = new GameController
+            _game = new GameViewModel();
+
+            // Refresh scores after each game completes
+            _game.PropertyChanged += (s, e) =>
             {
-                DisplayClickCount = (s) => this.ClickCount.Text = s,
-                DisplayCountdown = (s) => this.Countdown.Text = s,
-                DisplayTimeLeft = (s) => this.Time.Text = s,
-                UpdateUIForGameStarted = () => this.Play.Visibility = Visibility.Collapsed,
-                UpdateUIForGameEnded = () =>
+                if(e.PropertyName == "Playing" && !_game.Playing)
                 {
-                    this.Play.Visibility = Visibility.Visible;
-                    LoadHistory();
+                    ReloadHistory();
                 }
             };
+
+            this.GamePane.DataContext = _game;
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            LoadHistory();
+            ReloadHistory();
         }
 
         private void Play_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            _gameController.StartNewGame();
+            _game.StartNewGame();
         }
 
         private void Image_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            _gameController.HandleClick();
+            _game.HandleClick();
         }
 
-        private void LoadHistory()
+        private void ReloadHistory()
         {
             this.GameList.ItemsSource = GameService.GetTopGames();
         }
