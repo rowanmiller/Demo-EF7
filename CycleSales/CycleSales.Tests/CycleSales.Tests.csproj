@@ -35,31 +35,27 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=7.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\EntityFramework.7.0.0-beta1-10961\lib\net45\EntityFramework.dll</HintPath>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.7.0.0-beta2-11413\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
-    <Reference Include="EntityFramework.InMemory, Version=7.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\EntityFramework.InMemory.7.0.0-beta1-10961\lib\net45\EntityFramework.InMemory.dll</HintPath>
+    <Reference Include="EntityFramework.InMemory">
+      <HintPath>..\packages\EntityFramework.InMemory.7.0.0-beta2-11413\lib\net45\EntityFramework.InMemory.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Framework.ConfigurationModel, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Microsoft.Framework.ConfigurationModel.1.0.0-beta1-10345\lib\net45\Microsoft.Framework.ConfigurationModel.dll</HintPath>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Framework.ConfigurationModel">
+      <HintPath>..\packages\Microsoft.Framework.ConfigurationModel.1.0.0-beta2-10467\lib\net45\Microsoft.Framework.ConfigurationModel.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Framework.ConfigurationModel.Shared">
-      <HintPath>..\packages\Microsoft.Framework.ConfigurationModel.Shared.1.0.0-beta1-10345\lib\net45\Microsoft.Framework.ConfigurationModel.Shared.dll</HintPath>
+    <Reference Include="Microsoft.Framework.DependencyInjection">
+      <HintPath>..\packages\Microsoft.Framework.DependencyInjection.1.0.0-beta2-10483\lib\net45\Microsoft.Framework.DependencyInjection.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Framework.DependencyInjection, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Microsoft.Framework.DependencyInjection.1.0.0-beta1-10346\lib\net45\Microsoft.Framework.DependencyInjection.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Framework.Logging, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Microsoft.Framework.Logging.1.0.0-beta1-10333\lib\net45\Microsoft.Framework.Logging.dll</HintPath>
+    <Reference Include="Microsoft.Framework.Logging">
+      <HintPath>..\packages\Microsoft.Framework.Logging.1.0.0-beta2-10467\lib\net45\Microsoft.Framework.Logging.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Framework.Logging.Interfaces">
-      <HintPath>..\packages\Microsoft.Framework.Logging.Interfaces.1.0.0-beta1-10333\lib\net45\Microsoft.Framework.Logging.Interfaces.dll</HintPath>
+      <HintPath>..\packages\Microsoft.Framework.Logging.Interfaces.1.0.0-beta2-10467\lib\net45\Microsoft.Framework.Logging.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Framework.OptionsModel">
+      <HintPath>..\packages\Microsoft.Framework.OptionsModel.1.0.0-beta2-10466\lib\net45\Microsoft.Framework.OptionsModel.dll</HintPath>
     </Reference>
     <Reference Include="Remotion.Linq, Version=1.15.15.0, Culture=neutral, PublicKeyToken=fee00910d6e5f53b, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -68,17 +64,16 @@
     <Reference Include="System" />
     <Reference Include="System.Collections" />
     <Reference Include="System.Collections.Concurrent" />
-    <Reference Include="System.Collections.Immutable, Version=1.1.22.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+    <Reference Include="System.Collections.Immutable, Version=1.1.32.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Microsoft.Bcl.Immutable.1.1.22-beta\lib\portable-net45+win8+wpa81\System.Collections.Immutable.dll</HintPath>
+      <HintPath>..\packages\System.Collections.Immutable.1.1.32-beta\lib\portable-net45+win8+wp8+wpa81\System.Collections.Immutable.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel" />
     <Reference Include="System.Diagnostics.Debug" />
     <Reference Include="System.Diagnostics.Tools" />
     <Reference Include="System.Globalization" />
-    <Reference Include="System.Interactive.Async, Version=1.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Ix-Async.1.2.2-withwpa81\lib\net45\System.Interactive.Async.dll</HintPath>
+    <Reference Include="System.Interactive.Async">
+      <HintPath>..\packages\Ix-Async.1.2.3-beta\lib\net45\System.Interactive.Async.dll</HintPath>
     </Reference>
     <Reference Include="System.Linq" />
     <Reference Include="System.Linq.Expressions" />

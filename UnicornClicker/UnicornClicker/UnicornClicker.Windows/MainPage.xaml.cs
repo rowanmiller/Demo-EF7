@@ -15,12 +15,9 @@ namespace UnicornClicker
             _game = new GameViewModel();
 
             // Refresh scores after each game completes
-            _game.PropertyChanged += (s, e) =>
+            _game.GameCompleted += (s) =>
             {
-                if(e.PropertyName == "Playing" && !_game.Playing)
-                {
-                    ReloadHistory();
-                }
+                ReloadHistory();
             };
 
             this.GamePane.DataContext = _game;

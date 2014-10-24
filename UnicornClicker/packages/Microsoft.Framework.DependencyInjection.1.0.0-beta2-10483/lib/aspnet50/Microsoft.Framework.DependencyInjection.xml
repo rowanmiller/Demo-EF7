@@ -1,0 +1,145 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.Framework.DependencyInjection</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.Framework.DependencyInjection.ActivatorUtilities">
+            <summary>
+            Helper code for the various activator services.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Framework.DependencyInjection.ActivatorUtilities.GetServiceOrCreateInstance(System.IServiceProvider,System.Type)">
+            <summary>
+            Retrieve an instance of the given type from the service provider. If one is not found then instantiate it directly.
+            </summary>
+            <param name="services"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Framework.DependencyInjection.ActivatorUtilities.CreateInstance(System.IServiceProvider,System.Type)">
+            <summary>
+            Instantiate an object of the given type, using constructor service injection if possible.
+            </summary>
+            <param name="services"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Framework.DependencyInjection.ActivatorUtilities.CreateInstance``1(System.IServiceProvider)">
+            <summary>
+            Instantiate an object of the given type, using constructor service injection if possible.
+            </summary>
+            <param name="services"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Framework.DependencyInjection.ActivatorUtilities.CreateFactory(System.Type)">
+            <summary>
+            Creates a factory to instantiate a type using constructor service injection if possible.
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Microsoft.Framework.DependencyInjection.ServiceCollection">
+            <summary>
+            Default implementation of <see cref="T:Microsoft.Framework.DependencyInjection.IServiceCollection"/>.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Framework.DependencyInjection.ServiceCollection.Add(Microsoft.Framework.DependencyInjection.IServiceDescriptor)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.Framework.DependencyInjection.ServiceCollection.Add(System.Collections.Generic.IEnumerable{Microsoft.Framework.DependencyInjection.IServiceDescriptor})">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.Framework.DependencyInjection.ServiceCollection.GetEnumerator">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.Framework.DependencyInjection.ServiceDescriptor.#ctor(System.Type,System.Type,Microsoft.Framework.DependencyInjection.LifecycleKind)">
+            <summary>
+            Initializes a new instance of <see cref="T:Microsoft.Framework.DependencyInjection.ServiceDescriptor"/> with the specified <paramref name="implementationType"/>.
+            </summary>
+            <param name="serviceType">The <see cref="T:System.Type"/> of the service.</param>
+            <param name="implementationType">The <see cref="T:System.Type"/> implementing the service.</param>
+            <param name="lifecycle">The <see cref="T:Microsoft.Framework.DependencyInjection.LifecycleKind"/> of the service.</param>
+        </member>
+        <member name="M:Microsoft.Framework.DependencyInjection.ServiceDescriptor.#ctor(System.Type,System.Object)">
+            <summary>
+            Initializes a new instance of <see cref="T:Microsoft.Framework.DependencyInjection.ServiceDescriptor"/> with the specified <paramref name="instance"/>
+            as a <see cref="F:Microsoft.Framework.DependencyInjection.LifecycleKind.Singleton"/>.
+            </summary>
+            <param name="serviceType">The <see cref="T:System.Type"/> of the service.</param>
+            <param name="instance">The instance implementing the service.</param>
+        </member>
+        <member name="M:Microsoft.Framework.DependencyInjection.ServiceDescriptor.#ctor(System.Type,System.Func{System.IServiceProvider,System.Object},Microsoft.Framework.DependencyInjection.LifecycleKind)">
+            <summary>
+            Initializes a new instance of <see cref="T:Microsoft.Framework.DependencyInjection.ServiceDescriptor"/> with the specified <paramref name="factory"/>.
+            </summary>
+            <param name="serviceType">The <see cref="T:System.Type"/> of the service.</param>
+            <param name="factory">A factory used for creating service instances.</param>
+            <param name="lifecycle">The <see cref="T:Microsoft.Framework.DependencyInjection.LifecycleKind"/> of the service.</param>
+        </member>
+        <member name="P:Microsoft.Framework.DependencyInjection.ServiceDescriptor.Lifecycle">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.Framework.DependencyInjection.ServiceDescriptor.ServiceType">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.Framework.DependencyInjection.ServiceDescriptor.ImplementationType">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.Framework.DependencyInjection.ServiceDescriptor.ImplementationInstance">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.Framework.DependencyInjection.ServiceDescriptor.ImplementationFactory">
+            <inheritdoc />
+        </member>
+        <member name="T:Microsoft.Framework.DependencyInjection.ServiceProvider">
+            <summary>
+            The default IServiceProvider.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Framework.DependencyInjection.ServiceProvider.GetService(System.Type)">
+            <summary>
+            Gets the service object of the specified type.
+            </summary>
+            <param name="serviceType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Framework.DependencyInjection.ServiceProviderExtensions.GetService``1(System.IServiceProvider)">
+            <summary>
+            Get service of type <typeparamref name="T"/> from the IServiceProvider.
+            </summary>
+            <typeparam name="T">The type of service object to get.</typeparam>
+            <param name="provider">The <see cref="T:System.IServiceProvider"/> to retrieve the service object from.</param>
+            <returns>A service object of type <typeparamref name="T"/> or null if there is no such service.</returns>
+        </member>
+        <member name="M:Microsoft.Framework.DependencyInjection.ServiceProviderExtensions.GetRequiredService(System.IServiceProvider,System.Type)">
+            <summary>
+            Get service of type <paramref name="serviceType"/> from the IServiceProvider.
+            </summary>
+            <param name="provider">The <see cref="T:System.IServiceProvider"/> to retrieve the service object from.</param>
+            <param name="serviceType">An object that specifies the type of service object to get.</param>
+            <returns>A service object of type <paramref name="serviceType"/>.</returns>
+            <exception cref="T:System.Exception">There is no service of type <paramref name="serviceType"/>.</exception>
+        </member>
+        <member name="M:Microsoft.Framework.DependencyInjection.ServiceProviderExtensions.GetRequiredService``1(System.IServiceProvider)">
+            <summary>
+            Get service of type <typeparamref name="T"/> from the IServiceProvider.
+            </summary>
+            <typeparam name="T">The type of service object to get.</typeparam>
+            <param name="provider">The <see cref="T:System.IServiceProvider"/> to retrieve the service object from.</param>
+            <returns>A service object of type <typeparamref name="T"/>.</returns>
+            <exception cref="T:System.Exception">There is no service of type <typeparamref name="T"/>.</exception>
+        </member>
+        <member name="T:Microsoft.Framework.DependencyInjection.ServiceLookup.InstanceService">
+            <summary>
+            Summary description for InstanceService
+            </summary>
+        </member>
+        <member name="T:Microsoft.Framework.DependencyInjection.ServiceLookup.IServiceCallSite">
+            <summary>
+            Summary description for IServiceCallSite
+            </summary>
+        </member>
+    </members>
+</doc>

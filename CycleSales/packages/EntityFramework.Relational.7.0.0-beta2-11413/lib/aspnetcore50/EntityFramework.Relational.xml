@@ -1,0 +1,365 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>EntityFramework.Relational</name>
+    </assembly>
+    <members>
+        <member name="M:Microsoft.Data.Entity.Relational.RelationalConnection.#ctor">
+            <summary>
+                This constructor is intended only for use when creating test doubles that will override members
+                with mocked or faked behavior. Use of this constructor for other purposes may result in unexpected
+                behavior including but not limited to throwing <see cref="T:System.NullReferenceException" />.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Relational.RelationalDataStore.#ctor">
+            <summary>
+                This constructor is intended only for use when creating test doubles that will override members
+                with mocked or faked behavior. Use of this constructor for other purposes may result in unexpected
+                behavior including but not limited to throwing <see cref="T:System.NullReferenceException" />.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Relational.RelationalTransaction.#ctor">
+            <summary>
+                This constructor is intended only for use when creating test doubles that will override members
+                with mocked or faked behavior. Use of this constructor for other purposes may result in unexpected
+                behavior including but not limited to throwing <see cref="T:System.NullReferenceException" />.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Relational.Model.RelationalTypeMapping.#ctor">
+            <summary>
+                This constructor is intended only for use when creating test doubles that will override members
+                with mocked or faked behavior. Use of this constructor for other purposes may result in unexpected
+                behavior including but not limited to throwing <see cref="T:System.NullReferenceException" />.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Relational.Strings.ArgumentIsEmpty">
+            <summary>
+            The string argument '{argumentName}' cannot be empty.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Relational.Strings.FormatArgumentIsEmpty(System.Object)">
+            <summary>
+            The string argument '{argumentName}' cannot be empty.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Relational.Strings.InvalidEnumValue">
+            <summary>
+            The value provided for argument '{argumentName}' must be a valid value of enum type '{enumType}'.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Relational.Strings.FormatInvalidEnumValue(System.Object,System.Object)">
+            <summary>
+            The value provided for argument '{argumentName}' must be a valid value of enum type '{enumType}'.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Relational.Strings.InvalidSchemaQualifiedName">
+            <summary>
+            The schema qualified name '{name}' is invalid. Schema qualified names must be of the form [&lt;schema_name&gt;.]&lt;object_name&gt;.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Relational.Strings.FormatInvalidSchemaQualifiedName(System.Object)">
+            <summary>
+            The schema qualified name '{name}' is invalid. Schema qualified names must be of the form [&lt;schema_name&gt;.]&lt;object_name&gt;.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Relational.Strings.ModificationFunctionInvalidEntityState">
+            <summary>
+            Can not create a ModificationFunction for an entity in state '{entityState}'.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Relational.Strings.FormatModificationFunctionInvalidEntityState(System.Object)">
+            <summary>
+            Can not create a ModificationFunction for an entity in state '{entityState}'.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Relational.Strings.UpdateConcurrencyException">
+            <summary>
+            Update failed. Expected {expectedRows} row(s) but {actualRows} row(s) returned.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Relational.Strings.FormatUpdateConcurrencyException(System.Object,System.Object)">
+            <summary>
+            Update failed. Expected {expectedRows} row(s) but {actualRows} row(s) returned.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Relational.Strings.MultipleDataStoresConfigured">
+            <summary>
+            Multiple relational data store configurations found. A context can only be configured to use a single data store.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Relational.Strings.FormatMultipleDataStoresConfigured">
+            <summary>
+            Multiple relational data store configurations found. A context can only be configured to use a single data store.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Relational.Strings.NoDataStoreConfigured">
+            <summary>
+            No relational data stores are configured. Configure a data store using OnConfiguring or by creating an ImmutableDbContextOptions with a data store configured and passing it to the context.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Relational.Strings.FormatNoDataStoreConfigured">
+            <summary>
+            No relational data stores are configured. Configure a data store using OnConfiguring or by creating an ImmutableDbContextOptions with a data store configured and passing it to the context.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Relational.Strings.ConnectionAndConnectionString">
+            <summary>
+            Both an existing DbConnection and a connection string have been configured. When an existing DbConnection is used the connection string must be set on that connection.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Relational.Strings.FormatConnectionAndConnectionString">
+            <summary>
+            Both an existing DbConnection and a connection string have been configured. When an existing DbConnection is used the connection string must be set on that connection.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Relational.Strings.NoConnectionOrConnectionString">
+            <summary>
+            A relational store has been configured without specifying either the DbConnection or connection string to use.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Relational.Strings.FormatNoConnectionOrConnectionString">
+            <summary>
+            A relational store has been configured without specifying either the DbConnection or connection string to use.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Relational.Strings.UnsupportedType">
+            <summary>
+            The property '{propertyName}' cannot be mapped because it is of type '{propertyType}' which is currently not supported.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Relational.Strings.FormatUnsupportedType(System.Object,System.Object)">
+            <summary>
+            The property '{propertyName}' cannot be mapped because it is of type '{propertyType}' which is currently not supported.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Relational.Strings.NoConfigForConnection">
+            <summary>
+            The connection string '{connectionName}' could not be found because no IConfiguration object has been configured.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Relational.Strings.FormatNoConfigForConnection(System.Object)">
+            <summary>
+            The connection string '{connectionName}' could not be found because no IConfiguration object has been configured.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Relational.Strings.ConnectionNotFound">
+            <summary>
+            The connection string '{connectionName}' could not be found in the application's configuration.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Relational.Strings.FormatConnectionNotFound(System.Object)">
+            <summary>
+            The connection string '{connectionName}' could not be found in the application's configuration.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Relational.Strings.RelationalNotInUse">
+            <summary>
+            Relational-specific methods can only be used when the context is using a relational data store.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Relational.Strings.FormatRelationalNotInUse">
+            <summary>
+            Relational-specific methods can only be used when the context is using a relational data store.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Relational.Strings.UpdateStoreException">
+            <summary>
+            An error occurred while updating the entries. See the inner exception for details.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Relational.Strings.FormatUpdateStoreException">
+            <summary>
+            An error occurred while updating the entries. See the inner exception for details.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Relational.Strings.ArgumentPropertyNull">
+            <summary>
+            The property '{property}' of the argument '{argument}' cannot be null.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Relational.Strings.FormatArgumentPropertyNull(System.Object,System.Object)">
+            <summary>
+            The property '{property}' of the argument '{argument}' cannot be null.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Relational.Strings.CollectionArgumentIsEmpty">
+            <summary>
+            The collection argument '{argumentName}' must contain at least one element.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Relational.Strings.FormatCollectionArgumentIsEmpty(System.Object)">
+            <summary>
+            The collection argument '{argumentName}' must contain at least one element.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Relational.Strings.TransactionAlreadyStarted">
+            <summary>
+            The connection is already in a transaction and cannot participate in another transaction.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Relational.Strings.FormatTransactionAlreadyStarted">
+            <summary>
+            The connection is already in a transaction and cannot participate in another transaction.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Relational.Strings.TransactionAssociatedWithDifferentConnection">
+            <summary>
+            The specified transaction is not associated with the current connection. Only transactions associated with the current connection may be used.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Relational.Strings.FormatTransactionAssociatedWithDifferentConnection">
+            <summary>
+            The specified transaction is not associated with the current connection. Only transactions associated with the current connection may be used.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Relational.Strings.SkipNeedsOrderBy">
+            <summary>
+            A query containing the Skip operator must include at least one OrderBy operation.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Relational.Strings.FormatSkipNeedsOrderBy">
+            <summary>
+            A query containing the Skip operator must include at least one OrderBy operation.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Relational.Strings.SequenceDefinitionMismatch">
+            <summary>
+            The SQL Server sequence '{sequenceName}' was already specified with a different definition.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Relational.Strings.FormatSequenceDefinitionMismatch(System.Object)">
+            <summary>
+            The SQL Server sequence '{sequenceName}' was already specified with a different definition.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Relational.Strings.RelationalLoggerCreatingDatabase">
+            <summary>
+            Creating database '{databaseName}'.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Relational.Strings.FormatRelationalLoggerCreatingDatabase(System.Object)">
+            <summary>
+            Creating database '{databaseName}'.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Relational.Strings.RelationalLoggerOpeningConnection">
+            <summary>
+            Opening connection '{connectionString}'.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Relational.Strings.FormatRelationalLoggerOpeningConnection(System.Object)">
+            <summary>
+            Opening connection '{connectionString}'.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Relational.Strings.RelationalLoggerClosingConnection">
+            <summary>
+            Closing connection '{connectionString}'.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Relational.Strings.FormatRelationalLoggerClosingConnection(System.Object)">
+            <summary>
+            Closing connection '{connectionString}'.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Relational.Strings.RelationalLoggerBeginningTransaction">
+            <summary>
+            Beginning transaction with isolation level '{isolationLevel}'.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Relational.Strings.FormatRelationalLoggerBeginningTransaction(System.Object)">
+            <summary>
+            Beginning transaction with isolation level '{isolationLevel}'.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Relational.Strings.RelationalLoggerCommittingTransaction">
+            <summary>
+            Committing transaction.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Relational.Strings.FormatRelationalLoggerCommittingTransaction">
+            <summary>
+            Committing transaction.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Relational.Strings.RelationalLoggerRollingbackTransaction">
+            <summary>
+            Rolling back transaction.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Relational.Strings.FormatRelationalLoggerRollingbackTransaction">
+            <summary>
+            Rolling back transaction.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Relational.Strings.BadSequenceType">
+            <summary>
+            Invalid type for sequence. Valid types are 'Int64' (the default), 'Int32', 'Int16', and 'Byte'.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Relational.Strings.FormatBadSequenceType">
+            <summary>
+            Invalid type for sequence. Valid types are 'Int64' (the default), 'Int32', 'Int16', and 'Byte'.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Relational.Strings.BadSequenceString">
+            <summary>
+            Unable to deserialize sequence from model metadata. See inner exception for details.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Relational.Strings.FormatBadSequenceString">
+            <summary>
+            Unable to deserialize sequence from model metadata. See inner exception for details.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Relational.Update.BatchExecutor.#ctor">
+            <summary>
+                This constructor is intended only for use when creating test doubles that will override members
+                with mocked or faked behavior. Use of this constructor for other purposes may result in unexpected
+                behavior including but not limited to throwing <see cref="T:System.NullReferenceException" />.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Relational.Update.ColumnModification.#ctor">
+            <summary>
+                This constructor is intended only for use when creating test doubles that will override members
+                with mocked or faked behavior. Use of this constructor for other purposes may result in unexpected
+                behavior including but not limited to throwing <see cref="T:System.NullReferenceException" />.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Relational.Update.CommandBatchPreparer.#ctor">
+            <summary>
+                This constructor is intended only for use when creating test doubles that will override members
+                with mocked or faked behavior. Use of this constructor for other purposes may result in unexpected
+                behavior including but not limited to throwing <see cref="T:System.NullReferenceException" />.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Relational.Update.ModificationCommand.#ctor">
+            <summary>
+                This constructor is intended only for use when creating test doubles that will override members
+                with mocked or faked behavior. Use of this constructor for other purposes may result in unexpected
+                behavior including but not limited to throwing <see cref="T:System.NullReferenceException" />.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Relational.Update.ModificationCommandBatch.#ctor">
+            <summary>
+                This constructor is intended only for use when creating test doubles that will override members
+                with mocked or faked behavior. Use of this constructor for other purposes may result in unexpected
+                behavior including but not limited to throwing <see cref="T:System.NullReferenceException" />.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Relational.Update.ModificationCommandBatchFactory.#ctor">
+            <summary>
+                This constructor is intended only for use when creating test doubles that will override members
+                with mocked or faked behavior. Use of this constructor for other purposes may result in unexpected
+                behavior including but not limited to throwing <see cref="T:System.NullReferenceException" />.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Relational.Update.ReaderModificationCommandBatch.#ctor">
+            <summary>
+                This constructor is intended only for use when creating test doubles that will override members
+                with mocked or faked behavior. Use of this constructor for other purposes may result in unexpected
+                behavior including but not limited to throwing <see cref="T:System.NullReferenceException" />.
+            </summary>
+        </member>
+    </members>
+</doc>

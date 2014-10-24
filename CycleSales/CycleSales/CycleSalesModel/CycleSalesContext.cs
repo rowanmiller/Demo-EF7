@@ -17,17 +17,18 @@ namespace CycleSales.CycleSalesModel
 
         protected override void OnConfiguring(DbContextOptions options)
         {
-            options.UseSqlServer(ConfigurationManager.ConnectionStrings["CycleSalesConnection"].ConnectionString);
-
-            // TODO To use Migrations at the moment you need to replace ConfigurationManager call with the actual string
-            // @"Server=.\SQLEXPRESS;Database=CycleSales;integrated security=True;");
+            // TODO: Connection string in code rather than config file because of temporary limitation with Migrations
+            options.UseSqlServer(@"Server=(localdb)\v11.0;Database=CycleSales;integrated security=True;");
         }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.Entity<Bike>()
-                .ToTable("Bikes")
                 .Key(b => b.Bike_Id);
+
+            builder.Entity<Bike>()
+                .ForRelational()
+                .Table("Bikes");
         }
     }
 }

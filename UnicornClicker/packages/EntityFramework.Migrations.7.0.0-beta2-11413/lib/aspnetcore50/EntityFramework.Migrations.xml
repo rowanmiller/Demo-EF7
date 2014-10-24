@@ -1,0 +1,140 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>EntityFramework.Migrations</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.Data.Entity.Migrations.MigrationOperationSqlGenerator">
+            <summary>
+                Default migration operation SQL generator, outputs best-effort ANSI-99 compliant SQL.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Migrations.Infrastructure.Migrator.#ctor">
+            <summary>
+                This constructor is intended only for use when creating test doubles that will override members
+                with mocked or faked behavior. Use of this constructor for other purposes may result in unexpected
+                behavior including but not limited to throwing <see cref="T:System.NullReferenceException" />.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Migrations.Strings.ArgumentIsEmpty">
+            <summary>
+            The string argument '{argumentName}' cannot be empty.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Migrations.Strings.FormatArgumentIsEmpty(System.Object)">
+            <summary>
+            The string argument '{argumentName}' cannot be empty.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Migrations.Strings.InvalidEnumValue">
+            <summary>
+            The value provided for argument '{argumentName}' must be a valid value of enum type '{enumType}'.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Migrations.Strings.FormatInvalidEnumValue(System.Object,System.Object)">
+            <summary>
+            The value provided for argument '{argumentName}' must be a valid value of enum type '{enumType}'.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Migrations.Strings.UnknownOperation">
+            <summary>
+            The current migration SQL generator '{sqlGeneratorType}' is unable to generate SQL for operations of type '{operationType}'.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Migrations.Strings.FormatUnknownOperation(System.Object,System.Object)">
+            <summary>
+            The current migration SQL generator '{sqlGeneratorType}' is unable to generate SQL for operations of type '{operationType}'.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Migrations.Strings.TargetMigrationNotFound">
+            <summary>
+            The target migration '{targetMigrationName}' was not found.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Migrations.Strings.FormatTargetMigrationNotFound(System.Object)">
+            <summary>
+            The target migration '{targetMigrationName}' was not found.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Migrations.Strings.LocalMigrationNotFound">
+            <summary>
+            The history repository includes a migration with the identifier '{migrationId}' but the migration assembly does not contain the corresponding migration class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Migrations.Strings.FormatLocalMigrationNotFound(System.Object)">
+            <summary>
+            The history repository includes a migration with the identifier '{migrationId}' but the migration assembly does not contain the corresponding migration class.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Migrations.Strings.InvalidMigrationId">
+            <summary>
+            '{migrationId}' is not a valid migration identifier.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Migrations.Strings.FormatInvalidMigrationId(System.Object)">
+            <summary>
+            '{migrationId}' is not a valid migration identifier.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Migrations.Strings.MissingMigrationMetadata">
+            <summary>
+            '{migrationType}' does not implement IMigrationMetadata.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Migrations.Strings.FormatMissingMigrationMetadata(System.Object)">
+            <summary>
+            '{migrationType}' does not implement IMigrationMetadata.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Migrations.Strings.MigratorLoggerCreatingHistoryTable">
+            <summary>
+            Creating migration history table.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Migrations.Strings.FormatMigratorLoggerCreatingHistoryTable">
+            <summary>
+            Creating migration history table.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Migrations.Strings.MigratorLoggerDroppingHistoryTable">
+            <summary>
+            Dropping migration history table.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Migrations.Strings.FormatMigratorLoggerDroppingHistoryTable">
+            <summary>
+            Dropping migration history table.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Migrations.Strings.MigratorLoggerApplyingMigration">
+            <summary>
+            Applying migration '{migrationId}'.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Migrations.Strings.FormatMigratorLoggerApplyingMigration(System.Object)">
+            <summary>
+            Applying migration '{migrationId}'.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Migrations.Strings.MigratorLoggerRevertingMigration">
+            <summary>
+            Reverting migration '{migrationId}'.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Migrations.Strings.FormatMigratorLoggerRevertingMigration(System.Object)">
+            <summary>
+            Reverting migration '{migrationId}'.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Migrations.Strings.MigratorLoggerUpToDate">
+            <summary>
+            The database is up to date.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Migrations.Strings.FormatMigratorLoggerUpToDate">
+            <summary>
+            The database is up to date.
+            </summary>
+        </member>
+    </members>
+</doc>

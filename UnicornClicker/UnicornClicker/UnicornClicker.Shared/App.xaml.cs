@@ -38,7 +38,7 @@ namespace UnicornClicker
         {
             using (var db = new GameContext())
             {
-                db.Database.EnsureCreated();
+                db.Database.AsRelational().ApplyMigrations();
             }
 
             this.InitializeComponent();

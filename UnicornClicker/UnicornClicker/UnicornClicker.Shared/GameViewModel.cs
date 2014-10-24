@@ -8,6 +8,8 @@ namespace UnicornClicker
 {
     public class GameViewModel : INotifyPropertyChanged
     {
+        public delegate void GameCompletedEventHandler(object sender);
+
         private static readonly int _gameTime = 5;
         private int _clickCount;
         private int _secondsPlayed;
@@ -16,12 +18,21 @@ namespace UnicornClicker
         private Visibility _gameControlsVisibility = Visibility.Visible;
 
         public event PropertyChangedEventHandler PropertyChanged;
+        public event GameCompletedEventHandler GameCompleted;
 
-        public void OnPropertyChanged(string property)
+        protected void OnPropertyChanged(string property)
         {
             if (PropertyChanged != null)
             {
                 PropertyChanged(this, new PropertyChangedEventArgs(property));
+            }
+        }
+
+        protected void OnGameCompleted()
+        {
+            if (GameCompleted != null)
+            {
+                GameCompleted(this);
             }
         }
 
@@ -128,6 +139,8 @@ namespace UnicornClicker
                 Playing = false;
 
                 GameService.RecordGame(_gameTime, _clickCount);
+
+                OnGameCompleted();
 
                 GameControlsVisibility = Visibility.Visible;
             }

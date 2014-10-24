@@ -17,8 +17,7 @@ namespace CycleSales.CycleSalesModel
             {
                 if(!db.Database.AsRelational().Exists())
                 {
-                    var migrator = db.Configuration.Services.ServiceProvider.GetService<Migrator>();
-                    migrator.UpdateDatabase();
+                    db.Database.AsRelational().ApplyMigrations();
 
                     db.Bikes.Add(new Bike
                     {

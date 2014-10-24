@@ -16,14 +16,9 @@ namespace CycleSales.WarrantyModel
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            //builder.Entity<WarrantyInfo>()
-            //    .Key(w => new { w.BikeModelNo, w.BikeSerialNo });
-
             builder.Entity<WarrantyInfo>()
+                .ForAzureTableStorage()
                 .PartitionAndRowKey(w => w.BikeModelNo, w => w.BikeSerialNo);
-
-            //builder.Entity<WarrantyInfo>()
-            //    .Timestamp("Timestamp", shadowProperty: true);
         }
     }
 }

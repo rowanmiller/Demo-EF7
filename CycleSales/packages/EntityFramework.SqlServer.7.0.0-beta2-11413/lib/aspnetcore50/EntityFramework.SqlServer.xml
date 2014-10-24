@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>EntityFramework.SqlServer</name>
+    </assembly>
+    <members>
+        <member name="P:Microsoft.Data.Entity.SqlServer.Strings.ArgumentIsEmpty">
+            <summary>
+            The string argument '{argumentName}' cannot be empty.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.SqlServer.Strings.FormatArgumentIsEmpty(System.Object)">
+            <summary>
+            The string argument '{argumentName}' cannot be empty.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.SqlServer.Strings.CollectionArgumentIsEmpty">
+            <summary>
+            The collection argument '{argumentName}' must contain at least one element.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.SqlServer.Strings.FormatCollectionArgumentIsEmpty(System.Object)">
+            <summary>
+            The collection argument '{argumentName}' must contain at least one element.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.SqlServer.Strings.IntegerConfigurationValueFormatError">
+            <summary>
+            The value for the configuration entry '{configurationKey}' is '{invalidValue}', but an integer is expected.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.SqlServer.Strings.FormatIntegerConfigurationValueFormatError(System.Object,System.Object)">
+            <summary>
+            The value for the configuration entry '{configurationKey}' is '{invalidValue}', but an integer is expected.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.SqlServer.Strings.InvalidEnumValue">
+            <summary>
+            The value provided for argument '{argumentName}' must be a valid value of enum type '{enumType}'.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.SqlServer.Strings.FormatInvalidEnumValue(System.Object,System.Object)">
+            <summary>
+            The value provided for argument '{argumentName}' must be a valid value of enum type '{enumType}'.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.SqlServer.Strings.MaxBatchSizeMustBePositive">
+            <summary>
+            The value provided for max batch size must be positive.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.SqlServer.Strings.FormatMaxBatchSizeMustBePositive">
+            <summary>
+            The value provided for max batch size must be positive.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.SqlServer.Strings.SequenceBadBlockSize">
+            <summary>
+            The increment value of '{increment}' for sequence '{sequenceName}' cannot be used for value generation. Sequences used for value generation must have positive increments.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.SqlServer.Strings.FormatSequenceBadBlockSize(System.Object,System.Object)">
+            <summary>
+            The increment value of '{increment}' for sequence '{sequenceName}' cannot be used for value generation. Sequences used for value generation must have positive increments.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.SqlServer.Strings.IdentityBadType">
+            <summary>
+            Identity value generation cannot be used for the property '{property}' on entity type '{entityType}' because the property type is '{propertyType}'. Identity value generation can only be used with signed integer properties.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.SqlServer.Strings.FormatIdentityBadType(System.Object,System.Object,System.Object)">
+            <summary>
+            Identity value generation cannot be used for the property '{property}' on entity type '{entityType}' because the property type is '{propertyType}'. Identity value generation can only be used with signed integer properties.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.SqlServer.Strings.SequenceBadType">
+            <summary>
+            SQL Server sequences cannot be used to generate values for the property '{property}' on entity type '{entityType}' because the property type is '{propertyType}'. Sequences can only be used with integer properties.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.SqlServer.Strings.FormatSequenceBadType(System.Object,System.Object,System.Object)">
+            <summary>
+            SQL Server sequences cannot be used to generate values for the property '{property}' on entity type '{entityType}' because the property type is '{propertyType}'. Sequences can only be used with integer properties.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.SqlServer.Update.SqlServerBatchExecutor.#ctor">
+            <summary>
+                This constructor is intended only for use when creating test doubles that will override members
+                with mocked or faked behavior. Use of this constructor for other purposes may result in unexpected
+                behavior including but not limited to throwing <see cref="T:System.NullReferenceException" />.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.SqlServer.Update.SqlServerModificationCommandBatch.#ctor">
+            <summary>
+                This constructor is intended only for use when creating test doubles that will override members
+                with mocked or faked behavior. Use of this constructor for other purposes may result in unexpected
+                behavior including but not limited to throwing <see cref="T:System.NullReferenceException" />.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.SqlServer.Update.SqlServerModificationCommandBatchFactory.#ctor">
+            <summary>
+                This constructor is intended only for use when creating test doubles that will override members
+                with mocked or faked behavior. Use of this constructor for other purposes may result in unexpected
+                behavior including but not limited to throwing <see cref="T:System.NullReferenceException" />.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.Framework.Logging</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.Framework.Logging.LoggerExtensions">
+            <summary>
+            ILogger extension methods for common scenarios.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Framework.Logging.LoggerExtensions.WriteVerbose(Microsoft.Framework.Logging.ILogger,System.String)">
+            <summary>
+            Writes a verbose log message.
+            </summary>
+            <param name="logger"></param>
+            <param name="data"></param>
+        </member>
+        <member name="M:Microsoft.Framework.Logging.LoggerExtensions.WriteInformation(Microsoft.Framework.Logging.ILogger,System.String)">
+            <summary>
+            Writes an informational log message.
+            </summary>
+            <param name="logger"></param>
+            <param name="message"></param>
+        </member>
+        <member name="M:Microsoft.Framework.Logging.LoggerExtensions.WriteWarning(Microsoft.Framework.Logging.ILogger,System.String,System.String[])">
+            <summary>
+            Writes a warning log message.
+            </summary>
+            <param name="logger"></param>
+            <param name="message"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:Microsoft.Framework.Logging.LoggerExtensions.WriteWarning(Microsoft.Framework.Logging.ILogger,System.String,System.Exception)">
+            <summary>
+            Writes a warning log message.
+            </summary>
+            <param name="logger"></param>
+            <param name="message"></param>
+            <param name="error"></param>
+        </member>
+        <member name="M:Microsoft.Framework.Logging.LoggerExtensions.WriteError(Microsoft.Framework.Logging.ILogger,System.String)">
+            <summary>
+            Writes an error log message.
+            </summary>
+            <param name="logger"></param>
+            <param name="message"></param>
+        </member>
+        <member name="M:Microsoft.Framework.Logging.LoggerExtensions.WriteError(Microsoft.Framework.Logging.ILogger,System.String,System.Exception)">
+            <summary>
+            Writes an error log message.
+            </summary>
+            <param name="logger"></param>
+            <param name="message"></param>
+            <param name="error"></param>
+        </member>
+        <member name="M:Microsoft.Framework.Logging.LoggerExtensions.WriteCritical(Microsoft.Framework.Logging.ILogger,System.String)">
+            <summary>
+            Writes a critical log message.
+            </summary>
+            <param name="logger"></param>
+            <param name="message"></param>
+        </member>
+        <member name="M:Microsoft.Framework.Logging.LoggerExtensions.WriteCritical(Microsoft.Framework.Logging.ILogger,System.String,System.Exception)">
+            <summary>
+            Writes a critical log message.
+            </summary>
+            <param name="logger"></param>
+            <param name="message"></param>
+            <param name="error"></param>
+        </member>
+        <member name="T:Microsoft.Framework.Logging.LoggerFactory">
+            <summary>
+            Summary description for LoggerFactory
+            </summary>
+        </member>
+        <member name="T:Microsoft.Framework.Logging.LoggerFactoryExtensions">
+            <summary>
+            ILoggerFactory extension methods for common scenarios.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Framework.Logging.LoggerFactoryExtensions.Create``1(Microsoft.Framework.Logging.ILoggerFactory)">
+            <summary>
+            Creates a new ILogger instance using the full name of the given type.
+            </summary>
+            <typeparam name="T">The type.</typeparam>
+            <param name="factory">The factory.</param>
+        </member>
+    </members>
+</doc>

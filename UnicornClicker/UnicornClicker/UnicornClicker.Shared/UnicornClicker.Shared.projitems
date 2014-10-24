@@ -19,6 +19,11 @@
     <Compile Include="$(MSBuildThisFileDirectory)Game.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GameViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GameService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Migrations\201410242240058_InitialSchema.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Migrations\201410242240058_InitialSchema.designer.cs">
+      <DependentUpon>201410242240058_InitialSchema.cs</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Migrations\GameContextModelSnapshot.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="$(MSBuildThisFileDirectory)Assets\back.png" />

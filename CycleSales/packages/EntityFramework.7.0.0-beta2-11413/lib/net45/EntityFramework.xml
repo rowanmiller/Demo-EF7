@@ -1,0 +1,1280 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>EntityFramework</name>
+    </assembly>
+    <members>
+        <member name="M:Microsoft.Data.Entity.DbSet.#ctor">
+            <summary>
+                This constructor is intended only for use when creating test doubles that will override members
+                with mocked or faked behavior. Use of this constructor for other purposes may result in unexpected
+                behavior including but not limited to throwing <see cref="T:System.NullReferenceException" />.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.DbSet`1.#ctor">
+            <summary>
+                This constructor is intended only for use when creating test doubles that will override members
+                with mocked or faked behavior. Use of this constructor for other purposes may result in unexpected
+                behavior including but not limited to throwing <see cref="T:System.NullReferenceException" />.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.ChangeTracking.ArraySidecar.#ctor">
+            <summary>
+                This constructor is intended only for use when creating test doubles that will override members
+                with mocked or faked behavior. Use of this constructor for other purposes may result in unexpected
+                behavior including but not limited to throwing <see cref="T:System.NullReferenceException" />.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.ChangeTracking.ChangeDetector.#ctor">
+            <summary>
+                This constructor is intended only for use when creating test doubles that will override members
+                with mocked or faked behavior. Use of this constructor for other purposes may result in unexpected
+                behavior including but not limited to throwing <see cref="T:System.NullReferenceException" />.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.ChangeTracking.ChangeTracker.#ctor">
+            <summary>
+                This constructor is intended only for use when creating test doubles that will override members
+                with mocked or faked behavior. Use of this constructor for other purposes may result in unexpected
+                behavior including but not limited to throwing <see cref="T:System.NullReferenceException" />.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.ChangeTracking.ClrStateEntry.#ctor">
+            <summary>
+                This constructor is intended only for use when creating test doubles that will override members
+                with mocked or faked behavior. Use of this constructor for other purposes may result in unexpected
+                behavior including but not limited to throwing <see cref="T:System.NullReferenceException" />.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.ChangeTracking.DictionarySidecar.#ctor">
+            <summary>
+                This constructor is intended only for use when creating test doubles that will override members
+                with mocked or faked behavior. Use of this constructor for other purposes may result in unexpected
+                behavior including but not limited to throwing <see cref="T:System.NullReferenceException" />.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.ChangeTracking.EntityKeyFactorySource.#ctor">
+            <summary>
+                This constructor is intended only for use when creating test doubles that will override members
+                with mocked or faked behavior. Use of this constructor for other purposes may result in unexpected
+                behavior including but not limited to throwing <see cref="T:System.NullReferenceException" />.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.ChangeTracking.MixedStateEntry.#ctor">
+            <summary>
+                This constructor is intended only for use when creating test doubles that will override members
+                with mocked or faked behavior. Use of this constructor for other purposes may result in unexpected
+                behavior including but not limited to throwing <see cref="T:System.NullReferenceException" />.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.ChangeTracking.NavigationFixer.#ctor">
+            <summary>
+                This constructor is intended only for use when creating test doubles that will override members
+                with mocked or faked behavior. Use of this constructor for other purposes may result in unexpected
+                behavior including but not limited to throwing <see cref="T:System.NullReferenceException" />.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.ChangeTracking.OriginalValues.#ctor">
+            <summary>
+                This constructor is intended only for use when creating test doubles that will override members
+                with mocked or faked behavior. Use of this constructor for other purposes may result in unexpected
+                behavior including but not limited to throwing <see cref="T:System.NullReferenceException" />.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.ChangeTracking.RelationshipsSnapshot.#ctor">
+            <summary>
+                This constructor is intended only for use when creating test doubles that will override members
+                with mocked or faked behavior. Use of this constructor for other purposes may result in unexpected
+                behavior including but not limited to throwing <see cref="T:System.NullReferenceException" />.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.ChangeTracking.ShadowStateEntry.#ctor">
+            <summary>
+                This constructor is intended only for use when creating test doubles that will override members
+                with mocked or faked behavior. Use of this constructor for other purposes may result in unexpected
+                behavior including but not limited to throwing <see cref="T:System.NullReferenceException" />.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.ChangeTracking.Sidecar.#ctor">
+            <summary>
+                This constructor is intended only for use when creating test doubles that will override members
+                with mocked or faked behavior. Use of this constructor for other purposes may result in unexpected
+                behavior including but not limited to throwing <see cref="T:System.NullReferenceException" />.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.ChangeTracking.StateEntry.#ctor">
+            <summary>
+                This constructor is intended only for use when creating test doubles that will override members
+                with mocked or faked behavior. Use of this constructor for other purposes may result in unexpected
+                behavior including but not limited to throwing <see cref="T:System.NullReferenceException" />.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.ChangeTracking.StateEntryFactory.#ctor">
+            <summary>
+                This constructor is intended only for use when creating test doubles that will override members
+                with mocked or faked behavior. Use of this constructor for other purposes may result in unexpected
+                behavior including but not limited to throwing <see cref="T:System.NullReferenceException" />.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.ChangeTracking.StateEntryNotifier.#ctor">
+            <summary>
+                This constructor is intended only for use when creating test doubles that will override members
+                with mocked or faked behavior. Use of this constructor for other purposes may result in unexpected
+                behavior including but not limited to throwing <see cref="T:System.NullReferenceException" />.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.ChangeTracking.StateManager.#ctor">
+            <summary>
+                This constructor is intended only for use when creating test doubles that will override members
+                with mocked or faked behavior. Use of this constructor for other purposes may result in unexpected
+                behavior including but not limited to throwing <see cref="T:System.NullReferenceException" />.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.ChangeTracking.StoreGeneratedValues.#ctor">
+            <summary>
+                This constructor is intended only for use when creating test doubles that will override members
+                with mocked or faked behavior. Use of this constructor for other purposes may result in unexpected
+                behavior including but not limited to throwing <see cref="T:System.NullReferenceException" />.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:Microsoft.Data.Entity.Identity.BlockOfSequentialValuesGenerator" -->
+        <member name="M:Microsoft.Data.Entity.Identity.ForeignKeyValueGenerator.#ctor">
+            <summary>
+                This constructor is intended only for use when creating test doubles that will override members
+                with mocked or faked behavior. Use of this constructor for other purposes may result in unexpected
+                behavior including but not limited to throwing <see cref="T:System.NullReferenceException" />.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Identity.ValueGeneratorCache.#ctor">
+            <summary>
+                This constructor is intended only for use when creating test doubles that will override members
+                with mocked or faked behavior. Use of this constructor for other purposes may result in unexpected
+                behavior including but not limited to throwing <see cref="T:System.NullReferenceException" />.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Identity.ValueGeneratorSelector.#ctor">
+            <summary>
+                This constructor is intended only for use when creating test doubles that will override members
+                with mocked or faked behavior. Use of this constructor for other purposes may result in unexpected
+                behavior including but not limited to throwing <see cref="T:System.NullReferenceException" />.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Data.Entity.Infrastructure.ContextServices">
+            <summary>
+                These are convenience methods for obtaining services directly from the DI container for situations
+                where using normal constructor injecttion for each service is not appropriate. For example, this is
+                used in <see cref="T:Microsoft.Data.Entity.ChangeTracking.StateEntry" /> instances where we want to carry only one reference around rather than
+                carrying a reference for dependent service.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Infrastructure.ContextServices.#ctor">
+            <summary>
+                This constructor is intended only for use when creating test doubles that will override members
+                with mocked or faked behavior. Use of this constructor for other purposes may result in unexpected
+                behavior including but not limited to throwing <see cref="T:System.NullReferenceException" />.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Infrastructure.DbSetInitializer.#ctor">
+            <summary>
+                This constructor is intended only for use when creating test doubles that will override members
+                with mocked or faked behavior. Use of this constructor for other purposes may result in unexpected
+                behavior including but not limited to throwing <see cref="T:System.NullReferenceException" />.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Metadata.ClrCollectionAccessorSource.#ctor">
+            <summary>
+                This constructor is intended only for use when creating test doubles that will override members
+                with mocked or faked behavior. Use of this constructor for other purposes may result in unexpected
+                behavior including but not limited to throwing <see cref="T:System.NullReferenceException" />.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Metadata.EntityMaterializerSource.#ctor">
+            <summary>
+                This constructor is intended only for use when creating test doubles that will override members
+                with mocked or faked behavior. Use of this constructor for other purposes may result in unexpected
+                behavior including but not limited to throwing <see cref="T:System.NullReferenceException" />.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Metadata.EntityType.#ctor">
+            <summary>
+                This constructor is intended only for use when creating test doubles that will override members
+                with mocked or faked behavior. Use of this constructor for other purposes may result in unexpected
+                behavior including but not limited to throwing <see cref="T:System.NullReferenceException" />.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Metadata.EntityType.#ctor(System.Type,Microsoft.Data.Entity.Metadata.Model)">
+            <summary>
+                Creates a new metadata object representing an entity type associated with the given .NET type.
+            </summary>
+            <param name="type">The .NET entity type that this metadata object represents.</param>
+            <param name="model">The model associated with this entity type.</param>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Metadata.EntityType.#ctor(System.String,Microsoft.Data.Entity.Metadata.Model)">
+            <summary>
+                Creates a new metadata object representing an entity type that will participate in shadow-state
+                such that there is no underlying .NET type corresponding to this metadata object.
+            </summary>
+            <param name="name">The name of the shadow-state entity type.</param>
+            <param name="model">The model associated with this entity type.</param>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Metadata.ForeignKey.#ctor">
+            <summary>
+                This constructor is intended only for use when creating test doubles that will override members
+                with mocked or faked behavior. Use of this constructor for other purposes may result in unexpected
+                behavior including but not limited to throwing <see cref="T:System.NullReferenceException" />.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Metadata.Index.#ctor">
+            <summary>
+                This constructor is intended only for use when creating test doubles that will override members
+                with mocked or faked behavior. Use of this constructor for other purposes may result in unexpected
+                behavior including but not limited to throwing <see cref="T:System.NullReferenceException" />.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Metadata.Key.#ctor">
+            <summary>
+                This constructor is intended only for use when creating test doubles that will override members
+                with mocked or faked behavior. Use of this constructor for other purposes may result in unexpected
+                behavior including but not limited to throwing <see cref="T:System.NullReferenceException" />.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Metadata.MemberMapper.#ctor">
+            <summary>
+                This constructor is intended only for use when creating test doubles that will override members
+                with mocked or faked behavior. Use of this constructor for other purposes may result in unexpected
+                behavior including but not limited to throwing <see cref="T:System.NullReferenceException" />.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Metadata.PropertyBase.#ctor">
+            <summary>
+                This constructor is intended only for use when creating test doubles that will override members
+                with mocked or faked behavior. Use of this constructor for other purposes may result in unexpected
+                behavior including but not limited to throwing <see cref="T:System.NullReferenceException" />.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Strings.ArgumentIsEmpty">
+            <summary>
+            The string argument '{argumentName}' cannot be empty.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Strings.FormatArgumentIsEmpty(System.Object)">
+            <summary>
+            The string argument '{argumentName}' cannot be empty.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Strings.CircularDependency">
+            <summary>
+            A circular model foreign key dependency was detected: {cycle}.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Strings.FormatCircularDependency(System.Object)">
+            <summary>
+            A circular model foreign key dependency was detected: {cycle}.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Strings.InvalidEnumValue">
+            <summary>
+            The value provided for argument '{argumentName}' must be a valid value of enum type '{enumType}'.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Strings.FormatInvalidEnumValue(System.Object,System.Object)">
+            <summary>
+            The value provided for argument '{argumentName}' must be a valid value of enum type '{enumType}'.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Strings.InvalidPropertiesExpression">
+            <summary>
+            The properties expression '{expression}' is not valid. The expression should represent a property access: 't =&gt; t.MyProperty'. When specifying multiple properties use an anonymous type: 't =&gt; new {{ t.MyProperty1, t.MyProperty2 }}'.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Strings.FormatInvalidPropertiesExpression(System.Object)">
+            <summary>
+            The properties expression '{expression}' is not valid. The expression should represent a property access: 't =&gt; t.MyProperty'. When specifying multiple properties use an anonymous type: 't =&gt; new {{ t.MyProperty1, t.MyProperty2 }}'.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Strings.InvalidPropertyExpression">
+            <summary>
+            The expression '{expression}' is not a valid property expression. The expression should represent a property access: 't =&gt; t.MyProperty'.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Strings.FormatInvalidPropertyExpression(System.Object)">
+            <summary>
+            The expression '{expression}' is not a valid property expression. The expression should represent a property access: 't =&gt; t.MyProperty'.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Strings.IdentityConflict">
+            <summary>
+            The instance of entity type '{entityType}' cannot be tracked because another instance of this type with the same key is already being tracked. For new entities consider using an IIdentityGenerator to generate unique key values.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Strings.FormatIdentityConflict(System.Object)">
+            <summary>
+            The instance of entity type '{entityType}' cannot be tracked because another instance of this type with the same key is already being tracked. For new entities consider using an IIdentityGenerator to generate unique key values.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Strings.NullPrimaryKey">
+            <summary>
+            The instance of entity type '{entityType}' cannot be tracked because it has a null primary key. Either set the key explicitly or consider using an IValueGenerator to generate unique key values.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Strings.FormatNullPrimaryKey(System.Object)">
+            <summary>
+            The instance of entity type '{entityType}' cannot be tracked because it has a null primary key. Either set the key explicitly or consider using an IValueGenerator to generate unique key values.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Strings.WrongStateManager">
+            <summary>
+            Cannot start tracking StateEntry for entity type '{entityType}' because it was created by a different StateManager instance.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Strings.FormatWrongStateManager(System.Object)">
+            <summary>
+            Cannot start tracking StateEntry for entity type '{entityType}' because it was created by a different StateManager instance.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Strings.MultipleStateEntries">
+            <summary>
+            Cannot start tracking StateEntry for entity type '{entityType}' because another StateEntry is already tracking the same entity.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Strings.FormatMultipleStateEntries(System.Object)">
+            <summary>
+            Cannot start tracking StateEntry for entity type '{entityType}' because another StateEntry is already tracking the same entity.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Strings.EntityTypeNotFound">
+            <summary>
+            The entity type '{entityType}' was not found. Ensure that the entity type has been added to the model.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Strings.FormatEntityTypeNotFound(System.Object)">
+            <summary>
+            The entity type '{entityType}' was not found. Ensure that the entity type has been added to the model.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Strings.PropertyNotFound">
+            <summary>
+            The property '{property}' on entity type '{entityType}' could not be found. Ensure that the property exists and has been included in the model.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Strings.FormatPropertyNotFound(System.Object,System.Object)">
+            <summary>
+            The property '{property}' on entity type '{entityType}' could not be found. Ensure that the property exists and has been included in the model.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Strings.EmptySequence">
+            <summary>
+            Sequence contains no elements.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Strings.FormatEmptySequence">
+            <summary>
+            Sequence contains no elements.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Strings.MoreThanOneElement">
+            <summary>
+            Sequence contains more than one element.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Strings.FormatMoreThanOneElement">
+            <summary>
+            Sequence contains more than one element.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Strings.MoreThanOneMatch">
+            <summary>
+            Sequence contains more than one matching element.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Strings.FormatMoreThanOneMatch">
+            <summary>
+            Sequence contains more than one matching element.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Strings.NoMatch">
+            <summary>
+            Sequence contains no matching element.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Strings.FormatNoMatch">
+            <summary>
+            Sequence contains no matching element.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Strings.CollectionArgumentIsEmpty">
+            <summary>
+            The collection argument '{argumentName}' must contain at least one element.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Strings.FormatCollectionArgumentIsEmpty(System.Object)">
+            <summary>
+            The collection argument '{argumentName}' must contain at least one element.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Strings.InconsistentEntityType">
+            <summary>
+            The properties provided for the argument '{argumentName}' are declared on different entity types.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Strings.FormatInconsistentEntityType(System.Object)">
+            <summary>
+            The properties provided for the argument '{argumentName}' are declared on different entity types.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Strings.EntityRequiresKey">
+            <summary>
+            The entity type '{entityType}' requires a key to be defined.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Strings.FormatEntityRequiresKey(System.Object)">
+            <summary>
+            The entity type '{entityType}' requires a key to be defined.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Strings.KeyPropertiesWrongEntity">
+            <summary>
+            The specified key properties {key} are not declared on the entity type '{entityType}'. Ensure key properties are declared on the target entity type.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Strings.FormatKeyPropertiesWrongEntity(System.Object,System.Object)">
+            <summary>
+            The specified key properties {key} are not declared on the entity type '{entityType}'. Ensure key properties are declared on the target entity type.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Strings.ForeignKeyPropertiesWrongEntity">
+            <summary>
+            The specified foreign key properties {foreignKey} are not declared on the entity type '{entityType}'. Ensure foreign key properties are declared on the target entity type.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Strings.FormatForeignKeyPropertiesWrongEntity(System.Object,System.Object)">
+            <summary>
+            The specified foreign key properties {foreignKey} are not declared on the entity type '{entityType}'. Ensure foreign key properties are declared on the target entity type.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Strings.IndexPropertiesWrongEntity">
+            <summary>
+            The specified index properties {index} are not declared on the entity type '{entityType}'. Ensure index properties are declared on the target entity type.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Strings.FormatIndexPropertiesWrongEntity(System.Object,System.Object)">
+            <summary>
+            The specified index properties {index} are not declared on the entity type '{entityType}'. Ensure index properties are declared on the target entity type.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Strings.IQueryableNotAsync">
+            <summary>
+            The source IQueryable doesn't implement IAsyncEnumerable&lt;{genericParameter}&gt;. Only sources that implement IAsyncEnumerable can be used for Entity Framework asynchronous operations.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Strings.FormatIQueryableNotAsync(System.Object)">
+            <summary>
+            The source IQueryable doesn't implement IAsyncEnumerable&lt;{genericParameter}&gt;. Only sources that implement IAsyncEnumerable can be used for Entity Framework asynchronous operations.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Strings.IQueryableProviderNotAsync">
+            <summary>
+            The provider for the source IQueryable doesn't implement IAsyncQueryProvider. Only providers that implement IEntityQueryProvider can be used for Entity Framework asynchronous operations.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Strings.FormatIQueryableProviderNotAsync">
+            <summary>
+            The provider for the source IQueryable doesn't implement IAsyncQueryProvider. Only providers that implement IEntityQueryProvider can be used for Entity Framework asynchronous operations.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Strings.EagerOriginalValuesRequired">
+            <summary>
+            Lazy original value tracking cannot be turned on for entity type '{entityType}'. Entities that do not implement both INotifyPropertyChanging and INotifyPropertyChanged require original values to be stored eagerly in order to correct detect changes made to entities.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Strings.FormatEagerOriginalValuesRequired(System.Object)">
+            <summary>
+            Lazy original value tracking cannot be turned on for entity type '{entityType}'. Entities that do not implement both INotifyPropertyChanging and INotifyPropertyChanged require original values to be stored eagerly in order to correct detect changes made to entities.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Strings.OriginalValueNotTracked">
+            <summary>
+            The original value for property '{property}' of entity type '{entityType}' cannot be accessed because it is not being tracked. To access all original values set 'UseLazyOriginalValues' to false on the entity type.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Strings.FormatOriginalValueNotTracked(System.Object,System.Object)">
+            <summary>
+            The original value for property '{property}' of entity type '{entityType}' cannot be accessed because it is not being tracked. To access all original values set 'UseLazyOriginalValues' to false on the entity type.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Strings.MissingBackingField">
+            <summary>
+            The property '{entityType}.{property}' is annotated with backing field '{field}' but that field cannot be found.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Strings.FormatMissingBackingField(System.Object,System.Object,System.Object)">
+            <summary>
+            The property '{entityType}.{property}' is annotated with backing field '{field}' but that field cannot be found.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Strings.BadBackingFieldType">
+            <summary>
+            The annotated backing field '{field}' of type '{fieldType}' cannot be used for the property '{entityType}.{property}' of type '{propertyType}'. Only backing fields of types that are assignable from the property type can be used.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Strings.FormatBadBackingFieldType(System.Object,System.Object,System.Object,System.Object,System.Object)">
+            <summary>
+            The annotated backing field '{field}' of type '{fieldType}' cannot be used for the property '{entityType}.{property}' of type '{propertyType}'. Only backing fields of types that are assignable from the property type can be used.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Strings.NoFieldOrSetter">
+            <summary>
+            No backing field could be discovered for property '{entityType}.{property}' and the property does not have a setter. Either use a backing field name that can be matched by convention, annotate the property with a backing field, or define a property setter.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Strings.FormatNoFieldOrSetter(System.Object,System.Object)">
+            <summary>
+            No backing field could be discovered for property '{entityType}.{property}' and the property does not have a setter. Either use a backing field name that can be matched by convention, annotate the property with a backing field, or define a property setter.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Strings.NoClrType">
+            <summary>
+            The CLR entity materializer cannot be used for entity type '{entityType}' because it is a shadow-state entity type.  Materialization to a CLR type is only possible for entity types that have a corresponding CLR type.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Strings.FormatNoClrType(System.Object)">
+            <summary>
+            The CLR entity materializer cannot be used for entity type '{entityType}' because it is a shadow-state entity type.  Materialization to a CLR type is only possible for entity types that have a corresponding CLR type.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Strings.MultipleDataStoresConfigured">
+            <summary>
+            The data stores {storeNames}are configured. A context can only be configured to use a single data store.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Strings.FormatMultipleDataStoresConfigured(System.Object)">
+            <summary>
+            The data stores {storeNames}are configured. A context can only be configured to use a single data store.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Strings.NoDataStoreConfigured">
+            <summary>
+            No data stores are configured. Configure a data store using OnConfiguring or by creating an ImmutableDbContextOptions with a data store configured and passing it to the context.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Strings.FormatNoDataStoreConfigured">
+            <summary>
+            No data stores are configured. Configure a data store using OnConfiguring or by creating an ImmutableDbContextOptions with a data store configured and passing it to the context.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Strings.NoDataStoreService">
+            <summary>
+            No data stores are available. Ensure that data store services are added inside the call to AddEntityFramework on your ServiceCollection.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Strings.FormatNoDataStoreService">
+            <summary>
+            No data stores are available. Ensure that data store services are added inside the call to AddEntityFramework on your ServiceCollection.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Strings.MultipleDataStoresAvailable">
+            <summary>
+            The data stores {storeNames}are available. A context can only be configured to use a single data store. Configure a data store using OnConfiguring or by creating an ImmutableDbContextOptions with a data store configured and passing it to the context.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Strings.FormatMultipleDataStoresAvailable(System.Object)">
+            <summary>
+            The data stores {storeNames}are available. A context can only be configured to use a single data store. Configure a data store using OnConfiguring or by creating an ImmutableDbContextOptions with a data store configured and passing it to the context.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Strings.EntityConfigurationLocked">
+            <summary>
+            Cannot change the ImmutableDbContextOptions by calling '{memberName}' because it is locked. Use ImmutableDbContextOptionsBuilder to create ImmutableDbContextOptionss.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Strings.FormatEntityConfigurationLocked(System.Object)">
+            <summary>
+            Cannot change the ImmutableDbContextOptions by calling '{memberName}' because it is locked. Use ImmutableDbContextOptionsBuilder to create ImmutableDbContextOptionss.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Strings.MultiplePropertiesMatchedAsKeys">
+            <summary>
+            Multiple potential primary key properties named '{property}' but differing only by case were found on entity type '{entityType}'. Configure the primary key explicitly using the SetKey fluent API.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Strings.FormatMultiplePropertiesMatchedAsKeys(System.Object,System.Object)">
+            <summary>
+            Multiple potential primary key properties named '{property}' but differing only by case were found on entity type '{entityType}'. Configure the primary key explicitly using the SetKey fluent API.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Strings.NoValueGenerator">
+            <summary>
+            The '{propertyName}' on entity type '{entityType}' is set up to use generated values, but no value generator is available for properties of type '{propertyType}'. To use value generation for properties of type '{propertyType}' the data store must configure an appropriate value generator.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Strings.FormatNoValueGenerator(System.Object,System.Object,System.Object)">
+            <summary>
+            The '{propertyName}' on entity type '{entityType}' is set up to use generated values, but no value generator is available for properties of type '{propertyType}'. To use value generation for properties of type '{propertyType}' the data store must configure an appropriate value generator.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Strings.PropertyWithStorageNameNotFound">
+            <summary>
+            A property with the storage name '{property}' on entity type '{entityType}' could not be found. Ensure that the property exists, has been included in the model, and has been configured with storage name specified.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Strings.FormatPropertyWithStorageNameNotFound(System.Object,System.Object)">
+            <summary>
+            A property with the storage name '{property}' on entity type '{entityType}' could not be found. Ensure that the property exists, has been included in the model, and has been configured with storage name specified.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Strings.CurrentValuesAlwaysInSync">
+            <summary>
+            CurrentValues are always in sync with the entity state.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Strings.FormatCurrentValuesAlwaysInSync">
+            <summary>
+            CurrentValues are always in sync with the entity state.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Strings.DataStoreException">
+            <summary>
+            An error occured while running a data store operation. See InnerException for details.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Strings.FormatDataStoreException">
+            <summary>
+            An error occured while running a data store operation. See InnerException for details.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Strings.LogExceptionDuringQueryIteration">
+            <summary>
+            An exception occurred in the data store while iterating the results of a query.{newline}{error}
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Strings.FormatLogExceptionDuringQueryIteration(System.Object,System.Object)">
+            <summary>
+            An exception occurred in the data store while iterating the results of a query.{newline}{error}
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Strings.LogExceptionDuringSaveChanges">
+            <summary>
+            An exception occurred in the data store while saving changes.{newline}{error}
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Strings.FormatLogExceptionDuringSaveChanges(System.Object,System.Object)">
+            <summary>
+            An exception occurred in the data store while saving changes.{newline}{error}
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Strings.PropertyExtensionInvoked">
+            <summary>
+            The Property&lt;T&gt; extension method may only be used within LINQ queries.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Strings.FormatPropertyExtensionInvoked">
+            <summary>
+            The Property&lt;T&gt; extension method may only be used within LINQ queries.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Strings.DuplicateProperty">
+            <summary>
+            The property '{property}' cannot be added to the entity type '{entityType}' because a property with the same name already exists.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Strings.FormatDuplicateProperty(System.Object,System.Object)">
+            <summary>
+            The property '{property}' cannot be added to the entity type '{entityType}' because a property with the same name already exists.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Strings.NoClrProperty">
+            <summary>
+            The property '{property}' cannot exist on entity type '{entityType}' because the property is not marked as shadow state and no corresponding CLR property exists on the underlying type.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Strings.FormatNoClrProperty(System.Object,System.Object)">
+            <summary>
+            The property '{property}' cannot exist on entity type '{entityType}' because the property is not marked as shadow state and no corresponding CLR property exists on the underlying type.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Strings.WrongClrPropertyType">
+            <summary>
+            The property '{property}' cannot exist on entity type '{entityType}' because the property is not marked as shadow state and the type of the corresponding CLR property does not match the type specified in the property.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Strings.FormatWrongClrPropertyType(System.Object,System.Object)">
+            <summary>
+            The property '{property}' cannot exist on entity type '{entityType}' because the property is not marked as shadow state and the type of the corresponding CLR property does not match the type specified in the property.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Strings.ClrPropertyOnShadowEntity">
+            <summary>
+            The property '{property}' cannot exist on entity type '{entityType}' because the entity type is marked as shadow state while the property is not. Shadow state entity types can only contain shadow state properties.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Strings.FormatClrPropertyOnShadowEntity(System.Object,System.Object)">
+            <summary>
+            The property '{property}' cannot exist on entity type '{entityType}' because the entity type is marked as shadow state while the property is not. Shadow state entity types can only contain shadow state properties.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Strings.PropertyInUse">
+            <summary>
+            The property '{property}' cannot be removed from entity type '{entityType}' because it is being used in an index or key. All indexes and keys must be removed or redefined before the property can be removed.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Strings.FormatPropertyInUse(System.Object,System.Object)">
+            <summary>
+            The property '{property}' cannot be removed from entity type '{entityType}' because it is being used in an index or key. All indexes and keys must be removed or redefined before the property can be removed.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Strings.KeyInUse">
+            <summary>
+            Cannot remove key {key} from entity type '{entityType}' because it is referenced by a foreign key in entity type '{dependentType}'. All foreign keys must be removed or redefined before the referenced key can be removed.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Strings.FormatKeyInUse(System.Object,System.Object,System.Object)">
+            <summary>
+            Cannot remove key {key} from entity type '{entityType}' because it is referenced by a foreign key in entity type '{dependentType}'. All foreign keys must be removed or redefined before the referenced key can be removed.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Strings.ForeignKeyInUse">
+            <summary>
+            Cannot remove foreign key {foreignKey} from entity type '{entityType}' because it is referenced by navigation property '{navigation}' in entity type '{dependentType}'. All navigations must be removed or redefined before the referenced foreign key can be removed.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Strings.FormatForeignKeyInUse(System.Object,System.Object,System.Object,System.Object)">
+            <summary>
+            Cannot remove foreign key {foreignKey} from entity type '{entityType}' because it is referenced by navigation property '{navigation}' in entity type '{dependentType}'. All navigations must be removed or redefined before the referenced foreign key can be removed.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Strings.NavigationAlreadyOwned">
+            <summary>
+            The navigation property '{navigation}' cannot be added to the entity type '{entityType}' because it already belongs to entity type '{existingEntityType}'.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Strings.FormatNavigationAlreadyOwned(System.Object,System.Object,System.Object)">
+            <summary>
+            The navigation property '{navigation}' cannot be added to the entity type '{entityType}' because it already belongs to entity type '{existingEntityType}'.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Strings.DuplicateNavigation">
+            <summary>
+            The navigation property '{navigation}' cannot be added to the entity type '{entityType}' because a navigation property with the same name already exists.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Strings.FormatDuplicateNavigation(System.Object,System.Object)">
+            <summary>
+            The navigation property '{navigation}' cannot be added to the entity type '{entityType}' because a navigation property with the same name already exists.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Strings.NavigationOnShadowEntity">
+            <summary>
+            The navigation property '{navigation}' cannot be added to entity type '{entityType}' because the entity type is defined in shadow state and navigations properties cannot be added to shadow state.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Strings.FormatNavigationOnShadowEntity(System.Object,System.Object)">
+            <summary>
+            The navigation property '{navigation}' cannot be added to entity type '{entityType}' because the entity type is defined in shadow state and navigations properties cannot be added to shadow state.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Strings.NoClrNavigation">
+            <summary>
+            The navigation property '{navigation}' cannot be added to entity type '{entityType}' because there is no corresponding CLR property on the underlying type and navigations properties cannot be added to shadow state.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Strings.FormatNoClrNavigation(System.Object,System.Object)">
+            <summary>
+            The navigation property '{navigation}' cannot be added to entity type '{entityType}' because there is no corresponding CLR property on the underlying type and navigations properties cannot be added to shadow state.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Strings.WrongClrSingleNavigationType">
+            <summary>
+            The navigation property '{navigation}' cannot be added to entity type '{entityType}' because its CLR type '{clrType}' does not match the CLR type '{targetType}' of the related entity.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Strings.FormatWrongClrSingleNavigationType(System.Object,System.Object,System.Object,System.Object)">
+            <summary>
+            The navigation property '{navigation}' cannot be added to entity type '{entityType}' because its CLR type '{clrType}' does not match the CLR type '{targetType}' of the related entity.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Strings.WrongClrCollectionNavigationType">
+            <summary>
+            The collection navigation property '{navigation}' cannot be added to entity type '{entityType}' because its CLR type '{clrType}' does not implement 'IEnumerable&lt;{targetType}&gt;'. Collection navigation properties must implement IEnumerable&lt;&gt; of the related entity.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Strings.FormatWrongClrCollectionNavigationType(System.Object,System.Object,System.Object,System.Object)">
+            <summary>
+            The collection navigation property '{navigation}' cannot be added to entity type '{entityType}' because its CLR type '{clrType}' does not implement 'IEnumerable&lt;{targetType}&gt;'. Collection navigation properties must implement IEnumerable&lt;&gt; of the related entity.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Strings.NavigationNotFound">
+            <summary>
+            The navigation property '{navigation}' on entity type '{entityType}' could not be found. Ensure that the navigation property exists and has been included in the model.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Strings.FormatNavigationNotFound(System.Object,System.Object)">
+            <summary>
+            The navigation property '{navigation}' on entity type '{entityType}' could not be found. Ensure that the navigation property exists and has been included in the model.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Strings.MultipleNavigations">
+            <summary>
+            The navigation properties '{navigation1}' and '{navigation2}' on entity type '{entityType}' are both backed by the same foreign key and point in the same direction. Each foreign key can have at most one navigation property and one inverse navigation property.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Strings.FormatMultipleNavigations(System.Object,System.Object,System.Object)">
+            <summary>
+            The navigation properties '{navigation1}' and '{navigation2}' on entity type '{entityType}' are both backed by the same foreign key and point in the same direction. Each foreign key can have at most one navigation property and one inverse navigation property.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Strings.ForeignKeyCountMismatch">
+            <summary>
+            The number of properties specified for the foreign key {foreignKey} on entity type '{dependentType}' does not match the number of properties in the referenced key {referencedKey} on entity type '{principalType}'.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Strings.FormatForeignKeyCountMismatch(System.Object,System.Object,System.Object,System.Object)">
+            <summary>
+            The number of properties specified for the foreign key {foreignKey} on entity type '{dependentType}' does not match the number of properties in the referenced key {referencedKey} on entity type '{principalType}'.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Strings.ForeignKeyTypeMismatch">
+            <summary>
+            The types of the properties specified for the foreign key {foreignKey} on entity type '{dependentType}' do not match the types of the properties in the referenced key on entity type '{principalType}'.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Strings.FormatForeignKeyTypeMismatch(System.Object,System.Object,System.Object)">
+            <summary>
+            The types of the properties specified for the foreign key {foreignKey} on entity type '{dependentType}' do not match the types of the properties in the referenced key on entity type '{principalType}'.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Strings.NavigationBadType">
+            <summary>
+            The type of navigation property '{navigation}' on entity type '{entityType}' is '{foundType}' which does not implement ICollection&lt;{targetType}&gt;. Collection navigation properties must implement ICollection&lt;&gt; of the target type.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Strings.FormatNavigationBadType(System.Object,System.Object,System.Object,System.Object)">
+            <summary>
+            The type of navigation property '{navigation}' on entity type '{entityType}' is '{foundType}' which does not implement ICollection&lt;{targetType}&gt;. Collection navigation properties must implement ICollection&lt;&gt; of the target type.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Strings.NavigationArray">
+            <summary>
+            The type of navigation property '{navigation}' on entity type '{entityType}' is '{foundType}' which is an array type.. Collection navigation properties cannot be arrays.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Strings.FormatNavigationArray(System.Object,System.Object,System.Object)">
+            <summary>
+            The type of navigation property '{navigation}' on entity type '{entityType}' is '{foundType}' which is an array type.. Collection navigation properties cannot be arrays.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Strings.NavigationNoGetter">
+            <summary>
+            The navigation property '{navigation}' on entity type '{entityType}' does not have a getter.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Strings.FormatNavigationNoGetter(System.Object,System.Object)">
+            <summary>
+            The navigation property '{navigation}' on entity type '{entityType}' does not have a getter.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Strings.NavigationNoSetter">
+            <summary>
+            The navigation property '{navigation}' on entity type '{entityType}' does not have a setter. Read-only collection navigation properties must be initialized before use.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Strings.FormatNavigationNoSetter(System.Object,System.Object)">
+            <summary>
+            The navigation property '{navigation}' on entity type '{entityType}' does not have a setter. Read-only collection navigation properties must be initialized before use.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Strings.NavigationCannotCreateType">
+            <summary>
+            The type of navigation property '{navigation}' on entity type '{entityType}' is '{foundType}' for which it was not possible to create a concrete instance. Either initialize the property before use, add a public parameterless constructor to the type, or use a type which can be assigned a HashSet&lt;&gt; or List&lt;&gt;.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Strings.FormatNavigationCannotCreateType(System.Object,System.Object,System.Object)">
+            <summary>
+            The type of navigation property '{navigation}' on entity type '{entityType}' is '{foundType}' for which it was not possible to create a concrete instance. Either initialize the property before use, add a public parameterless constructor to the type, or use a type which can be assigned a HashSet&lt;&gt; or List&lt;&gt;.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Strings.PropertyReadOnly">
+            <summary>
+            The property '{property}' on entity type '{entityType}' is read-only and so cannot be modified or marked as modified.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Strings.FormatPropertyReadOnly(System.Object,System.Object)">
+            <summary>
+            The property '{property}' on entity type '{entityType}' is read-only and so cannot be modified or marked as modified.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Strings.KeyPropertyMustBeReadOnly">
+            <summary>
+            The property '{property}' on entity type '{entityType}' cannot be marked as read-write because it is part of a key. Key properties are always read-only.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Strings.FormatKeyPropertyMustBeReadOnly(System.Object,System.Object)">
+            <summary>
+            The property '{property}' on entity type '{entityType}' cannot be marked as read-write because it is part of a key. Key properties are always read-only.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Strings.DuplicateForeignKey">
+            <summary>
+            The foreign key {foreignKey} cannot be added to the entity type '{entityType}' because a foreign key on the same properties already exists.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Strings.FormatDuplicateForeignKey(System.Object,System.Object)">
+            <summary>
+            The foreign key {foreignKey} cannot be added to the entity type '{entityType}' because a foreign key on the same properties already exists.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Strings.DuplicateIndex">
+            <summary>
+            The index {index} cannot be added to the entity type '{entityType}' because an index on the same properties already exists.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Strings.FormatDuplicateIndex(System.Object,System.Object)">
+            <summary>
+            The index {index} cannot be added to the entity type '{entityType}' because an index on the same properties already exists.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Strings.DuplicateKey">
+            <summary>
+            The key {key} cannot be added to the entity type '{entityType}' because a key on the same properties already exists.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Strings.FormatDuplicateKey(System.Object,System.Object)">
+            <summary>
+            The key {key} cannot be added to the entity type '{entityType}' because a key on the same properties already exists.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Strings.ForeignKeyNotFound">
+            <summary>
+            The foreign key {foreignKey} on entity type '{entityType}' could not be found. Ensure that the foreign key been added to the entity type.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Strings.FormatForeignKeyNotFound(System.Object,System.Object)">
+            <summary>
+            The foreign key {foreignKey} on entity type '{entityType}' could not be found. Ensure that the foreign key been added to the entity type.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Strings.IndexNotFound">
+            <summary>
+            The index {index} on entity type '{entityType}' could not be found. Ensure that the index been added to the entity type.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Strings.FormatIndexNotFound(System.Object,System.Object)">
+            <summary>
+            The index {index} on entity type '{entityType}' could not be found. Ensure that the index been added to the entity type.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Strings.KeyNotFound">
+            <summary>
+            The key {key} on entity type '{entityType}' could not be found. Ensure that the key been added to the entity type.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Strings.FormatKeyNotFound(System.Object,System.Object)">
+            <summary>
+            The key {key} on entity type '{entityType}' could not be found. Ensure that the key been added to the entity type.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Strings.NavigationToShadowEntity">
+            <summary>
+            The navigation property '{navigation}' cannot be added to entity type '{entityType}' because the target entity type '{targetType}' is defined in shadow state and navigations properties cannot point to shadow state entities.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Strings.FormatNavigationToShadowEntity(System.Object,System.Object,System.Object)">
+            <summary>
+            The navigation property '{navigation}' cannot be added to entity type '{entityType}' because the target entity type '{targetType}' is defined in shadow state and navigations properties cannot point to shadow state entities.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Strings.CollectionArgumentContainsNulls">
+            <summary>
+            The collection argument '{argumentName}' must not contain any null references.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Strings.FormatCollectionArgumentContainsNulls(System.Object)">
+            <summary>
+            The collection argument '{argumentName}' must not contain any null references.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Strings.EntityTypeNotInRelationship">
+            <summary>
+            The specified type '{type}' is invalid. It should be either the dependent type '{dependentType}' or the principal type '{principalType}'.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Strings.FormatEntityTypeNotInRelationship(System.Object,System.Object,System.Object)">
+            <summary>
+            The specified type '{type}' is invalid. It should be either the dependent type '{dependentType}' or the principal type '{principalType}'.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Strings.DuplicateEntityType">
+            <summary>
+            The entity type '{entityType}' cannot be added to the model because an entity with the same name already exists.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Strings.FormatDuplicateEntityType(System.Object)">
+            <summary>
+            The entity type '{entityType}' cannot be added to the model because an entity with the same name already exists.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Strings.UnsupportedAnnotationType">
+            <summary>
+            Annotations of type '{type}' are not supported. Only common simple .NET types are currently supported.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Strings.FormatUnsupportedAnnotationType(System.Object)">
+            <summary>
+            Annotations of type '{type}' are not supported. Only common simple .NET types are currently supported.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Strings.DuplicateAnnotation">
+            <summary>
+            The annotation '{annotation}' cannot be added because an annotation with the same name already exists.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Strings.FormatDuplicateAnnotation(System.Object)">
+            <summary>
+            The annotation '{annotation}' cannot be added because an annotation with the same name already exists.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Strings.AnnotationNotFound">
+            <summary>
+            The annotation '{annotation}' was not found. Ensure that the annotation has been added.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Strings.FormatAnnotationNotFound(System.Object)">
+            <summary>
+            The annotation '{annotation}' was not found. Ensure that the annotation has been added.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Strings.IncludeNotImplemented">
+            <summary>
+            The Include operator is not implemented by the current data store provider.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Strings.FormatIncludeNotImplemented">
+            <summary>
+            The Include operator is not implemented by the current data store provider.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Strings.IncludeNonBindableExpression">
+            <summary>
+            The expression '{expression}' passed to the Include operator could not be bound. Only single-level navigation expressions are supported. 
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Strings.FormatIncludeNonBindableExpression(System.Object)">
+            <summary>
+            The expression '{expression}' passed to the Include operator could not be bound. Only single-level navigation expressions are supported. 
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Strings.LogCompilingQueryModel">
+            <summary>
+            Compiling query model: '{queryModel}'
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Strings.FormatLogCompilingQueryModel(System.Object)">
+            <summary>
+            Compiling query model: '{queryModel}'
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Strings.LogOptimizedQueryModel">
+            <summary>
+            Optimized query model: '{queryModel}'
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Strings.FormatLogOptimizedQueryModel(System.Object)">
+            <summary>
+            Optimized query model: '{queryModel}'
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Strings.LogCompiledQueryFunction">
+            <summary>
+            Compiled query expression.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Strings.FormatLogCompiledQueryFunction">
+            <summary>
+            Compiled query expression.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Strings.LogIncludingNavigation">
+            <summary>
+            Including navigation: '{navigation}'
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Strings.FormatLogIncludingNavigation(System.Object)">
+            <summary>
+            Including navigation: '{navigation}'
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.Strings.LogTrackingQuerySources">
+            <summary>
+            Tracking query sources: [{querySources}]
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Strings.FormatLogTrackingQuerySources(System.Object)">
+            <summary>
+            Tracking query sources: [{querySources}]
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Storage.DataStore.#ctor">
+            <summary>
+                This constructor is intended only for use when creating test doubles that will override members
+                with mocked or faked behavior. Use of this constructor for other purposes may result in unexpected
+                behavior including but not limited to throwing <see cref="T:System.NullReferenceException" />.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Storage.DataStoreConnection.#ctor">
+            <summary>
+                This constructor is intended only for use when creating test doubles that will override members
+                with mocked or faked behavior. Use of this constructor for other purposes may result in unexpected
+                behavior including but not limited to throwing <see cref="!:NullReferenceException" />.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Storage.DataStoreSelector.#ctor">
+            <summary>
+                This constructor is intended only for use when creating test doubles that will override members
+                with mocked or faked behavior. Use of this constructor for other purposes may result in unexpected
+                behavior including but not limited to throwing <see cref="T:System.NullReferenceException" />.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.Storage.DataStoreTransaction.#ctor">
+            <summary>
+                This constructor is intended only for use when creating test doubles that will override members
+                with mocked or faked behavior. Use of this constructor for other purposes may result in unexpected
+                behavior including but not limited to throwing <see cref="T:System.NullReferenceException" />.
+            </summary>
+        </member>
+        <member name="T:System.Threading.Tasks.TaskExtensions">
+            <summary>
+                Contains extension methods for the <see cref="T:System.Threading.Tasks.Task" /> class.
+            </summary>
+        </member>
+        <member name="M:System.Threading.Tasks.TaskExtensions.WithCurrentCulture``1(System.Threading.Tasks.Task{``0})">
+            <summary>
+                Configures an awaiter used to await this <see cref="T:System.Threading.Tasks.Task`1" /> to avoid
+                marshalling the continuation back to the original context, but preserve the
+                current culture and UI culture.
+            </summary>
+            <remarks> Calling this has no effect on platforms that don't use <see cref="T:System.Threading.SynchronizationContext" />. </remarks>
+            <typeparam name="T">
+                The type of the result produced by the associated <see cref="T:System.Threading.Tasks.Task`1" />.
+            </typeparam>
+            <param name="task">The task to be awaited on.</param>
+            <returns>An object used to await this task.</returns>
+        </member>
+        <member name="M:System.Threading.Tasks.TaskExtensions.WithCurrentCulture(System.Threading.Tasks.Task)">
+            <summary>
+                Configures an awaiter used to await this <see cref="T:System.Threading.Tasks.Task" /> to avoid
+                marshalling the continuation back to the original context, but preserve the
+                current culture and UI culture.
+            </summary>
+            <remarks> Calling this has no effect on platforms that don't use <see cref="T:System.Threading.SynchronizationContext" />. </remarks>
+            <param name="task">The task to be awaited on.</param>
+            <returns>An object used to await this task.</returns>
+        </member>
+        <member name="T:System.Threading.Tasks.TaskExtensions.CultureAwaiter`1">
+            <summary>
+                Provides an awaitable object that allows for awaits on <see cref="T:System.Threading.Tasks.Task`1" /> that
+                preserve the culture.
+            </summary>
+            <typeparam name="T">
+                The type of the result produced by the associated <see cref="T:System.Threading.Tasks.Task`1" />.
+            </typeparam>
+            <remarks>This type is intended for compiler use only.</remarks>
+        </member>
+        <member name="M:System.Threading.Tasks.TaskExtensions.CultureAwaiter`1.#ctor(System.Threading.Tasks.Task{`0})">
+            <summary>
+                Constructs a new instance of the <see cref="T:System.Threading.Tasks.TaskExtensions.CultureAwaiter`1" /> class.
+            </summary>
+            <param name="task">The task to be awaited on.</param>
+        </member>
+        <member name="M:System.Threading.Tasks.TaskExtensions.CultureAwaiter`1.GetAwaiter">
+            <summary>Gets an awaiter used to await this <see cref="T:System.Threading.Tasks.Task`1" />.</summary>
+            <returns>An awaiter instance.</returns>
+            <remarks>This method is intended for compiler user rather than use directly in code.</remarks>
+        </member>
+        <member name="P:System.Threading.Tasks.TaskExtensions.CultureAwaiter`1.IsCompleted">
+            <summary>
+                Gets whether this <see cref="T:System.Threading.Tasks.Task">Task</see> has completed.
+            </summary>
+            <remarks>
+                <see cref="P:System.Threading.Tasks.TaskExtensions.CultureAwaiter`1.IsCompleted" /> will return true when the Task is in one of the three
+                final states: <see cref="F:System.Threading.Tasks.TaskStatus.RanToCompletion">RanToCompletion</see>,
+                <see cref="F:System.Threading.Tasks.TaskStatus.Faulted">Faulted</see>, or
+                <see cref="F:System.Threading.Tasks.TaskStatus.Canceled">Canceled</see>.
+            </remarks>
+        </member>
+        <member name="M:System.Threading.Tasks.TaskExtensions.CultureAwaiter`1.GetResult">
+            <summary>Ends the await on the completed <see cref="T:System.Threading.Tasks.Task`1" />.</summary>
+            <returns>The result of the completed <see cref="T:System.Threading.Tasks.Task`1" />.</returns>
+            <exception cref="T:System.NullReferenceException">The awaiter was not properly initialized.</exception>
+            <exception cref="T:System.Threading.Tasks.TaskCanceledException">The task was canceled.</exception>
+            <exception cref="T:System.Exception">The task completed in a Faulted state.</exception>
+        </member>
+        <member name="M:System.Threading.Tasks.TaskExtensions.CultureAwaiter`1.OnCompleted(System.Action)">
+            <summary>This method is not implemented and should not be called.</summary>
+            <param name="continuation">The action to invoke when the await operation completes.</param>
+        </member>
+        <member name="M:System.Threading.Tasks.TaskExtensions.CultureAwaiter`1.UnsafeOnCompleted(System.Action)">
+            <summary>
+                Schedules the continuation onto the <see cref="T:System.Threading.Tasks.Task`1" /> associated with this
+                <see cref="T:System.Runtime.CompilerServices.TaskAwaiter`1" />.
+            </summary>
+            <param name="continuation">The action to invoke when the await operation completes.</param>
+            <exception cref="T:System.ArgumentNullException">
+                The <paramref name="continuation" /> argument is null
+                (Nothing in Visual Basic).
+            </exception>
+            <exception cref="T:System.InvalidOperationException">The awaiter was not properly initialized.</exception>
+            <remarks>This method is intended for compiler user rather than use directly in code.</remarks>
+        </member>
+        <member name="T:System.Threading.Tasks.TaskExtensions.CultureAwaiter">
+            <summary>
+                Provides an awaitable object that allows for awaits on <see cref="T:System.Threading.Tasks.Task" /> that
+                preserve the culture.
+            </summary>
+            <remarks>This type is intended for compiler use only.</remarks>
+        </member>
+        <member name="M:System.Threading.Tasks.TaskExtensions.CultureAwaiter.#ctor(System.Threading.Tasks.Task)">
+            <summary>
+                Constructs a new instance of the <see cref="T:System.Threading.Tasks.TaskExtensions.CultureAwaiter" /> class.
+            </summary>
+            <param name="task">The task to be awaited on.</param>
+        </member>
+        <member name="M:System.Threading.Tasks.TaskExtensions.CultureAwaiter.GetAwaiter">
+            <summary>Gets an awaiter used to await this <see cref="T:System.Threading.Tasks.Task" />.</summary>
+            <returns>An awaiter instance.</returns>
+            <remarks>This method is intended for compiler user rather than use directly in code.</remarks>
+        </member>
+        <member name="P:System.Threading.Tasks.TaskExtensions.CultureAwaiter.IsCompleted">
+            <summary>
+                Gets whether this <see cref="T:System.Threading.Tasks.Task">Task</see> has completed.
+            </summary>
+            <remarks>
+                <see cref="P:System.Threading.Tasks.TaskExtensions.CultureAwaiter.IsCompleted" /> will return true when the Task is in one of the three
+                final states: <see cref="F:System.Threading.Tasks.TaskStatus.RanToCompletion">RanToCompletion</see>,
+                <see cref="F:System.Threading.Tasks.TaskStatus.Faulted">Faulted</see>, or
+                <see cref="F:System.Threading.Tasks.TaskStatus.Canceled">Canceled</see>.
+            </remarks>
+        </member>
+        <member name="M:System.Threading.Tasks.TaskExtensions.CultureAwaiter.GetResult">
+            <summary>Ends the await on the completed <see cref="T:System.Threading.Tasks.Task" />.</summary>
+            <exception cref="T:System.NullReferenceException">The awaiter was not properly initialized.</exception>
+            <exception cref="T:System.Threading.Tasks.TaskCanceledException">The task was canceled.</exception>
+            <exception cref="T:System.Exception">The task completed in a Faulted state.</exception>
+        </member>
+        <member name="M:System.Threading.Tasks.TaskExtensions.CultureAwaiter.OnCompleted(System.Action)">
+            <summary>This method is not implemented and should not be called.</summary>
+            <param name="continuation">The action to invoke when the await operation completes.</param>
+        </member>
+        <member name="M:System.Threading.Tasks.TaskExtensions.CultureAwaiter.UnsafeOnCompleted(System.Action)">
+            <summary>
+                Schedules the continuation onto the <see cref="T:System.Threading.Tasks.Task" /> associated with this
+                <see cref="T:System.Runtime.CompilerServices.TaskAwaiter" />.
+            </summary>
+            <param name="continuation">The action to invoke when the await operation completes.</param>
+            <exception cref="T:System.ArgumentNullException">
+                The <paramref name="continuation" /> argument is null
+                (Nothing in Visual Basic).
+            </exception>
+            <exception cref="T:System.InvalidOperationException">The awaiter was not properly initialized.</exception>
+            <remarks>This method is intended for compiler user rather than use directly in code.</remarks>
+        </member>
+    </members>
+</doc>

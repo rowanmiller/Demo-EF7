@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>EntityFramework.SQLite</name>
+    </assembly>
+    <members>
+        <member name="M:Microsoft.Data.Entity.SQLite.SQLiteBatchExecutor.#ctor">
+            <summary>
+                This constructor is intended only for use when creating test doubles that will override members
+                with mocked or faked behavior. Use of this constructor for other purposes may result in unexpected
+                behavior including but not limited to throwing <see cref="T:System.NullReferenceException" />.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.SQLite.SQLiteModificationCommandBatchFactory.#ctor">
+            <summary>
+                This constructor is intended only for use when creating test doubles that will override members
+                with mocked or faked behavior. Use of this constructor for other purposes may result in unexpected
+                behavior including but not limited to throwing <see cref="T:System.NullReferenceException" />.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.SQLite.Strings.ArgumentIsEmpty">
+            <summary>
+            The string argument '{argumentName}' cannot be empty.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.SQLite.Strings.FormatArgumentIsEmpty(System.Object)">
+            <summary>
+            The string argument '{argumentName}' cannot be empty.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.SQLite.Strings.InvalidEnumValue">
+            <summary>
+            The value provided for argument '{argumentName}' must be a valid value of enum type '{enumType}'.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.SQLite.Strings.FormatInvalidEnumValue(System.Object,System.Object)">
+            <summary>
+            The value provided for argument '{argumentName}' must be a valid value of enum type '{enumType}'.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Entity.SQLite.Strings.MigrationOperationNotSupported">
+            <summary>
+            '{generatorType}' does not support migration operations of type '{operationType}'.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Entity.SQLite.Strings.FormatMigrationOperationNotSupported(System.Object,System.Object)">
+            <summary>
+            '{generatorType}' does not support migration operations of type '{operationType}'.
+            </summary>
+        </member>
+    </members>
+</doc>

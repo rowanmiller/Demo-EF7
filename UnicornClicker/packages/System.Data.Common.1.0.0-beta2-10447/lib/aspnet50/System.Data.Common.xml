@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>System.Data.Common</name>
+    </assembly>
+    <members>
+        <member name="P:Microsoft.Data.Common.Strings.ArgumentIsNullOrWhitespace">
+            <summary>
+            The argument '{argumentName}' cannot be null, empty or contain only white space.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Common.Strings.FormatArgumentIsNullOrWhitespace(System.Object)">
+            <summary>
+            The argument '{argumentName}' cannot be null, empty or contain only white space.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Common.Strings.ConnectionStringInvalidSyntax">
+            <summary>
+            Format of the initialization string does not conform to specification starting at index {index}.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Common.Strings.FormatConnectionStringInvalidSyntax(System.Object)">
+            <summary>
+            Format of the initialization string does not conform to specification starting at index {index}.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Common.Strings.DefaultConstraintException">
+            <summary>
+            Constraint Exception.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Common.Strings.FormatDefaultConstraintException">
+            <summary>
+            Constraint Exception.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Common.Strings.DefaultDataException">
+            <summary>
+            Data Exception.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Common.Strings.FormatDefaultDataException">
+            <summary>
+            Data Exception.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Common.Strings.ExternalException">
+            <summary>
+            External component has thrown an exception.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Common.Strings.FormatExternalException">
+            <summary>
+            External component has thrown an exception.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Common.Strings.InternalError">
+            <summary>
+            Internal error.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Common.Strings.FormatInternalError">
+            <summary>
+            Internal error.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Common.Strings.InvalidKey">
+            <summary>
+            Invalid keyword, contain one or more of 'no characters', 'control characters', 'leading or trailing whitespace' or 'leading semicolons'.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Common.Strings.FormatInvalidKey">
+            <summary>
+            Invalid keyword, contain one or more of 'no characters', 'control characters', 'leading or trailing whitespace' or 'leading semicolons'.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Common.Strings.InvalidValue">
+            <summary>
+            The value contains embedded nulls (\u0000).
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Common.Strings.FormatInvalidValue">
+            <summary>
+            The value contains embedded nulls (\u0000).
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Common.Strings.KeywordNotSupported">
+            <summary>
+            Keyword not supported: '{keyword}'.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Common.Strings.FormatKeywordNotSupported(System.Object)">
+            <summary>
+            Keyword not supported: '{keyword}'.
+            </summary>
+        </member>
+    </members>
+</doc>

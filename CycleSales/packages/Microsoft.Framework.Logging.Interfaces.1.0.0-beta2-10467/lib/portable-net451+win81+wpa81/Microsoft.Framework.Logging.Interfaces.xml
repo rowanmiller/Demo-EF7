@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.Framework.Logging.Interfaces</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.Framework.Logging.ILogger">
+            <summary>
+            A generic interface for logging.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Framework.Logging.ILogger.Write(Microsoft.Framework.Logging.TraceType,System.Int32,System.Object,System.Exception,System.Func{System.Object,System.Exception,System.String})">
+            <summary>
+            Aggregates most logging patterns to a single method.  This must be compatible with the Func representation in the OWIN environment.
+            </summary>
+            <param name="eventType"></param>
+            <param name="eventId"></param>
+            <param name="state"></param>
+            <param name="exception"></param>
+            <param name="formatter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Framework.Logging.ILogger.IsEnabled(Microsoft.Framework.Logging.TraceType)">
+            <summary>
+            Checks if the given TraceEventType is enabled.
+            </summary>
+            <param name="eventType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Framework.Logging.ILogger.BeginScope(System.Object)">
+            <summary>
+            Begins a logical operation scope.
+            </summary>
+            <param name="state">The identifier for the scope.</param>
+            <returns>An IDisposable that ends the logical operation scope on dispose.</returns>
+        </member>
+        <member name="T:Microsoft.Framework.Logging.ILoggerFactory">
+            <summary>
+            Used to create logger instances of the given name.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Framework.Logging.ILoggerFactory.Create(System.String)">
+            <summary>
+            Creates a new ILogger instance of the given name.
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Microsoft.Framework.Logging.ILoggerProvider">
+            <summary>
+            Used to create logger instances of the given name.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Framework.Logging.ILoggerProvider.Create(System.String)">
+            <summary>
+            Creates a new ILogger instance of the given name.
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

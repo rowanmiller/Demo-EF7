@@ -1,0 +1,136 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.Framework.Logging</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.Framework.Logging.DiagnosticsLoggerProvider">
+            <summary>
+            Provides an ILoggerFactory based on System.Diagnostics.TraceSource.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Framework.Logging.DiagnosticsLoggerProvider.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Framework.Logging.DiagnosticsLoggerProvider"/> class. 
+            </summary>
+            <summary>
+            Creates a factory named "Microsoft.Owin".
+            </summary>
+        </member>
+        <member name="M:Microsoft.Framework.Logging.DiagnosticsLoggerProvider.#ctor(System.Diagnostics.SourceSwitch,System.Diagnostics.TraceListener)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Framework.Logging.DiagnosticsLoggerProvider"/> class.
+            </summary>
+            <param name="rootSourceSwitch"></param>
+            <param name="rootTraceListener"></param>
+        </member>
+        <member name="M:Microsoft.Framework.Logging.DiagnosticsLoggerProvider.Create(System.String)">
+            <summary>
+            Creates a new DiagnosticsLogger for the given component name.
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Microsoft.Framework.Logging.DiagnosticsScope">
+            <summary>
+            Provides an IDisposable that represents a logical operation scope based on System.Diagnostics LogicalOperationStack
+            </summary>
+        </member>
+        <member name="M:Microsoft.Framework.Logging.DiagnosticsScope.#ctor(System.Object)">
+            <summary>
+            Pushes state onto the LogicalOperationStack by calling 
+            <see cref="!:Trace.CorrelationManager.StartLogicalOperation(object operationId)"/>
+            </summary>
+            <param name="state">The state.</param>
+        </member>
+        <member name="M:Microsoft.Framework.Logging.DiagnosticsScope.Dispose">
+            <summary>
+            Pops a state off the LogicalOperationStack by calling
+            <see cref="!:Trace.CorrelationManager.StopLogicalOperation()"/>
+            </summary>
+            <param name="state">The state.</param>
+        </member>
+        <member name="T:Microsoft.Framework.Logging.LoggerExtensions">
+            <summary>
+            ILogger extension methods for common scenarios.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Framework.Logging.LoggerExtensions.WriteVerbose(Microsoft.Framework.Logging.ILogger,System.String)">
+            <summary>
+            Writes a verbose log message.
+            </summary>
+            <param name="logger"></param>
+            <param name="data"></param>
+        </member>
+        <member name="M:Microsoft.Framework.Logging.LoggerExtensions.WriteInformation(Microsoft.Framework.Logging.ILogger,System.String)">
+            <summary>
+            Writes an informational log message.
+            </summary>
+            <param name="logger"></param>
+            <param name="message"></param>
+        </member>
+        <member name="M:Microsoft.Framework.Logging.LoggerExtensions.WriteWarning(Microsoft.Framework.Logging.ILogger,System.String,System.String[])">
+            <summary>
+            Writes a warning log message.
+            </summary>
+            <param name="logger"></param>
+            <param name="message"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:Microsoft.Framework.Logging.LoggerExtensions.WriteWarning(Microsoft.Framework.Logging.ILogger,System.String,System.Exception)">
+            <summary>
+            Writes a warning log message.
+            </summary>
+            <param name="logger"></param>
+            <param name="message"></param>
+            <param name="error"></param>
+        </member>
+        <member name="M:Microsoft.Framework.Logging.LoggerExtensions.WriteError(Microsoft.Framework.Logging.ILogger,System.String)">
+            <summary>
+            Writes an error log message.
+            </summary>
+            <param name="logger"></param>
+            <param name="message"></param>
+        </member>
+        <member name="M:Microsoft.Framework.Logging.LoggerExtensions.WriteError(Microsoft.Framework.Logging.ILogger,System.String,System.Exception)">
+            <summary>
+            Writes an error log message.
+            </summary>
+            <param name="logger"></param>
+            <param name="message"></param>
+            <param name="error"></param>
+        </member>
+        <member name="M:Microsoft.Framework.Logging.LoggerExtensions.WriteCritical(Microsoft.Framework.Logging.ILogger,System.String)">
+            <summary>
+            Writes a critical log message.
+            </summary>
+            <param name="logger"></param>
+            <param name="message"></param>
+        </member>
+        <member name="M:Microsoft.Framework.Logging.LoggerExtensions.WriteCritical(Microsoft.Framework.Logging.ILogger,System.String,System.Exception)">
+            <summary>
+            Writes a critical log message.
+            </summary>
+            <param name="logger"></param>
+            <param name="message"></param>
+            <param name="error"></param>
+        </member>
+        <member name="T:Microsoft.Framework.Logging.LoggerFactory">
+            <summary>
+            Summary description for LoggerFactory
+            </summary>
+        </member>
+        <member name="T:Microsoft.Framework.Logging.LoggerFactoryExtensions">
+            <summary>
+            ILoggerFactory extension methods for common scenarios.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Framework.Logging.LoggerFactoryExtensions.Create``1(Microsoft.Framework.Logging.ILoggerFactory)">
+            <summary>
+            Creates a new ILogger instance using the full name of the given type.
+            </summary>
+            <typeparam name="T">The type.</typeparam>
+            <param name="factory">The factory.</param>
+        </member>
+    </members>
+</doc>

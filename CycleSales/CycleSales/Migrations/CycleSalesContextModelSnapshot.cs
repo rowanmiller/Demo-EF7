@@ -1,4 +1,5 @@
 using CycleSales.CycleSalesModel;
+using Microsoft.Data.Entity;
 using Microsoft.Data.Entity.Metadata;
 using Microsoft.Data.Entity.Migrations.Infrastructure;
 using System;
@@ -23,7 +24,7 @@ namespace CycleSales.Migrations
                         b.Property<string>("Name");
                         b.Property<decimal>("Retail");
                         b.Key("Bike_Id");
-                        b.ToTable("Bikes");
+                        b.ForRelational().Table("Bikes");
                     });
                 
                 return builder.Model;

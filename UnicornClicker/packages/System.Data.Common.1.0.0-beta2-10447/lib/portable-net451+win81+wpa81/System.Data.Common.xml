@@ -1,0 +1,2209 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>System.Data.Common</name>
+    </assembly>
+    <members>
+        <member name="T:System.Data.CommandBehavior">
+            <summary>
+            Provides a description of the results of the query and its effect on the database.
+            </summary>
+        </member>
+        <member name="F:System.Data.CommandBehavior.Default">
+            <summary>
+            The query may return multiple result sets. Execution of the query may affect the database state.
+            <c>Default</c> sets no CommandBehavior flags, so calling <c>ExecuteReader(CommandBehavior.Default)</c>
+            is functionally equivalent to calling <c>ExecuteReader()</c>.
+            </summary>
+        </member>
+        <member name="F:System.Data.CommandBehavior.SingleResult">
+            <summary>
+            The query returns a single result set.
+            </summary>
+        </member>
+        <member name="F:System.Data.CommandBehavior.SchemaOnly">
+            <summary>
+            The query returns column information only. When using SchemaOnly, the .NET Framework Data Provider for
+            SQL Server precedes the statement being executed with SET FMTONLY ON.
+            </summary>
+        </member>
+        <member name="F:System.Data.CommandBehavior.KeyInfo">
+            <summary>
+            The query returns column and primary key information.
+            When KeyInfo is used for command execution, the provider will append extra columns to the result set for
+            existing primary key and timestamp columns.
+            When using KeyInfo, the .NET Framework Data Provider for SQL Server precedes the statement being executed
+            with SET FMTONLY OFF and SET NO_BROWSETABLE ON. The user should be aware of potential side effects, such as
+            interference with the use of SET FMTONLY ON statements. See SQL Server Books Online for more information.
+            </summary>
+        </member>
+        <member name="F:System.Data.CommandBehavior.SingleRow">
+            <summary>
+            The query is expected to return a single row of the first result set. Execution of the query may affect the
+            database state. Some .NET Framework data providers may, but are not required to, use this information to
+            optimize the performance of the command. If your SQL statement is expected to return only a single row,
+            specifying SingleRow can also improve application performance. It is possible to specify <c>SingleRow</c>
+            when executing queries that are expected to return multiple result sets. In that case, where both a
+            multi-result set SQL query and single row are specified, the result returned will contain only the first
+            row of the first result set. The other result sets of the query will not be returned.
+            </summary>
+        </member>
+        <member name="F:System.Data.CommandBehavior.SequentialAccess">
+            <summary>
+            Provides a way for the <c>DataReader</c> to handle rows that contain columns with large binary values.
+            Rather than loading the entire row, <c>SequentialAccess</c> enables the <c>DataReader</c> to load data as a
+            stream. You can then use the <c>GetBytes</c> or <c>GetChars</c> method to specify a byte location to start
+            the read operation, and a limited buffer size for the data being returned.
+            When you specify <c>SequentialAccess</c>, you are required to read from the columns in the order they are
+            returned, although you are not required to read each column. Once you have read past a location in the
+            returned stream of data, data at or before that location can no longer be read from the <c>DataReader</c>.
+            </summary>
+        </member>
+        <member name="F:System.Data.CommandBehavior.CloseConnection">
+            <summary>
+            When the command is executed, the associated <c>Connection</c> object is closed when the associated
+            <c>DataReader</c> object is closed.
+            </summary>
+        </member>
+        <member name="T:System.Data.CommandType">
+            <summary>
+            Specifies how a command string is interpreted.
+            </summary>
+        </member>
+        <member name="F:System.Data.CommandType.Text">
+            <summary>
+            An SQL text command. (Default.)
+            </summary>
+        </member>
+        <member name="F:System.Data.CommandType.StoredProcedure">
+            <summary>
+            The name of a stored procedure.
+            </summary>
+        </member>
+        <member name="F:System.Data.CommandType.TableDirect">
+            <summary>
+            The name of a table.
+            </summary>
+        </member>
+        <member name="T:System.Data.ConnectionState">
+            <summary>
+            Describes the current state of the connection to a data source.
+            </summary>
+        </member>
+        <member name="F:System.Data.ConnectionState.Closed">
+            <summary>
+            The connection is closed.
+            </summary>
+        </member>
+        <member name="F:System.Data.ConnectionState.Open">
+            <summary>
+            The connection is open.
+            </summary>
+        </member>
+        <member name="F:System.Data.ConnectionState.Connecting">
+            <summary>
+            The connection object is connecting to the data source.
+            </summary>
+        </member>
+        <member name="T:System.Data.ConstraintException">
+            <summary>
+            Represents the exception that is thrown when attempting an action that violates a constraint.
+            </summary>
+        </member>
+        <member name="M:System.Data.ConstraintException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.Data.ConstraintException" /> class. This is the default
+            constructor.
+            </summary>
+        </member>
+        <member name="M:System.Data.ConstraintException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.Data.ConstraintException" /> class with the specified string.
+            </summary>
+            <param name="message">The string to display when the exception is thrown.</param>
+        </member>
+        <member name="M:System.Data.ConstraintException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.Data.ConstraintException" /> class using the specified string and
+            inner exception.
+            </summary>
+            <param name="message">The string to display when the exception is thrown. </param>
+            <param name="innerException">A reference to an inner exception. </param>
+        </member>
+        <member name="T:System.Data.DataException">
+            <summary>
+            Represents the exception that is thrown when errors are generated using ADO.NET components.
+            </summary>
+        </member>
+        <member name="M:System.Data.DataException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.Data.DataException" /> class. This is the default constructor.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:System.Data.DataException.#ctor(System.String)" -->
+        <member name="M:System.Data.DataException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.Data.DataException" /> class using the specified string and inner
+            exception.
+            </summary>
+            <remarks>
+            You can create a new exception that catches an earlier exception. The code that handles the second
+            exception can make use of the additional information from the earlier exception, also called an inner
+            exception, to examine the cause of the initial error.
+            </remarks>
+            <param name="message">The string to display when the exception is thrown. </param>
+            <param name="innerException">A reference to an inner exception. </param>
+        </member>
+        <member name="T:System.Data.DbType">
+            <summary>
+            Specifies the data type of a field, a property, or a <c>Parameter</c> object of a .NET Framework data
+            provider.
+            </summary>
+            <remarks>
+            The type of a parameter is specific to the .NET Framework data provider. Specifying the type converts the
+            value of the <c>Parameter</c> to the data provider Type before passing the value to the data source. If the
+            type is not specified, ADO.NET infers the data provider Type of the <c>Parameter</c> from the <c>Value</c>
+            property of the <c>Parameter</c> object.
+            You can also generically specify the type of a <c>Parameter</c> by setting <c>DbType</c> property of a
+            <c>Parameter</c> object.
+            ADO.NET cannot correctly infer the type if a byte array is larger than 8,000 bytes. Explicitly specify the
+            DbType when working with byte arrays larger than 8,000 bytes.
+            </remarks>
+        </member>
+        <member name="F:System.Data.DbType.AnsiString">
+            <summary>
+            A variable-length stream of non-Unicode characters ranging between 1 and 8,000 characters.
+            </summary>
+        </member>
+        <member name="F:System.Data.DbType.Binary">
+            <summary>
+            A variable-length stream of binary data ranging between 1 and 8,000 bytes.
+            </summary>
+        </member>
+        <member name="F:System.Data.DbType.Byte">
+            <summary>
+            An 8-bit unsigned integer ranging in value from 0 to 255.
+            </summary>
+        </member>
+        <member name="F:System.Data.DbType.Boolean">
+            <summary>
+            A simple type representing Boolean values of true or false.
+            </summary>
+        </member>
+        <member name="F:System.Data.DbType.Currency">
+            <summary>
+            A currency value ranging from -2^63 (or -922,337,203,685,477.5808) to 2^63 -1 (or
+            +922,337,203,685,477.5807) with an accuracy to a ten-thousandth of a currency unit.
+            </summary>
+        </member>
+        <member name="F:System.Data.DbType.Date">
+            <summary>
+            A type representing a date value.
+            </summary>
+        </member>
+        <member name="F:System.Data.DbType.DateTime">
+            <summary>
+            A type representing a date and time value.
+            </summary>
+        </member>
+        <member name="F:System.Data.DbType.Decimal">
+            <summary>
+            A simple type representing values ranging from 1.0 x 10_-28 to approximately 7.9 x 10_28 with 28-29
+            significant digits.
+            </summary>
+        </member>
+        <member name="F:System.Data.DbType.Double">
+            <summary>
+            A floating point type representing values ranging from approximately 5.0 x 10_-324 to 1.7 x 10_308 with a
+            precision of 15-16 digits.
+            </summary>
+        </member>
+        <member name="F:System.Data.DbType.Guid">
+            <summary>
+            A globally unique identifier (or GUID).
+            </summary>
+        </member>
+        <member name="F:System.Data.DbType.Int16">
+            <summary>
+            An integral type representing signed 16-bit integers with values between -32768 and 32767.
+            </summary>
+        </member>
+        <member name="F:System.Data.DbType.Int32">
+            <summary>
+            An integral type representing signed 32-bit integers with values between -2147483648 and 2147483647.
+            </summary>
+        </member>
+        <member name="F:System.Data.DbType.Int64">
+            <summary>
+            An integral type representing signed 64-bit integers with values between -9223372036854775808 and
+            9223372036854775807.
+            </summary>
+        </member>
+        <member name="F:System.Data.DbType.Object">
+            <summary>
+            A general type representing any reference or value type not explicitly represented by another <c>DbType</c>
+            value.
+            </summary>
+        </member>
+        <member name="F:System.Data.DbType.SByte">
+            <summary>
+            An integral type representing signed 8-bit integers with values between -128 and 127.
+            </summary>
+        </member>
+        <member name="F:System.Data.DbType.Single">
+            <summary>
+            A floating point type representing values ranging from approximately 1.5 x 10^-45 to 3.4 x 10^38 with a
+            precision of 7 digits.
+            </summary>
+        </member>
+        <member name="F:System.Data.DbType.String">
+            <summary>
+            A type representing Unicode character strings.
+            </summary>
+        </member>
+        <member name="F:System.Data.DbType.Time">
+            <summary>
+            A type representing a SQL Server <c>DateTime</c> value.
+            </summary>
+        </member>
+        <member name="F:System.Data.DbType.UInt16">
+            <summary>
+            An integral type representing unsigned 16-bit integers with values between 0 and 65535.
+            </summary>
+        </member>
+        <member name="F:System.Data.DbType.UInt32">
+            <summary>
+            An integral type representing unsigned 32-bit integers with values between 0 and 4294967295.
+            </summary>
+        </member>
+        <member name="F:System.Data.DbType.UInt64">
+            <summary>
+            An integral type representing unsigned 64-bit integers with values between 0 and 18446744073709551615.
+            </summary>
+        </member>
+        <member name="F:System.Data.DbType.VarNumeric">
+            <summary>
+            A variable-length numeric value.
+            </summary>
+        </member>
+        <member name="F:System.Data.DbType.AnsiStringFixedLength">
+            <summary>
+            A fixed-length stream of non-Unicode characters.
+            </summary>
+        </member>
+        <member name="F:System.Data.DbType.StringFixedLength">
+            <summary>
+            A fixed-length string of Unicode characters.
+            </summary>
+        </member>
+        <member name="F:System.Data.DbType.Xml">
+            <summary>
+            A parsed representation of an XML document or fragment.
+            </summary>
+        </member>
+        <member name="F:System.Data.DbType.DateTime2">
+            <summary>
+            Date and time data. Date value range is from January 1,1 AD through December 31, 9999 AD. Time value range
+            is 00:00:00 through 23:59:59.9999999 with an accuracy of 100 nanoseconds.
+            </summary>
+        </member>
+        <member name="F:System.Data.DbType.DateTimeOffset">
+            <summary>
+            Date and time data with time zone awareness. Date value range is from January 1,1 AD through December 31,
+            9999 AD. Time value range is 00:00:00 through 23:59:59.9999999 with an accuracy of 100 nanoseconds.
+            Time zone value range is -14:00 through +14:00.
+            </summary>
+        </member>
+        <member name="T:System.Data.IsolationLevel">
+            <summary>
+            Specifies the transaction locking behavior for the connection.
+            </summary>
+        </member>
+        <member name="F:System.Data.IsolationLevel.Unspecified">
+            <summary>
+            A different isolation level than the one specified is being used, but the level cannot be determined.
+            </summary>
+        </member>
+        <member name="F:System.Data.IsolationLevel.Chaos">
+            <summary>
+            The pending changes from more highly isolated transactions cannot be overwritten.
+            </summary>
+        </member>
+        <member name="F:System.Data.IsolationLevel.ReadUncommitted">
+            <summary>
+            A dirty read is possible, meaning that no shared locks are issued and no exclusive locks are honored.
+            </summary>
+        </member>
+        <member name="F:System.Data.IsolationLevel.ReadCommitted">
+            <summary>
+            Shared locks are held while the data is being read to avoid dirty reads, but the data can be changed before
+            the end of the transaction, resulting in non-repeatable reads or phantom data.
+            </summary>
+        </member>
+        <member name="F:System.Data.IsolationLevel.RepeatableRead">
+            <summary>
+            Locks are placed on all data that is used in a query, preventing other users from updating the data.
+            Prevents non-repeatable reads but phantom rows are still possible.
+            </summary>
+        </member>
+        <member name="F:System.Data.IsolationLevel.Serializable">
+            <summary>
+            A range lock is placed on the <see cref="!:DataSet" />, preventing other users from updating or inserting
+            rows into the dataset until the transaction is complete.
+            </summary>
+        </member>
+        <member name="F:System.Data.IsolationLevel.Snapshot">
+            <summary>
+            Reduces blocking by storing a version of data that one application can read while another is modifying the
+            same data. Indicates that from one transaction you cannot see changes made in other transactions, even if
+            you requery.
+            </summary>
+        </member>
+        <member name="T:System.Data.ParameterDirection">
+            <summary>
+            Specifies the type of a parameter within a query relative to the DataSet.
+            </summary>
+        </member>
+        <member name="F:System.Data.ParameterDirection.Input">
+            <summary>
+            The parameter is an input parameter.
+            </summary>
+        </member>
+        <member name="F:System.Data.ParameterDirection.Output">
+            <summary>
+            The parameter is an output parameter.
+            </summary>
+        </member>
+        <member name="F:System.Data.ParameterDirection.InputOutput">
+            <summary>
+            The parameter is capable of both input and output.
+            </summary>
+        </member>
+        <member name="F:System.Data.ParameterDirection.ReturnValue">
+            <summary>
+            The parameter represents a return value from an operation such as a stored procedure, built-in function, or
+            user-defined function.
+            </summary>
+        </member>
+        <member name="T:System.Data.StateChangeEventArgs">
+            <summary>
+            Provides data for the state change event of a .NET Framework data provider.
+            </summary>
+        </member>
+        <member name="M:System.Data.StateChangeEventArgs.#ctor(System.Data.ConnectionState,System.Data.ConnectionState)">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.Data.StateChangeEventArgs" /> class, when given the original state
+            and the current state of the object.
+            </summary>
+            <param name="originalState">One of the <see cref="T:System.Data.ConnectionState" /> values.</param>
+            <param name="currentState">One of the <see cref="T:System.Data.ConnectionState" /> values.</param>
+        </member>
+        <member name="P:System.Data.StateChangeEventArgs.OriginalState">
+            <summary>
+            Gets the original state of the connection.
+            </summary>
+            <value>One of the <see cref="T:System.Data.ConnectionState" /> values.</value>
+        </member>
+        <member name="P:System.Data.StateChangeEventArgs.CurrentState">
+            <summary>
+            Gets the new state of the connection. The connection object will be in the new state already when the event
+            is fired.
+            </summary>
+            <value>One of the <see cref="T:System.Data.ConnectionState" /> values.</value>
+        </member>
+        <member name="T:System.Data.StateChangeEventHandler">
+            <summary>
+            Represents the method that will handle the <see cref="!:DbConnection.StateChange" /> event.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.Data.StateChangeEventArgs" /> that contains the event data.</param>
+        </member>
+        <member name="T:System.Data.UpdateRowSource">
+            <summary>
+            Specifies how query command results are applied to the row being updated.
+            </summary>
+        </member>
+        <member name="F:System.Data.UpdateRowSource.None">
+            <summary>
+            Any returned parameters or rows are ignored.
+            </summary>
+        </member>
+        <member name="F:System.Data.UpdateRowSource.OutputParameters">
+            <summary>
+            Output parameters are mapped to the changed row.
+            </summary>
+        </member>
+        <member name="F:System.Data.UpdateRowSource.FirstReturnedRecord">
+            <summary>
+            The data in the first returned row is mapped to the changed row.
+            </summary>
+        </member>
+        <member name="F:System.Data.UpdateRowSource.Both">
+            <summary>
+            Both the output parameters and the first returned row are mapped to the changed row.
+            </summary>
+        </member>
+        <member name="T:System.Data.Common.DbCommand">
+            <summary>
+            Represents an SQL statement or stored procedure to execute against a data source. Provides a base class for
+            database-specific classes that represent commands.
+            </summary>
+        </member>
+        <member name="M:System.Data.Common.DbCommand.Finalize">
+            <summary>
+            Finalizes an instance of the <see cref="T:System.Data.Common.DbCommand" /> class.
+            </summary>
+        </member>
+        <member name="P:System.Data.Common.DbCommand.Connection">
+            <summary>
+            Gets or sets the <see cref="P:System.Data.Common.DbCommand.DbConnection" /> used by this <see cref="T:System.Data.Common.DbCommand" />.
+            </summary>
+            <value>The connection to the data source.</value>
+        </member>
+        <member name="P:System.Data.Common.DbCommand.Transaction">
+            <summary>
+            Gets or sets the <see cref="P:System.Data.Common.DbCommand.DbTransaction" /> within which this <see cref="T:System.Data.Common.DbCommand" /> object executes.
+            </summary>
+            <value>
+            The transaction within which a Command object of a .NET Framework data provider executes. The default value
+            is a null reference (<c>Nothing</c> in Visual Basic).
+            </value>
+        </member>
+        <member name="P:System.Data.Common.DbCommand.CommandText">
+            <summary>
+            Gets or sets the text command to run against the data source.
+            </summary>
+            <value>The text command to execute. The default value is an empty string ("").</value>
+        </member>
+        <member name="P:System.Data.Common.DbCommand.CommandTimeout">
+            <summary>
+            Gets or sets the wait time before terminating the attempt to execute a command and generating an error.
+            </summary>
+            <value>The time in seconds to wait for the command to execute.</value>
+        </member>
+        <member name="P:System.Data.Common.DbCommand.CommandType">
+            <summary>
+            Indicates or specifies how the <see cref="P:System.Data.Common.DbCommand.CommandText" /> property is interpreted.
+            </summary>
+            <value>One of the <see cref="P:System.Data.Common.DbCommand.CommandType" /> values. The default is <c>Text</c>.</value>
+        </member>
+        <member name="P:System.Data.Common.DbCommand.DesignTimeVisible">
+            <summary>
+            Gets or sets a value indicating whether the command object should be visible in a customized interface
+            control.
+            </summary>
+            <value>
+            <c>true</c>, if the command object should be visible in a control; otherwise <c>false</c>.
+            The default is <c>true</c>.
+            </value>
+        </member>
+        <member name="P:System.Data.Common.DbCommand.UpdatedRowSource">
+            <summary>
+            Gets or sets how command results are applied to the in-memory row.
+            </summary>
+            <value>
+            One of the <see cref="T:System.Data.UpdateRowSource" /> values.
+            The default is <c>Both</c> unless the command is automatically generated. Then the default is <c>None</c>.
+            </value>
+        </member>
+        <member name="P:System.Data.Common.DbCommand.Parameters">
+            <summary>
+            Gets the collection of <see cref="T:System.Data.Common.DbParameter" /> objects.
+            </summary>
+            <value>The parameters of the SQL statement or stored procedure.</value>
+        </member>
+        <member name="P:System.Data.Common.DbCommand.DbConnection">
+            <summary>
+            Gets or sets the <see cref="P:System.Data.Common.DbCommand.DbConnection" /> used by this <see cref="T:System.Data.Common.DbCommand" />.
+            </summary>
+            <value>The connection to the data source.</value>
+        </member>
+        <member name="P:System.Data.Common.DbCommand.DbParameterCollection">
+            <summary>
+            Gets the collection of <see cref="T:System.Data.Common.DbParameter" /> objects.
+            </summary>
+            <value>The parameters of the SQL statement or stored procedure.</value>
+        </member>
+        <member name="P:System.Data.Common.DbCommand.DbTransaction">
+            <summary>
+            Gets or sets the <see cref="P:System.Data.Common.DbCommand.DbTransaction" /> within which this
+            <see cref="T:System.Data.Common.DbCommand" /> object executes.
+            </summary>
+            <value>
+            The transaction within which a Command object of a .NET Framework data provider executes. The default value
+            is a null reference (<c>Nothing</c> in Visual Basic).
+            </value>
+        </member>
+        <member name="M:System.Data.Common.DbCommand.Cancel">
+            <summary>
+            Attempts to cancels the execution of a <see cref="T:System.Data.Common.DbCommand" />.
+            </summary>
+        </member>
+        <member name="M:System.Data.Common.DbCommand.CreateParameter">
+            <summary>
+            Creates a new instance of a <see cref="T:System.Data.Common.DbParameter" /> object.
+            </summary>
+            <returns>A <see cref="T:System.Data.Common.DbParameter" /> object.</returns>
+        </member>
+        <member name="M:System.Data.Common.DbCommand.ExecuteNonQuery">
+            <summary>
+            Executes a SQL statement against a connection object.
+            </summary>
+            <returns>The number of rows affected.</returns>
+        </member>
+        <member name="M:System.Data.Common.DbCommand.ExecuteNonQueryAsync">
+            <summary>
+            An asynchronous version of <see cref="M:System.Data.Common.DbCommand.ExecuteNonQuery" />, which executes a SQL statement against a
+            connection object.
+            Invokes <see cref="M:System.Data.Common.DbCommand.ExecuteNonQueryAsync" /> with <c>CancellationToken.None</c>.
+            </summary>
+            <returns>A task representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:System.Data.Common.DbCommand.ExecuteNonQueryAsync(System.Threading.CancellationToken)">
+            <summary>
+            This is the asynchronous version of <see cref="M:System.Data.Common.DbCommand.ExecuteNonQuery" />. Providers should override with an
+            appropriate implementation. The cancellation token may optionally be ignored.
+            The default implementation invokes the synchronous <see cref="M:System.Data.Common.DbCommand.ExecuteNonQuery" /> method and returns a
+            completed task, blocking the calling thread. The default implementation will return a cancelled task if
+            passed an already cancelled cancellation token. Exceptions thrown by <see cref="M:System.Data.Common.DbCommand.ExecuteNonQuery" /> will be
+            communicated via the returned Task Exception property.
+            Do not invoke other methods and properties of the <c>DbCommand</c> object until the returned Task is
+            complete.
+            </summary>
+            <param name="cancellationToken">The token to monitor for cancellation requests.</param>
+            <returns>A task representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:System.Data.Common.DbCommand.ExecuteReader">
+            <summary>
+            Executes the <see cref="P:System.Data.Common.DbCommand.CommandText" /> against the <see cref="P:System.Data.Common.DbCommand.Connection" />,
+            and returns a <see cref="T:System.Data.Common.DbDataReader" />.
+            </summary>
+            <returns>A <see cref="T:System.Data.Common.DbDataReader" /> object.</returns>
+        </member>
+        <member name="M:System.Data.Common.DbCommand.ExecuteReader(System.Data.CommandBehavior)">
+            <summary>
+            Executes the <see cref="P:System.Data.Common.DbCommand.CommandText" /> against the <see cref="P:System.Data.Common.DbCommand.Connection" />,
+            and returns a <see cref="T:System.Data.Common.DbDataReader" /> using one of the <see cref="T:System.Data.CommandBehavior" /> values.
+            </summary>
+            <param name="behavior">One of the <see cref="T:System.Data.CommandBehavior" /> values.</param>
+            <returns>A <see cref="T:System.Data.Common.DbDataReader" /> object.</returns>
+        </member>
+        <member name="M:System.Data.Common.DbCommand.ExecuteReaderAsync">
+            <summary>
+            An asynchronous version of <see cref="M:System.Data.Common.DbCommand.ExecuteReader" />, which executes the <see cref="P:System.Data.Common.DbCommand.CommandText" />
+            against the <see cref="P:System.Data.Common.DbCommand.Connection" /> and returns a <see cref="T:System.Data.Common.DbDataReader" />.
+            Invokes <see cref="M:System.Data.Common.DbCommand.ExecuteDbDataReaderAsync(System.Data.CommandBehavior,System.Threading.CancellationToken)" /> with <c>CancellationToken.None</c>.
+            </summary>
+            <param name="cancellationToken">The token to monitor for cancellation requests.</param>
+            <returns>A task representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:System.Data.Common.DbCommand.ExecuteReaderAsync(System.Threading.CancellationToken)">
+            <summary>
+            An asynchronous version of <see cref="M:System.Data.Common.DbCommand.ExecuteReader" />, which executes the <see cref="P:System.Data.Common.DbCommand.CommandText" />
+            against the <see cref="P:System.Data.Common.DbCommand.Connection" /> and returns a <see cref="T:System.Data.Common.DbDataReader" />. This method propagates a
+            notification that operations should be canceled.
+            Invokes <see cref="M:System.Data.Common.DbCommand.ExecuteDbDataReaderAsync(System.Data.CommandBehavior,System.Threading.CancellationToken)" />.
+            </summary>
+            <param name="cancellationToken">The token to monitor for cancellation requests.</param>
+            <returns>A task representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:System.Data.Common.DbCommand.ExecuteReaderAsync(System.Data.CommandBehavior)">
+            <summary>
+            An asynchronous version of <see cref="M:System.Data.Common.DbCommand.ExecuteReader" />, which executes the <see cref="P:System.Data.Common.DbCommand.CommandText" />
+            against the <see cref="P:System.Data.Common.DbCommand.Connection" /> and returns a <see cref="T:System.Data.Common.DbDataReader" />.
+            Invokes <see cref="M:System.Data.Common.DbCommand.ExecuteDbDataReaderAsync(System.Data.CommandBehavior,System.Threading.CancellationToken)" /> with <c>CancellationToken.None</c>.
+            </summary>
+            <param name="behavior">One of the <see cref="T:System.Data.CommandBehavior" /> values.</param>
+            <returns>A task representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:System.Data.Common.DbCommand.ExecuteReaderAsync(System.Data.CommandBehavior,System.Threading.CancellationToken)">
+            <summary>
+            An asynchronous version of <see cref="M:System.Data.Common.DbCommand.ExecuteReader" />, which executes the <see cref="P:System.Data.Common.DbCommand.CommandText" />
+            against the <see cref="P:System.Data.Common.DbCommand.Connection" /> and returns a <see cref="T:System.Data.Common.DbDataReader" />. This method propagates a
+            notification that operations should be canceled.
+            Invokes <see cref="M:System.Data.Common.DbCommand.ExecuteDbDataReaderAsync(System.Data.CommandBehavior,System.Threading.CancellationToken)" />.
+            </summary>
+            <param name="behavior">One of the <see cref="T:System.Data.CommandBehavior" /> values.</param>
+            <param name="cancellationToken">The token to monitor for cancellation requests.</param>
+            <returns>A task representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:System.Data.Common.DbCommand.ExecuteScalar">
+            <summary>
+            Executes the query and returns the first column of the first row in the result set returned by the query.
+            All other columns and rows are ignored.
+            </summary>
+            <returns>The first column of the first row in the result set.</returns>
+        </member>
+        <member name="M:System.Data.Common.DbCommand.ExecuteScalarAsync">
+            <summary>
+            An asynchronous version of <see cref="M:System.Data.Common.DbCommand.ExecuteScalar" />, which executes the query and returns the first
+            column of the first row in the result set returned by the query. All other columns and rows are ignored.
+            Invokes <see cref="M:System.Data.Common.DbCommand.ExecuteScalarAsync" /> with <c>CancellationToken.None</c>.
+            </summary>
+            <returns>A task representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:System.Data.Common.DbCommand.ExecuteScalarAsync(System.Threading.CancellationToken)">
+            <summary>
+            This is the asynchronous version of <see cref="M:System.Data.Common.DbCommand.ExecuteScalar" />. Providers should override with an
+            appropriate implementation. The cancellation token may optionally be ignored.
+            The default implementation invokes the synchronous <see cref="M:System.Data.Common.DbCommand.ExecuteScalar" /> method and returns a
+            completed task, blocking the calling thread. The default implementation will return a cancelled task if
+            passed an already cancelled cancellation token. Exceptions thrown by ExecuteScalar will be communicated via
+            the returned Task Exception property.
+            Do not invoke other methods and properties of the <c>DbCommand</c> object until the returned Task is
+            complete.
+            </summary>
+            <param name="cancellationToken">The token to monitor for cancellation requests.</param>
+            <returns>A task representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:System.Data.Common.DbCommand.Prepare">
+            <summary>
+            Creates a prepared (or compiled) version of the command on the data source.
+            </summary>
+        </member>
+        <member name="M:System.Data.Common.DbCommand.Dispose">
+            <summary>
+            Releases all resources used by the current instance of the <c>DbCommand</c> class.
+            </summary>
+        </member>
+        <member name="M:System.Data.Common.DbCommand.Dispose(System.Boolean)">
+            <summary>
+            Releases the unmanaged and optionally the managed resources used by the current instance of the
+            <c>DbCommand</c> class.
+            </summary>
+            <param name="disposing">
+            <c>true</c> to release both managed and unmanaged resources;
+            <c>false</c> to release only unmanaged resources.
+            </param>
+        </member>
+        <member name="M:System.Data.Common.DbCommand.CreateDbParameter">
+            <summary>
+            Creates a new instance of a <see cref="T:System.Data.Common.DbParameter" /> object.
+            </summary>
+            <returns>A <see cref="T:System.Data.Common.DbParameter" /> object.</returns>
+        </member>
+        <member name="M:System.Data.Common.DbCommand.ExecuteDbDataReader(System.Data.CommandBehavior)">
+            <summary>
+            Executes the command text against the connection.
+            </summary>
+            <param name="behavior">An instance of <see cref="T:System.Data.CommandBehavior" />.</param>
+            <returns>A task representing the operation.</returns>
+            <exception cref="T:System.Data.Common.DbException">An error occurred while executing the command text.</exception>
+            <exception cref="T:System.ArgumentException">An invalid <see cref="T:System.Data.CommandBehavior" /> value.</exception>
+        </member>
+        <member name="M:System.Data.Common.DbCommand.ExecuteDbDataReaderAsync(System.Data.CommandBehavior,System.Threading.CancellationToken)">
+            <summary>
+            Providers should implement this method to provide a non-default implementation for
+            <see cref="M:System.Data.Common.DbCommand.ExecuteReader" /> overloads.
+            The default implementation invokes the synchronous <see cref="M:System.Data.Common.DbCommand.ExecuteReader" /> method and returns a
+            completed task, blocking the calling thread. The default implementation will return a cancelled task if
+            passed an already cancelled cancellation token. Exceptions thrown by ExecuteReader will be communicated via
+            the returned Task Exception property.
+            This method accepts a cancellation token that can be used to request the operation to be cancelled early.
+            Implementations may ignore this request.
+            </summary>
+            <param name="behavior">Options for statement execution and data retrieval.</param>
+            <param name="cancellationToken">The token to monitor for cancellation requests.</param>
+            <returns>A task representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:System.Data.Common.DbConnection">
+            <summary>
+            Represents a connection to a database.
+            </summary>
+        </member>
+        <member name="M:System.Data.Common.DbConnection.Finalize">
+            <summary>
+            Finalizes an instance of the <see cref="T:System.Data.Common.DbConnection" /> class.
+            </summary>
+        </member>
+        <member name="E:System.Data.Common.DbConnection.StateChange">
+            <summary>
+            Occurs when the state of the event changes.
+            </summary>
+        </member>
+        <member name="P:System.Data.Common.DbConnection.ConnectionString">
+            <summary>
+            Gets or sets the string used to open the connection.
+            </summary>
+            <value>
+            The connection string used to establish the initial connection. The exact contents of the connection string
+            depend on the specific data source for this connection. The default value is an empty string.
+            </value>
+        </member>
+        <member name="P:System.Data.Common.DbConnection.ConnectionTimeout">
+            <summary>
+            Gets the time to wait while establishing a connection before terminating the attempt and generating an
+            error.
+            </summary>
+            <value>
+            The time (in seconds) to wait for a connection to open. The default value is determined by the specific
+            type of connection that you are using.
+            </value>
+        </member>
+        <member name="P:System.Data.Common.DbConnection.DataSource">
+            <summary>
+            Gets the name of the database server to which to connect.
+            </summary>
+            <value>The name of the database server to which to connect. The default value is an empty string.</value>
+        </member>
+        <member name="P:System.Data.Common.DbConnection.Database">
+            <summary>
+            Gets the name of the current database after a connection is opened, or the database name specified in the
+            connection string before the connection is opened.
+            </summary>
+            <value>
+            The name of the current database or the name of the database to be used after a connection is opened. The
+            default value is an empty string.
+            </value>
+        </member>
+        <member name="P:System.Data.Common.DbConnection.ServerVersion">
+            <summary>
+            Gets a string that represents the version of the server to which the object is connected.
+            </summary>
+            <value>
+            The version of the database. The format of the string returned depends on the specific type of connection
+            you are using.
+            </value>
+            <exception cref="T:System.InvalidOperationException">
+            <see cref="P:System.Data.Common.DbConnection.ServerVersion" /> was called while the returned Task was not completed and the connection was
+            not
+            opened after a call to <see cref="M:System.Data.Common.DbConnection.OpenAsync" />.
+            </exception>
+        </member>
+        <member name="P:System.Data.Common.DbConnection.State">
+            <summary>
+            Gets the state of the connection.
+            </summary>
+            <value> The state of the connection. </value>
+        </member>
+        <member name="M:System.Data.Common.DbConnection.BeginTransaction">
+            <summary>
+            Starts a database transaction.
+            </summary>
+            <returns>An object representing the new transaction.</returns>
+        </member>
+        <member name="M:System.Data.Common.DbConnection.BeginTransaction(System.Data.IsolationLevel)">
+            <summary>
+            Starts a database transaction with the specified isolation level.
+            </summary>
+            <param name="isolationLevel">Specifies the isolation level for the transaction.</param>
+            <returns>An object representing the new transaction.</returns>
+        </member>
+        <member name="M:System.Data.Common.DbConnection.CreateCommand">
+            <summary>
+            Creates and returns a <see cref="T:System.Data.Common.DbCommand" /> object associated with the current connection.
+            </summary>
+            <returns>A <see cref="T:System.Data.Common.DbCommand" /> object.</returns>
+        </member>
+        <member name="M:System.Data.Common.DbConnection.ChangeDatabase(System.String)">
+            <summary>
+            Changes the current database for an open connection.
+            </summary>
+            <param name="databaseName">Specifies the name of the database for the connection to use.</param>
+        </member>
+        <member name="M:System.Data.Common.DbConnection.Close">
+            <summary>
+            Closes the connection to the database. This is the preferred method of closing any open connection.
+            </summary>
+            <exception cref="T:System.Data.Common.DbException">
+            The connection-level error that occurred while opening the connection.
+            </exception>
+        </member>
+        <member name="M:System.Data.Common.DbConnection.Open">
+            <summary>
+            Opens a database connection with the settings specified by the <see cref="P:System.Data.Common.DbConnection.ConnectionString" />.
+            </summary>
+        </member>
+        <member name="M:System.Data.Common.DbConnection.OpenAsync">
+            <summary>
+            An asynchronous version of <see cref="M:System.Data.Common.DbConnection.Open" />, which opens a database connection with the settings
+            specified by the <see cref="P:System.Data.Common.DbConnection.ConnectionString" />. This method invokes
+            <see cref="M:System.Data.Common.DbConnection.OpenAsync(System.Threading.CancellationToken)" /> with <c>CancellationToken.None</c>.
+            </summary>
+            <returns>A task representing the asynchronous operation.</returns>
+            <remarks>
+            After calling <see cref="M:System.Data.Common.DbConnection.OpenAsync" />, <see cref="P:System.Data.Common.DbConnection.State" /> must return
+            <see cref="F:System.Data.ConnectionState.Connecting" /> until the returned Task is completed. Then, if the connection was
+            successful, <see cref="P:System.Data.Common.DbConnection.State" /> must return <see cref="F:System.Data.ConnectionState.Open" />. If the connection fails,
+            <see cref="P:System.Data.Common.DbConnection.State" /> must return <see cref="F:System.Data.ConnectionState.Closed" />.
+            A call to <see cref="M:System.Data.Common.DbConnection.Close" /> will attempt to cancel or close the corresponding <see cref="M:System.Data.Common.DbConnection.OpenAsync" />
+            call.
+            </remarks>
+        </member>
+        <member name="M:System.Data.Common.DbConnection.OpenAsync(System.Threading.CancellationToken)">
+            <summary>
+            This is the asynchronous version of <see cref="M:System.Data.Common.DbConnection.Open" />. Providers should override with an appropriate
+            implementation. The cancellation token can optionally be honored.
+            The default implementation invokes the synchronous <see cref="M:System.Data.Common.DbConnection.Open" /> call and returns a completed task.
+            The default implementation will return a cancelled task if passed an already cancelled cancellationToken.
+            Exceptions thrown by <see cref="M:System.Data.Common.DbConnection.Open" /> will be communicated via the returned Task Exception property.
+            Do not invoke other methods and properties of the <c>DbConnection</c> object until the returned Task is
+            complete.
+            </summary>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns>A task representing the asynchronous operation.</returns>
+            <remarks>
+            After calling <see cref="M:System.Data.Common.DbConnection.OpenAsync(System.Threading.CancellationToken)" />, <see cref="P:System.Data.Common.DbConnection.State" /> must return
+            <see cref="F:System.Data.ConnectionState.Connecting" /> until the returned Task is completed. Then, if the connection was
+            successful, <see cref="P:System.Data.Common.DbConnection.State" /> must return <see cref="F:System.Data.ConnectionState.Open" />. If the connection fails,
+            <see cref="P:System.Data.Common.DbConnection.State" /> must return <see cref="F:System.Data.ConnectionState.Closed" />.
+            A call to <see cref="M:System.Data.Common.DbConnection.Close" /> will attempt to cancel or close the corresponding
+            <see cref="M:System.Data.Common.DbConnection.OpenAsync(System.Threading.CancellationToken)" /> call.
+            </remarks>
+        </member>
+        <member name="M:System.Data.Common.DbConnection.Dispose">
+            <summary>
+            Releases all resources used by the current instance of the <c>DbConnection</c> class.
+            </summary>
+        </member>
+        <member name="M:System.Data.Common.DbConnection.Dispose(System.Boolean)">
+            <summary>
+            Releases the unmanaged and optionally the managed resources used by the current instance of the
+            <c>DbConnection</c> class.
+            </summary>
+            <param name="disposing">
+            <c>true</c> to release both managed and unmanaged resources;
+            <c>false</c> to release only unmanaged resources.
+            </param>
+        </member>
+        <member name="P:System.Data.Common.DbConnection.DbProviderFactory">
+            <summary>
+            Gets the <see cref="P:System.Data.Common.DbConnection.DbProviderFactory" /> for this <see cref="T:System.Data.Common.DbConnection" />.
+            </summary>
+            <value>
+            A set of methods for creating instances of a provider's implementation of the data source classes.
+            </value>
+        </member>
+        <member name="M:System.Data.Common.DbConnection.OnStateChange(System.Data.StateChangeEventArgs)">
+            <summary>
+            Raises the <see cref="E:System.Data.Common.DbConnection.StateChange" /> event.
+            </summary>
+            <param name="stateChange">A <see cref="T:System.Data.StateChangeEventArgs" /> that contains the event data.</param>
+        </member>
+        <member name="M:System.Data.Common.DbConnection.BeginDbTransaction(System.Data.IsolationLevel)">
+            <summary>
+            Starts a database transaction.
+            </summary>
+            <param name="isolationLevel">Specifies the isolation level for the transaction.</param>
+            <returns>An object representing the new transaction.</returns>
+        </member>
+        <member name="M:System.Data.Common.DbConnection.CreateDbCommand">
+            <summary>
+            Creates and returns a <see cref="T:System.Data.Common.DbCommand" /> object associated with the current connection.
+            </summary>
+            <returns>A <see cref="T:System.Data.Common.DbCommand" /> object.</returns>
+        </member>
+        <member name="T:System.Data.Common.DbConnectionStringBuilder">
+            <summary>
+            Provides a base class for strongly typed connection string builders.
+            </summary>
+        </member>
+        <member name="P:System.Data.Common.DbConnectionStringBuilder.BrowsableConnectionString">
+            <summary>
+            Gets or sets a value indicating whether the <see cref="P:System.Data.Common.DbConnectionStringBuilder.ConnectionString"/> property is visible
+            in Visual Studio designers.
+            </summary>
+            <value>
+            <c>true</c> if the connection string is visible within designers; <c>false</c> otherwise.
+            The default is <c>true</c>.
+            </value>
+            <remarks>
+            Developers creating designers that take advantage of the <see cref="T:System.Data.Common.DbConnectionStringBuilder"/>
+            class must be able to make the connection string visible or invisible within the designer's property grid.
+            The <see cref="P:System.Data.Common.DbConnectionStringBuilder.BrowsableConnectionString"/> property lets developers indicate that the property should be
+            invisible by setting the property to <c>false</c>.
+            </remarks>
+        </member>
+        <member name="P:System.Data.Common.DbConnectionStringBuilder.ConnectionString">
+            <summary>
+            Gets or sets the connection string associated with the <see cref="T:System.Data.Common.DbConnectionStringBuilder" />.
+            </summary>
+            <value>
+            The current connection string, created from the key/value pairs that are contained within the
+            <see cref="T:System.Data.Common.DbConnectionStringBuilder" />. The default value is an empty string.
+            </value>
+            <exception cref="T:System.ArgumentException">An invalid connection string argument has been supplied.</exception>
+        </member>
+        <member name="P:System.Data.Common.DbConnectionStringBuilder.Count">
+            <summary>
+            Gets the current number of keys that are contained within the <see cref="P:System.Data.Common.DbConnectionStringBuilder.ConnectionString" /> property.
+            </summary>
+            <value>
+            The number of keys that are contained within the connection string maintained by the
+            <see cref="T:System.Data.Common.DbConnectionStringBuilder" /> instance.
+            </value>
+        </member>
+        <member name="P:System.Data.Common.DbConnectionStringBuilder.IsFixedSize">
+            <summary>
+            Gets a value that indicates whether the <see cref="T:System.Data.Common.DbConnectionStringBuilder" /> has a fixed size.
+            </summary>
+            <value>true if the <see cref="T:System.Data.Common.DbConnectionStringBuilder" /> has a fixed size; otherwise false.</value>
+        </member>
+        <member name="P:System.Data.Common.DbConnectionStringBuilder.IsReadOnly">
+            <summary>
+            Gets a value that indicates whether the <see cref="T:System.Data.Common.DbConnectionStringBuilder" /> is read-only.
+            </summary>
+            <value>
+            true if the <see cref="T:System.Data.Common.DbConnectionStringBuilder" /> is read-only; otherwise false. The default is false.
+            </value>
+        </member>
+        <member name="P:System.Data.Common.DbConnectionStringBuilder.Keys">
+            <summary>
+            Gets an <see cref="T:System.Collections.ICollection" /> that contains the keys in the <see cref="T:System.Data.Common.DbConnectionStringBuilder" />.
+            </summary>
+            <value>
+            An <see cref="T:System.Collections.ICollection" /> that contains the keys in the <see cref="T:System.Data.Common.DbConnectionStringBuilder" />.
+            </value>
+        </member>
+        <member name="P:System.Data.Common.DbConnectionStringBuilder.Values">
+            <summary>
+            Gets an <see cref="T:System.Collections.ICollection" /> that contains the values in the <see cref="T:System.Data.Common.DbConnectionStringBuilder" />.
+            </summary>
+            <value>
+            An <see cref="T:System.Collections.ICollection" /> that contains the values in the <see cref="T:System.Data.Common.DbConnectionStringBuilder" />.
+            </value>
+        </member>
+        <member name="P:System.Data.Common.DbConnectionStringBuilder.System#Collections#ICollection#IsSynchronized">
+            <summary>
+            Gets a value indicating whether access to the <see cref="T:System.Collections.ICollection" /> is synchronized (thread safe).
+            </summary>
+            <value>
+            true if access to the <see cref="T:System.Collections.ICollection" /> is synchronized (thread safe); otherwise, false.
+            </value>
+        </member>
+        <member name="P:System.Data.Common.DbConnectionStringBuilder.System#Collections#ICollection#SyncRoot">
+            <summary>
+            Gets an object that can be used to synchronize access to the <see cref="T:System.Collections.ICollection" />.
+            </summary>
+            <value>An object that can be used to synchronize access to the <see cref="T:System.Collections.ICollection" />.</value>
+        </member>
+        <member name="P:System.Data.Common.DbConnectionStringBuilder.Item(System.String)">
+            <summary>
+            Gets or sets the value associated with the specified key.
+            </summary>
+            <param name="keyword">The key of the item to get or set.</param>
+            <returns>
+            The value associated with the specified key. If the specified key is not found, trying to get it returns a
+            null reference (Nothing in Visual Basic), and trying to set it creates a new element using the specified
+            key.Passing a null (Nothing in Visual Basic) key throws an <see cref="T:System.ArgumentNullException" />. Assigning
+            a null value removes the key/value pair.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="keyword" /> is a null reference (Nothing in Visual Basic).
+            </exception>
+            <exception cref="T:System.NotSupportedException">
+            The property is set, and the <see cref="T:System.Data.Common.DbConnectionStringBuilder" /> is read-only. -or-The property is set,
+            <paramref name="keyword" /> does not exist in the collection, and the
+            <see cref="T:System.Data.Common.DbConnectionStringBuilder" /> has a fixed size.
+            </exception>
+        </member>
+        <member name="P:System.Data.Common.DbConnectionStringBuilder.System#Collections#IDictionary#Item(System.Object)">
+            <summary>
+            Gets or sets the element with the specified key.
+            </summary>
+            <param name="keyword">The key of the element to get or set.</param>
+            <returns>The element with the specified key.</returns>
+        </member>
+        <member name="M:System.Data.Common.DbConnectionStringBuilder.System#Collections#IDictionary#Add(System.Object,System.Object)">
+            <summary>
+            Adds an element with the provided key and value to the <see cref="T:System.Collections.IDictionary" /> object.
+            </summary>
+            <param name="keyword">The <see cref="T:System.Object" /> to use as the key of the element to add.</param>
+            <param name="value">The <see cref="T:System.Object" /> to use as the value of the element to add.</param>
+        </member>
+        <member name="P:System.Data.Common.DbConnectionStringBuilder.System#Collections#IDictionary#IsFixedSize">
+            <summary>
+            Gets a value indicating whether the <see cref="T:System.Collections.IDictionary"/> object has a fixed size. 
+            </summary>
+            <value>
+            <c>true</c> if the IDictionary object has a fixed size; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:System.Data.Common.DbConnectionStringBuilder.System#Collections#IDictionary#IsReadOnly">
+            <summary>
+            Gets a value indicating whether the <see cref="T:System.Collections.IDictionary"/> object is read-only. 
+            </summary>
+            <value>
+            <c>true</c>  if the <see cref="T:System.Collections.IDictionary"/> object is read-only; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="M:System.Data.Common.DbConnectionStringBuilder.Add(System.String,System.Object)">
+            <summary>
+            Adds an entry with the specified key and value into the <see cref="T:System.Data.Common.DbConnectionStringBuilder"/>.
+            </summary>
+            <param name="keyword">The key to add to the <see cref="T:System.Data.Common.DbConnectionStringBuilder"/>.</param>
+            <param name="value">The value for the specified key.</param>
+        </member>
+        <member name="M:System.Data.Common.DbConnectionStringBuilder.AppendKeyValuePair(System.Text.StringBuilder,System.String,System.String)">
+            <summary>
+            Provides an efficient and safe way to append a key and value to an existing <see cref="T:System.Text.StringBuilder" />
+            object.
+            </summary>
+            <param name="builder">The <see cref="T:System.Text.StringBuilder" /> to which to add the key/value pair.</param>
+            <param name="keyword">The key to be added.</param>
+            <param name="value">The value for the supplied key.</param>
+        </member>
+        <member name="M:System.Data.Common.DbConnectionStringBuilder.Clear">
+            <summary>
+            Clears the contents of the <see cref="T:System.Data.Common.DbConnectionStringBuilder" /> instance.
+            </summary>
+            <exception cref="T:System.NotSupportedException">
+            The <see cref="T:System.Data.Common.DbConnectionStringBuilder" /> is read-only.
+            </exception>
+        </member>
+        <member name="M:System.Data.Common.DbConnectionStringBuilder.System#Collections#IDictionary#Contains(System.Object)">
+            <summary>
+            Determines whether the <see cref="T:System.Collections.IDictionary" /> object contains an element with the specified key.
+            </summary>
+            <param name="keyword">The key to locate in the <see cref="T:System.Collections.IDictionary" /> object.</param>
+            <returns>
+            true if the <see cref="T:System.Collections.IDictionary" /> contains an element with the key; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:System.Data.Common.DbConnectionStringBuilder.ContainsKey(System.String)">
+            <summary>
+            Determines whether the <see cref="T:System.Data.Common.DbConnectionStringBuilder" /> contains a specific key.
+            </summary>
+            <param name="keyword">The key to locate in the <see cref="T:System.Data.Common.DbConnectionStringBuilder" />.</param>
+            <returns>
+            true if the <see cref="T:System.Data.Common.DbConnectionStringBuilder" /> contains an entry with the specified key; otherwise
+            false.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="keyword" /> is a null reference (Nothing in Visual Basic).
+            </exception>
+        </member>
+        <member name="M:System.Data.Common.DbConnectionStringBuilder.System#Collections#ICollection#CopyTo(System.Array,System.Int32)">
+            <summary>
+            Copies the elements of the <see cref="T:System.Collections.ICollection" /> to an <see cref="T:System.Array" />, starting at a particular
+            <see cref="T:System.Array" /> index.
+            </summary>
+            <param name="array">
+            The one-dimensional <see cref="T:System.Array" /> that is the destination of the elements copied from
+            <see cref="T:System.Collections.ICollection" />. The <see cref="T:System.Array" /> must have zero-based indexing.
+            </param>
+            <param name="index">The zero-based index in <paramref name="array" /> at which copying begins.</param>
+        </member>
+        <member name="M:System.Data.Common.DbConnectionStringBuilder.System#Collections#IDictionary#GetEnumerator">
+            <summary>
+            Returns an <see cref="T:System.Collections.IDictionaryEnumerator" /> object for the <see cref="T:System.Collections.IDictionary" /> object.
+            </summary>
+            <returns>An <see cref="T:System.Collections.IDictionaryEnumerator" /> object for the <see cref="T:System.Collections.IDictionary" /> object.</returns>
+        </member>
+        <member name="M:System.Data.Common.DbConnectionStringBuilder.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            Returns an enumerator that iterates through a collection.
+            </summary>
+            <returns>An <see cref="T:System.Collections.IEnumerator" /> object that can be used to iterate through the collection.</returns>
+        </member>
+        <member name="M:System.Data.Common.DbConnectionStringBuilder.Remove(System.String)">
+            <summary>
+            Removes the entry with the specified key from the <see cref="T:System.Data.Common.DbConnectionStringBuilder" /> instance.
+            </summary>
+            <param name="keyword">
+            The key of the key/value pair to be removed from the connection string in this
+            <see cref="T:System.Data.Common.DbConnectionStringBuilder" />.
+            </param>
+            <returns>
+            true if the key existed within the connection string and was removed; false if the key did not exist.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="keyword" /> is null (Nothing in Visual Basic)
+            </exception>
+            <exception cref="T:System.NotSupportedException">
+            The <see cref="T:System.Data.Common.DbConnectionStringBuilder" /> is read-only, or the <see cref="T:System.Data.Common.DbConnectionStringBuilder" />
+            has a fixed size.
+            </exception>
+        </member>
+        <member name="M:System.Data.Common.DbConnectionStringBuilder.System#Collections#IDictionary#Remove(System.Object)">
+            <summary>
+            Removes the element with the specified key from the <see cref="T:System.Collections.IDictionary" /> object.
+            </summary>
+            <param name="keyword">The key of the element to remove.</param>
+        </member>
+        <member name="M:System.Data.Common.DbConnectionStringBuilder.ShouldSerialize(System.String)">
+            <summary>
+            Indicates whether the specified key exists in this <see cref="T:System.Data.Common.DbConnectionStringBuilder" /> instance.
+            </summary>
+            <param name="keyword">The key to locate in the <see cref="T:System.Data.Common.DbConnectionStringBuilder" />.</param>
+            <returns>
+            true if the <see cref="T:System.Data.Common.DbConnectionStringBuilder" /> contains an entry with the specified key; otherwise
+            false.
+            </returns>
+        </member>
+        <member name="M:System.Data.Common.DbConnectionStringBuilder.TryGetValue(System.String,System.Object@)">
+            <summary>
+            Retrieves a value corresponding to the supplied key from this <see cref="T:System.Data.Common.DbConnectionStringBuilder" />.
+            </summary>
+            <param name="keyword">The key of the item to retrieve.</param>
+            <param name="value">The value corresponding to the <paramref name="key" />.</param>
+            <returns>
+            true if <paramref name="keyword" /> was found within the connection string, false otherwise.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="keyword" /> contains a null value (Nothing in Visual Basic).
+            </exception>
+        </member>
+        <member name="M:System.Data.Common.DbConnectionStringBuilder.ToString">
+            <summary>
+            Returns the connection string associated with this <see cref="T:System.Data.Common.DbConnectionStringBuilder" />.
+            </summary>
+            <returns>The current <see cref="P:System.Data.Common.DbConnectionStringBuilder.ConnectionString" /> property.</returns>
+        </member>
+        <member name="T:System.Data.Common.DbDataReader">
+            <summary>
+            Reads a forward-only stream of rows from a data source.
+            </summary>
+        </member>
+        <member name="M:System.Data.Common.DbDataReader.Finalize">
+            <summary>
+            Finalizes an instance of the <see cref="T:System.Data.Common.DbDataReader" /> class.
+            </summary>
+        </member>
+        <member name="P:System.Data.Common.DbDataReader.Depth">
+            <summary>
+            Gets a value indicating the depth of nesting for the current row.
+            </summary>
+            <value>
+            The depth of nesting for the current row.
+            </value>
+        </member>
+        <member name="P:System.Data.Common.DbDataReader.FieldCount">
+            <summary>
+            Gets the number of columns in the current row.
+            </summary>
+            <value>
+            The number of columns in the current row.
+            </value>
+        </member>
+        <member name="P:System.Data.Common.DbDataReader.HasRows">
+            <summary>
+            Gets a value that indicates whether this <c>DbDataReader</c> contains one or more rows.
+            </summary>
+            <value>
+            <c>true</c> if the <c>DbDataReader</c> contains one or more rows; otherwise <c>false</c>.
+            </value>
+        </member>
+        <member name="P:System.Data.Common.DbDataReader.IsClosed">
+            <summary>
+            Gets a value indicating whether the <c>DbDataReader</c> is closed.
+            </summary>
+            <value>
+            <c>true</c> if the <c>DbDataReader</c> is closed; otherwise <c>false</c>.
+            </value>
+        </member>
+        <member name="P:System.Data.Common.DbDataReader.RecordsAffected">
+            <summary>
+            Gets the number of rows changed, inserted, or deleted by execution of the SQL statement.
+            </summary>
+            <value>
+            The number of rows changed, inserted, or deleted. -1 for SELECT statements; 0 if no rows were affected or
+            the statement failed
+            </value>
+            <remarks>
+            The <c>RecordsAffected</c> property is not set until all rows are read and you close the
+            <c>DbDataReader</c>.
+            </remarks>
+        </member>
+        <member name="P:System.Data.Common.DbDataReader.VisibleFieldCount">
+            <summary>
+            Gets the number of fields in the <c>DbDataReader</c> that are not hidden.
+            </summary>
+            <value>
+            The number of fields that are not hidden.
+            </value>
+            <remarks>
+            This value is used to determine how many fields in the <c>DbDataReader</c> are visible. For
+            example, a SELECT on a partial primary key returns the remaining parts of the key as hidden fields. The
+            hidden fields are always appended behind the visible fields.
+            </remarks>
+        </member>
+        <member name="P:System.Data.Common.DbDataReader.Item(System.Int32)">
+            <summary>
+            Gets the value of the specified column as an instance of <see cref="T:System.Object" />.
+            </summary>
+            <value>
+            The value of the specified column.
+            </value>
+            <param name="ordinal">The zero-based column ordinal.</param>
+        </member>
+        <member name="P:System.Data.Common.DbDataReader.Item(System.String)">
+            <summary>
+            Gets the value of the specified column as an instance of <see cref="T:System.Object" />.
+            </summary>
+            <value>
+            The value of the specified column.
+            </value>
+            <param name="name">The name of the column.</param>
+        </member>
+        <member name="M:System.Data.Common.DbDataReader.Close">
+            <summary>
+            Closes the <c>DbDataReader</c> object.
+            </summary>
+        </member>
+        <member name="M:System.Data.Common.DbDataReader.Dispose">
+            <summary>
+            Releases all resources used by the current instance of the <c>DbDataReader</c> class.
+            </summary>
+        </member>
+        <member name="M:System.Data.Common.DbDataReader.Dispose(System.Boolean)">
+            <summary>
+            Releases the unmanaged and optionally the managed resources used by the current instance of the
+            <c>DbDataReader</c> class.
+            </summary>
+            <param name="disposing">
+            <c>true</c> to release both managed and unmanaged resources;
+            <c>false</c> to release only unmanaged resources.
+            </param>
+        </member>
+        <member name="M:System.Data.Common.DbDataReader.GetDataTypeName(System.Int32)">
+            <summary>
+            Gets name of the data type of the specified column.
+            </summary>
+            <param name="ordinal">The zero-based column ordinal.</param>
+            <returns>A string representing the name of the data type.</returns>
+        </member>
+        <member name="M:System.Data.Common.DbDataReader.GetEnumerator">
+            <summary>
+            Returns an <see cref="T:System.Collections.IEnumerator" /> that can be used to iterate through the rows in the data reader.
+            </summary>
+            <returns>An <see cref="T:System.Collections.IEnumerator" /> that can be used to iterate through the rows in the data reader.</returns>
+        </member>
+        <member name="M:System.Data.Common.DbDataReader.GetFieldType(System.Int32)">
+            <summary>
+            Gets the data type of the specified column.
+            </summary>
+            <param name="ordinal">The zero-based column ordinal.</param>
+            <returns>The data type of the specified column.</returns>
+        </member>
+        <member name="M:System.Data.Common.DbDataReader.GetName(System.Int32)">
+            <summary>
+            Gets the name of the column, given the zero-based column ordinal.
+            </summary>
+            <param name="ordinal">The zero-based column ordinal.</param>
+            <returns>The name of the specified column.</returns>
+        </member>
+        <member name="M:System.Data.Common.DbDataReader.GetOrdinal(System.String)">
+            <summary>
+            Gets the column ordinal given the name of the column.
+            </summary>
+            <param name="name">The name of the column.</param>
+            <returns>The zero-based column ordinal.</returns>
+        </member>
+        <member name="M:System.Data.Common.DbDataReader.GetBoolean(System.Int32)">
+            <summary>
+            Gets the value of the specified column as a Boolean.
+            </summary>
+            <param name="ordinal">The zero-based column ordinal.</param>
+            <returns>The value of the specified column.</returns>
+        </member>
+        <member name="M:System.Data.Common.DbDataReader.GetByte(System.Int32)">
+            <summary>
+            Gets the value of the specified column as a byte.
+            </summary>
+            <param name="ordinal">The zero-based column ordinal.</param>
+            <returns>The value of the specified column.</returns>
+        </member>
+        <member name="M:System.Data.Common.DbDataReader.GetBytes(System.Int32,System.Int64,System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Reads a stream of bytes from the specified column, starting at location indicated by
+            <paramref name="dataOffset" />, into the buffer, starting at the location indicated by
+            <paramref name="bufferOffset" />.
+            </summary>
+            <param name="ordinal">The zero-based column ordinal.</param>
+            <param name="dataOffset">The index within the row from which to begin the read operation.</param>
+            <param name="buffer">The buffer into which to copy the data.</param>
+            <param name="bufferOffset">The index with the buffer to which the data will be copied.</param>
+            <param name="length">The maximum number of characters to read.</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.Common.DbDataReader.GetChar(System.Int32)">
+            <summary>
+            Gets the value of the specified column as a single character.
+            </summary>
+            <param name="ordinal">The zero-based column ordinal.</param>
+            <returns>The value of the specified column.</returns>
+        </member>
+        <member name="M:System.Data.Common.DbDataReader.GetChars(System.Int32,System.Int64,System.Char[],System.Int32,System.Int32)">
+            <summary>
+            Reads a stream of characters from the specified column, starting at location indicated by
+            <paramref name="dataOffset" />, into the buffer, starting at the location indicated by
+            <paramref name="bufferOffset" />.
+            </summary>
+            <param name="ordinal">The zero-based column ordinal.</param>
+            <param name="dataOffset">The index within the row from which to begin the read operation.</param>
+            <param name="buffer">The buffer into which to copy the data.</param>
+            <param name="bufferOffset">The index with the buffer to which the data will be copied.</param>
+            <param name="length">The maximum number of characters to read.</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Data.Common.DbDataReader.GetData(System.Int32)">
+            <summary>
+            Returns a <c>DbDataReader</c> object for the requested column ordinal.
+            </summary>
+            <param name="ordinal">The zero-based column ordinal.</param>
+            <returns>A <c>DbDataReader</c> object.</returns>
+        </member>
+        <member name="M:System.Data.Common.DbDataReader.GetDbDataReader(System.Int32)">
+            <summary>
+            Returns a <c>DbDataReader</c> object for the requested column ordinal that can be overridden with a
+            provider-specific implementation.
+            </summary>
+            <param name="ordinal">The zero-based column ordinal.</param>
+            <returns>A <c>DbDataReader</c> object.</returns>
+        </member>
+        <member name="M:System.Data.Common.DbDataReader.GetDateTime(System.Int32)">
+            <summary>
+            Gets the value of the specified column as a <see cref="T:System.DateTime" /> object.
+            </summary>
+            <param name="ordinal">The zero-based column ordinal.</param>
+            <returns>The value of the specified column.</returns>
+        </member>
+        <member name="M:System.Data.Common.DbDataReader.GetDecimal(System.Int32)">
+            <summary>
+            Gets the value of the specified column as a <see cref="T:System.Decimal" /> object.
+            </summary>
+            <param name="ordinal">The zero-based column ordinal.</param>
+            <returns>The value of the specified column.</returns>
+        </member>
+        <member name="M:System.Data.Common.DbDataReader.GetDouble(System.Int32)">
+            <summary>
+            Gets the value of the specified column as a double-precision floating point number.
+            </summary>
+            <param name="ordinal">The zero-based column ordinal.</param>
+            <returns>The value of the specified column.</returns>
+        </member>
+        <member name="M:System.Data.Common.DbDataReader.GetFloat(System.Int32)">
+            <summary>
+            Gets the value of the specified column as a single-precision floating point number.
+            </summary>
+            <param name="ordinal">The zero-based column ordinal.</param>
+            <returns>The value of the specified column.</returns>
+        </member>
+        <member name="M:System.Data.Common.DbDataReader.GetGuid(System.Int32)">
+            <summary>
+            Gets the value of the specified column as a globally-unique identifier (GUID).
+            </summary>
+            <param name="ordinal">The zero-based column ordinal.</param>
+            <returns>The value of the specified column.</returns>
+        </member>
+        <member name="M:System.Data.Common.DbDataReader.GetInt16(System.Int32)">
+            <summary>
+            Gets the value of the specified column as a 16-bit signed integer.
+            </summary>
+            <param name="ordinal">The zero-based column ordinal.</param>
+            <returns>The value of the specified column.</returns>
+        </member>
+        <member name="M:System.Data.Common.DbDataReader.GetInt32(System.Int32)">
+            <summary>
+            Gets the value of the specified column as a 32-bit signed integer.
+            </summary>
+            <param name="ordinal">The zero-based column ordinal.</param>
+            <returns>The value of the specified column.</returns>
+        </member>
+        <member name="M:System.Data.Common.DbDataReader.GetInt64(System.Int32)">
+            <summary>
+            Gets the value of the specified column as a 64-bit signed integer.
+            </summary>
+            <param name="ordinal">The zero-based column ordinal.</param>
+            <returns>The value of the specified column.</returns>
+        </member>
+        <member name="M:System.Data.Common.DbDataReader.GetProviderSpecificFieldType(System.Int32)">
+            <summary>
+            Returns the provider-specific field type of the specified column
+            </summary>
+            <param name="ordinal">The zero-based column ordinal.</param>
+            <returns>The <see cref="T:System.Type" /> object that describes the data type of the specified column.</returns>
+        </member>
+        <member name="M:System.Data.Common.DbDataReader.GetProviderSpecificValue(System.Int32)">
+            <summary>
+            Gets the value of the specified column as an instance of <see cref="T:System.Object" />.
+            </summary>
+            <param name="ordinal">The zero-based column ordinal.</param>
+            <returns>The value of the specified column.</returns>
+            <remarks>
+            To determine the specific type of the object returned, use
+            <see cref="M:System.Data.Common.DbDataReader.GetProviderSpecificFieldType(System.Int32)" />.
+            </remarks>
+        </member>
+        <member name="M:System.Data.Common.DbDataReader.GetProviderSpecificValues(System.Object[])">
+            <summary>
+            Gets all provider-specific attribute columns in the collection for the current row.
+            </summary>
+            <param name="values">An array into which to copy the attribute columns.</param>
+            <returns>The number of elements copied to the array.</returns>
+        </member>
+        <member name="M:System.Data.Common.DbDataReader.GetString(System.Int32)">
+            <summary>
+            Gets the value of the specified column as an instance of <see cref="T:System.String" />.
+            </summary>
+            <param name="ordinal">The zero-based column ordinal.</param>
+            <returns>The value of the specified column.</returns>
+        </member>
+        <member name="M:System.Data.Common.DbDataReader.GetStream(System.Int32)">
+            <summary>
+            Retrieves data as a <see cref="T:System.IO.Stream" />.
+            </summary>
+            <param name="ordinal">The zero-based column ordinal.</param>
+            <returns>The value of the specified column as a <see cref="T:System.IO.Stream" />.</returns>
+        </member>
+        <member name="M:System.Data.Common.DbDataReader.GetTextReader(System.Int32)">
+            <summary>
+            Retrieves data as a <see cref="T:System.IO.TextReader" />.
+            </summary>
+            <param name="ordinal">The zero-based column ordinal.</param>
+            <returns>The value of the specified column.</returns>
+            <remarks>
+            <c>GetTextReader</c> only supports the retrieval of values that can be converted to character
+            arrays (strings).
+            </remarks>
+        </member>
+        <member name="M:System.Data.Common.DbDataReader.GetValue(System.Int32)">
+            <summary>
+            Gets the value of the specified column as an instance of <see cref="T:System.Object" />.
+            </summary>
+            <param name="ordinal">The zero-based column ordinal.</param>
+            <returns>The value of the specified column.</returns>
+        </member>
+        <member name="M:System.Data.Common.DbDataReader.GetFieldValue``1(System.Int32)">
+            <summary>
+            Gets the value of the specified column as an instance of <paramref name="T" />.
+            </summary>
+            <typeparam name="T">The type of the value to be returned.</typeparam>
+            <param name="ordinal">The column to be retrieved.</param>
+            <returns>The value of the specified column.</returns>
+        </member>
+        <member name="M:System.Data.Common.DbDataReader.GetFieldValueAsync``1(System.Int32)">
+            <summary>
+            Asynchronously gets the value of the specified column as an instance of <paramref name="T" />.
+            </summary>
+            <typeparam name="T">The type of the value to be returned.</typeparam>
+            <param name="ordinal">The column to be retrieved.</param>
+            <returns>The value of the specified column.</returns>
+        </member>
+        <member name="M:System.Data.Common.DbDataReader.GetFieldValueAsync``1(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously gets the value of the specified column as an instance of <paramref name="T" />.
+            </summary>
+            <typeparam name="T">The type of the value to be returned.</typeparam>
+            <param name="ordinal">The column to be retrieved.</param>
+            <param name="cancellationToken">The token to monitor for cancellation requests.</param>
+            <returns>The value of the specified column.</returns>
+        </member>
+        <member name="M:System.Data.Common.DbDataReader.GetValues(System.Object[])">
+            <summary>
+            Populates an array of objects with the column values of the current row.
+            </summary>
+            <param name="values">An array into which to copy the attribute columns.</param>
+            <returns>The number of objects copied to the array.</returns>
+        </member>
+        <member name="M:System.Data.Common.DbDataReader.IsDBNull(System.Int32)">
+            <summary>
+            Gets a value that indicates whether the column contains a non-existent or missing value.
+            </summary>
+            <param name="ordinal">The zero-based column ordinal.</param>
+            <returns>
+            <c>true</c> if the specified column is equivalent to <see cref="T:System.DBNull" />; otherwise <c>false</c>.
+            </returns>
+            <remarks>
+            Call this method to check for null column values before calling the value type get methods (for
+            example, <c>GetByte</c>, <c>GetChar</c>, and so on) to avoid raising an error.
+            </remarks>
+        </member>
+        <member name="M:System.Data.Common.DbDataReader.IsDBNullAsync(System.Int32)">
+            <summary>
+            An asynchronous version of <see cref="M:System.Data.Common.DbDataReader.IsDBNull(System.Int32)" />, which gets a value that indicates whether the column
+            contains a non-existent or missing value.
+            </summary>
+            <param name="ordinal">The zero-based column ordinal.</param>
+            <returns>
+            <c>true</c> if the specified column is equivalent to <see cref="T:System.DBNull" />; otherwise <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:System.Data.Common.DbDataReader.IsDBNullAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            An asynchronous version of <see cref="M:System.Data.Common.DbDataReader.IsDBNull(System.Int32)" />, which gets a value that indicates whether the column
+            contains a non-existent or missing value.
+            </summary>
+            <param name="ordinal">The zero-based column ordinal.</param>
+            <param name="cancellationToken">The token to monitor for cancellation requests.</param>
+            <returns>
+            <c>true</c> if the specified column is equivalent to <see cref="T:System.DBNull" />; otherwise <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:System.Data.Common.DbDataReader.NextResult">
+            <summary>
+            Advances the reader to the next result when reading the results of a batch of statements.
+            </summary>
+            <returns><c>true</c> if there are more result sets; otherwise <c>false</c>.</returns>
+            <remarks>
+            This method allows you to process multiple result sets returned when a batch is submitted to the
+            data provider.
+            </remarks>
+        </member>
+        <member name="M:System.Data.Common.DbDataReader.NextResultAsync">
+            <summary>
+            An asynchronous version of <see cref="M:System.Data.Common.DbDataReader.NextResult" />, which advances the reader to the next result when
+            reading the results of a batch of statements.
+            Invokes <see cref="M:System.Data.Common.DbDataReader.NextResultAsync(System.Threading.CancellationToken)" /> with <c>CancellationToken.None</c>.
+            </summary>
+            <returns>A task representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:System.Data.Common.DbDataReader.NextResultAsync(System.Threading.CancellationToken)">
+            <summary>
+            This is the asynchronous version of <see cref="M:System.Data.Common.DbDataReader.NextResult" />. Providers should override with an
+            appropriate implementation.
+            Other methods and properties of the <c>DbDataReader</c> object should not be invoked while the returned
+            <c>Task</c> is not yet completed.
+            </summary>
+            <remarks>
+            The default implementation invokes the synchronous <see cref="M:System.Data.Common.DbDataReader.NextResult" /> method and returns a
+            completed task, blocking the calling thread. The default implementation will return a cancelled task if
+            passed an already cancelled <c>CancellationToken</c>. Exceptions thrown by <see cref="M:System.Data.Common.DbDataReader.NextResult" /> will
+            be communicated via the returned <c>Task</c> <c>Exception</c> property.
+            </remarks>
+            <param name="cancellationToken">The token to monitor for cancellation requests.</param>
+            <returns>A task representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:System.Data.Common.DbDataReader.Read">
+            <summary>
+            Advances the reader to the next record in a result set.
+            </summary>
+            <remarks>
+            The default position of a data reader is before the first record. Therefore, you must call Read to
+            begin accessing data.
+            </remarks>
+            <returns><c>true</c> if there are more rows; otherwise <c>false</c>.</returns>
+        </member>
+        <member name="M:System.Data.Common.DbDataReader.ReadAsync">
+            <summary>
+            An asynchronous version of <see cref="M:System.Data.Common.DbDataReader.Read" />, which advances the reader to the next record in a result
+            set.
+            This method invokes <see cref="M:System.Data.Common.DbDataReader.ReadAsync(System.Threading.CancellationToken)" /> with <c>CancellationToken.None</c>.
+            </summary>
+            <returns><c>true</c> if there are more rows; otherwise <c>false</c>.</returns>
+        </member>
+        <member name="M:System.Data.Common.DbDataReader.ReadAsync(System.Threading.CancellationToken)">
+            <summary>
+            This is the asynchronous version of <see cref="M:System.Data.Common.DbDataReader.Read" />. Providers should override with an appropriate
+            implementation.
+            Other methods and properties of the <c>DbDataReader</c> object should not be invoked while the returned
+            <c>Task</c> is not yet completed.
+            </summary>
+            <remarks>
+            The default implementation invokes the synchronous <see cref="M:System.Data.Common.DbDataReader.Read" /> method and returns a
+            completed task, blocking the calling thread. The default implementation will return a cancelled task if
+            passed an already cancelled <c>CancellationToken</c>. Exceptions thrown by <see cref="M:System.Data.Common.DbDataReader.Read" /> will be
+            communicated via the returned <c>Task</c> <c>Exception</c> property.
+            </remarks>
+            <param name="cancellationToken">The token to monitor for cancellation requests.</param>
+            <returns><c>true</c> if there are more rows; otherwise <c>false</c>.</returns>
+        </member>
+        <member name="T:System.Data.Common.DbException">
+            <summary>
+            The base class for all exceptions thrown on behalf of the data source.
+            </summary>
+        </member>
+        <member name="M:System.Data.Common.DbException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.Data.Common.DbException" /> class.
+            </summary>
+        </member>
+        <member name="M:System.Data.Common.DbException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.Data.Common.DbException" /> class with the specified error message.
+            </summary>
+            <param name="message">The message to display for this exception.</param>
+        </member>
+        <member name="M:System.Data.Common.DbException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.Data.Common.DbException" /> class with the specified error message and a
+            reference to the inner exception that is the cause of this exception.
+            </summary>
+            <param name="message">The message to display for this exception.</param>
+            <param name="innerException">The inner exception reference.</param>
+        </member>
+        <member name="M:System.Data.Common.DbException.#ctor(System.String,System.Int32)">
+            <summary>
+            Initializes a new instance of the ExternalException class with a specified error message and the HRESULT of
+            the error.
+            </summary>
+            <param name="message">The error message that specifies the reason for the exception.</param>
+            <param name="errorCode">The HRESULT of the error.</param>
+        </member>
+        <member name="P:System.Data.Common.DbException.ErrorCode">
+            <summary>
+            Gets the HRESULT of the error.
+            </summary>
+            <value>The HRESULT of the error.</value>
+        </member>
+        <member name="M:System.Data.Common.DbException.ToString">
+            <summary>
+            Returns a string that contains the HRESULT of the error.
+            </summary>
+            <returns>A string that represents the HRESULT.</returns>
+        </member>
+        <member name="T:System.Data.Common.DbParameter">
+            <summary>
+            Represents a parameter to a <see cref="T:System.Data.Common.DbCommand" />.
+            </summary>
+        </member>
+        <member name="P:System.Data.Common.DbParameter.DbType">
+            <summary>
+            Gets or sets the DbType of the parameter.
+            </summary>
+            <value>
+            One of the <see cref="!:Common.DbType" /> values. The default is <see cref="!:Common.DbType.String" />.
+            </value>
+        </member>
+        <member name="P:System.Data.Common.DbParameter.Direction">
+            <summary>
+            Gets or sets a value that indicates whether the parameter is input-only, output-only, bidirectional, or a
+            stored procedure return value parameter.
+            </summary>
+            <value>
+            One of the <see cref="T:System.Data.ParameterDirection" /> values. The default is
+            <see cref="F:System.Data.ParameterDirection.Input" />.
+            </value>
+            <remarks>
+            If the <c>Direction</c> is <see cref="F:System.Data.ParameterDirection.Output" />, and execution of the associated
+            <see cref="T:System.Data.Common.DbCommand" /> does not return a value, the <see cref="T:System.Data.Common.DbParameter" /> will contain a null value.
+            <see cref="F:System.Data.ParameterDirection.Output" />, <see cref="F:System.Data.ParameterDirection.InputOutput" />, and
+            <see cref="F:System.Data.ParameterDirection.ReturnValue" /> parameters returned by calling
+            <see cref="M:System.Data.Common.DbCommand.ExecuteReader" /> cannot be accessed until you call
+            <see cref="M:System.Data.Common.DbDataReader.Close" /> or <see cref="M:System.Data.Common.DbDataReader.Dispose" /> on the
+            <see cref="T:System.Data.Common.DbDataReader" />.
+            </remarks>
+        </member>
+        <member name="P:System.Data.Common.DbParameter.IsNullable">
+            <summary>
+            Gets or sets a value that indicates whether the parameter accepts null values.
+            </summary>
+            <value>
+            <c>true</c> if null values are accepted; otherwise false. The default is <c>false</c>.
+            </value>
+            <remarks>Null values are handled using the <see cref="T:System.DBNull" /> class.</remarks>
+        </member>
+        <member name="P:System.Data.Common.DbParameter.ParameterName">
+            <summary>
+            Gets or sets the name of the <see cref="T:System.Data.Common.DbParameter" />.
+            </summary>
+            <value>
+            The name of the <see cref="T:System.Data.Common.DbParameter" />. The default is an empty string ("").
+            </value>
+        </member>
+        <member name="P:System.Data.Common.DbParameter.Precision">
+            <summary>
+            Gets or sets the maximum number of digits used to represent the <see cref="P:System.Data.Common.DbParameter.Value" /> property.
+            </summary>
+            <value>
+            The maximum number of digits used to represent the <see cref="P:System.Data.Common.DbParameter.Value" /> property.
+            </value>
+        </member>
+        <member name="P:System.Data.Common.DbParameter.Scale">
+            <summary>
+            Gets or sets the number of decimal places to which <see cref="P:System.Data.Common.DbParameter.Value" /> is resolved.
+            </summary>
+            <value>
+            The number of decimal places to which <see cref="P:System.Data.Common.DbParameter.Value" /> is resolved.
+            </value>
+        </member>
+        <member name="P:System.Data.Common.DbParameter.Size">
+            <summary>
+            Gets or sets the maximum size, in bytes, of the data within the column.
+            </summary>
+            <value>
+            The maximum size, in bytes, of the data within the column. The default value is inferred from the parameter
+            value.
+            </value>
+            <remarks>
+            The <c>Size</c> property is used for binary and string types.
+            For nonstring data types and ANSI string data, the <c>Size</c> property refers to the number of bytes. For
+            Unicode string data, <c>Size</c> refers to the number of characters. The count for strings does not include
+            the terminating character.
+            For variable-length data types, <c>Size</c> describes the maximum amount of data to transmit to the server.
+            For example, for a Unicode string value, <c>Size</c> could be used to limit the amount of data sent to the
+            server to the first one hundred characters.
+            For bidirectional and output parameters, and return values, you must set the value of <c>Size</c>. This is
+            not required for input parameters, and if not explicitly set, the value is inferred from the actual size of
+            the specified parameter when a parameterized statement is executed.
+            The <c>DbType</c> and <c>Size</c> properties of a parameter can be inferred by setting <c>Value</c>.
+            Therefore, you are not required to specify them. However, they are not exposed in <c>DbParameter</c>
+            property settings. For example, if the size of the parameter has been inferred, <c>Size</c> does not
+            contain inferred value after statement execution.
+            For fixed length data types, the value of <c>Size</c> is ignored. It can be retrieved for informational
+            purposes, and returns the maximum amount of bytes the provider uses when transmitting the value of the
+            parameter to the server.
+            If the size of the value supplied for a <c>DbParameter</c> exceeds the specified <c>Size</c>, the
+            <c>Value</c> of the <c>DbParameter</c> will contain the specified value, truncated to <c>Size</c> of the
+            <c>DbParameter</c>.
+            For parameters of type <see cref="!:Common.DbType.String" />, the value of <c>Size</c> is length in Unicode
+            characters. For parameters of type <see cref="F:System.Data.DbType.Xml" />, <c>Size</c> is ignored.
+            </remarks>
+        </member>
+        <member name="P:System.Data.Common.DbParameter.SourceColumn">
+            <summary>
+            Gets or sets the name of the source column mapped to the DataSet and used for loading or returning the
+            <see cref="P:System.Data.Common.DbParameter.Value" />.
+            </summary>
+            <value>
+            The name of the source column mapped to the DataSet. The default is an empty string.
+            </value>
+        </member>
+        <member name="P:System.Data.Common.DbParameter.SourceColumnNullMapping">
+            <summary>
+            Sets or gets a value which indicates whether the source column is nullable. This allows
+            <see cref="!:DbCommandBuilder" /> to correctly generate update statements for nullable columns.
+            </summary>
+            <value>
+            <c>true</c>if the source column is nullable; <c>false</c> if it is not.
+            </value>
+        </member>
+        <member name="P:System.Data.Common.DbParameter.Value">
+            <summary>
+            Gets or sets the value of the parameter.
+            </summary>
+            <value>
+            An <see cref="T:System.Object" /> that is the value of the parameter. The default value is <c>null</c>.
+            </value>
+            <remarks>
+            For input parameters, the value is bound to the <see cref="T:System.Data.Common.DbCommand" /> that is sent to the server. For
+            output and return value parameters, the value is set on completion of the <see cref="T:System.Data.Common.DbCommand" /> and
+            after the <see cref="T:System.Data.Common.DbDataReader" /> is closed.
+            When you send a null parameter value to the server, you must specify <see cref="T:System.DBNull" />, not null. The
+            null value in the system is an empty object that has no value. <see cref="T:System.DBNull" /> is used to represent
+            null values.
+            If the application specifies the database type, the bound value is converted to that type when the provider
+            sends the data to the server. The provider tries to convert any type of value if it supports the
+            <see cref="!:IConvertible" /> interface. Conversion errors may result if the specified type is not compatible
+            with the value.
+            The <see cref="P:System.Data.Common.DbParameter.DbType" /> property can be inferred by setting the <c>Value</c>.
+            </remarks>
+        </member>
+        <member name="M:System.Data.Common.DbParameter.ResetDbType">
+            <summary>
+            Resets the <see cref="P:System.Data.Common.DbParameter.DbType" /> property to its original settings.
+            </summary>
+        </member>
+        <member name="T:System.Data.Common.DbParameterCollection">
+            <summary>
+            The base class for a collection of parameters relevant to a <see cref="T:System.Data.Common.DbCommand" />.
+            </summary>
+        </member>
+        <member name="P:System.Data.Common.DbParameterCollection.Count">
+            <summary>
+            Specifies the number of items in the collection.
+            </summary>
+            <value>
+            The number of items in the collection.
+            </value>
+        </member>
+        <member name="P:System.Data.Common.DbParameterCollection.IsFixedSize">
+            <summary>
+            Specifies whether the collection is a fixed size.
+            </summary>
+            <value>
+            <c>true</c> if the collection is a fixed size; otherwise <c>false</c>.
+            </value>
+        </member>
+        <member name="P:System.Data.Common.DbParameterCollection.IsReadOnly">
+            <summary>
+            Specifies whether the collection is read-only.
+            </summary>
+            <value>
+            <c>true</c> if the collection is read-only; otherwise <c>false</c>.
+            </value>
+        </member>
+        <member name="P:System.Data.Common.DbParameterCollection.IsSynchronized">
+            <summary>
+            Specifies whether the collection is synchronized.
+            </summary>
+            <value>
+            <c>true</c> if the collection is synchronized; otherwise <c>false</c>.
+            </value>
+        </member>
+        <member name="P:System.Data.Common.DbParameterCollection.System#Collections#IList#IsFixedSize">
+            <summary>
+            Specifies whether the collection is a fixed size.
+            </summary>
+            <value>
+            <c>true</c> if the collection is a fixed size; otherwise <c>false</c>.
+            </value>
+        </member>
+        <member name="P:System.Data.Common.DbParameterCollection.System#Collections#IList#IsReadOnly">
+            <summary>
+            Specifies whether the collection is read-only.
+            </summary>
+            <value>
+            <c>true</c> if the collection is read-only; otherwise <c>false</c>.
+            </value>
+        </member>
+        <member name="P:System.Data.Common.DbParameterCollection.System#Collections#ICollection#IsSynchronized">
+            <summary>
+            Specifies whether the collection is synchronized.
+            </summary>
+            <value>
+            <c>true</c> if the collection is synchronized; otherwise <c>false</c>.
+            </value>
+        </member>
+        <member name="P:System.Data.Common.DbParameterCollection.SyncRoot">
+            <summary>
+            Specifies the <see cref="T:System.Object"/> to be used to synchronize access to the collection.
+            </summary>
+            <value>
+            A <see cref="T:System.Object"/> to be used to synchronize access to the <see cref="T:System.Data.Common.DbParameterCollection"/>.
+            </value>
+        </member>
+        <member name="P:System.Data.Common.DbParameterCollection.Item(System.Int32)">
+            <summary>
+            Gets or sets the <see cref="T:System.Data.Common.DbParameter"/> at the specified index.
+            </summary>
+            <value>
+            The <see cref="T:System.Data.Common.DbParameter"/> at the specified index.
+            </value>
+            <param name="index">The zero-based index of the parameter.</param>
+        </member>
+        <member name="P:System.Data.Common.DbParameterCollection.Item(System.String)">
+            <summary>
+            Gets or sets the <see cref="T:System.Data.Common.DbParameter"/> with the specified name.
+            </summary>
+            <value>
+            The <see cref="T:System.Data.Common.DbParameter"/> with the specified name.
+            </value>
+            <param name="parameterName">The name of the parameter.</param>
+        </member>
+        <member name="P:System.Data.Common.DbParameterCollection.System#Collections#IList#Item(System.Int32)">
+            <summary>
+            Gets or sets the <see cref="T:System.Object"/> at the specified index.
+            </summary>
+            <value>
+            The <see cref="T:System.Object"/> at the specified index.
+            </value>
+            <param name="index">The zero-based index of the parameter.</param>
+        </member>
+        <member name="M:System.Data.Common.DbParameterCollection.Add(System.Object)">
+            <summary>
+            Adds the specified <see cref="T:System.Data.Common.DbParameter"/> object to the <see cref="T:System.Data.Common.DbParameterCollection"/>.
+            </summary>
+            <param name="value">The <see cref="P:System.Data.Common.DbParameter.Value"/> of the <see cref="T:System.Data.Common.DbParameter"/> to add to the collection.</param>
+            <returns>The index of the <see cref="T:System.Data.Common.DbParameter"/> object in the collection.</returns>
+        </member>
+        <member name="M:System.Data.Common.DbParameterCollection.AddRange(System.Array)">
+            <summary>
+            Adds an array of items with the specified values to the <see cref="T:System.Data.Common.DbParameterCollection"/>.
+            </summary>
+            <param name="values">An array of values of type <see cref="T:System.Data.Common.DbParameter"/> to add to the collection.</param>
+        </member>
+        <member name="M:System.Data.Common.DbParameterCollection.Contains(System.Object)">
+            <summary>
+            Indicates whether a <see cref="T:System.Data.Common.DbParameter"/> with the specified <see cref="P:System.Data.Common.DbParameter.Value"/> is contained in the collection.
+            </summary>
+            <param name="value">The <see cref="P:System.Data.Common.DbParameter.Value"/> of the <see cref="T:System.Data.Common.DbParameter"/> to look for in the collection.</param>
+            <returns><c>true</c> if the <see cref="T:System.Data.Common.DbParameter"/> is in the collection; otherwise <c>false</c>.</returns>
+        </member>
+        <member name="M:System.Data.Common.DbParameterCollection.Contains(System.String)">
+            <summary>
+            Indicates whether a <see cref="T:System.Data.Common.DbParameter"/> with the specified name exists in the collection.
+            </summary>
+            <param name="value">The name of the <see cref="T:System.Data.Common.DbParameter"/> to look for in the collection.</param>
+            <returns><c>true</c> if the <see cref="T:System.Data.Common.DbParameter"/> is in the collection; otherwise <c>false</c>.</returns>
+        </member>
+        <member name="M:System.Data.Common.DbParameterCollection.CopyTo(System.Array,System.Int32)">
+            <summary>
+            Copies an array of items to the collection starting at the specified index.
+            </summary>
+            <param name="array">The array of items to copy to the collection.</param>
+            <param name="index">The index in the collection to copy the items.</param>
+        </member>
+        <member name="M:System.Data.Common.DbParameterCollection.Clear">
+            <summary>
+            Removes all <see cref="T:System.Data.Common.DbParameter"/> values from the <see cref="T:System.Data.Common.DbParameterCollection"/>.
+            </summary>
+        </member>
+        <member name="M:System.Data.Common.DbParameterCollection.GetEnumerator">
+            <summary>
+            Returns an <see cref="T:System.Collections.IEnumerator" /> that can be used to iterate through the collection.
+            </summary>
+            <returns>An <see cref="T:System.Collections.IEnumerator" /> that can be used to iterate through the collection.</returns>
+        </member>
+        <member name="M:System.Data.Common.DbParameterCollection.GetParameter(System.Int32)">
+            <summary>
+            Returns the <see cref="T:System.Data.Common.DbParameter"/> object at the specified index in the collection.
+            </summary>
+            <param name="index">The index of the <see cref="T:System.Data.Common.DbParameter"/> in the collection.</param>
+            <returns>The <see cref="T:System.Data.Common.DbParameter"/> object at the specified index in the collection.</returns>
+        </member>
+        <member name="M:System.Data.Common.DbParameterCollection.GetParameter(System.String)">
+            <summary>
+            Returns the <see cref="T:System.Data.Common.DbParameter"/> object with the specified name.
+            </summary>
+            <param name="parameterName">The name of the <see cref="T:System.Data.Common.DbParameter"/> in the collection.</param>
+            <returns>The <see cref="T:System.Data.Common.DbParameter"/> the object with the specified name.</returns>
+        </member>
+        <member name="M:System.Data.Common.DbParameterCollection.IndexOf(System.Object)">
+            <summary>
+            Returns the index of the specified <see cref="T:System.Data.Common.DbParameter"/> object.
+            </summary>
+            <param name="value">The <see cref="T:System.Data.Common.DbParameter"/> object in the collection.</param>
+            <returns>The index of the specified <see cref="T:System.Data.Common.DbParameter"/> object.</returns>
+        </member>
+        <member name="M:System.Data.Common.DbParameterCollection.IndexOf(System.String)">
+            <summary>
+            Returns the index of the <see cref="T:System.Data.Common.DbParameter"/> object with the specified name.
+            </summary>
+            <param name="parameterName">The name of the <see cref="T:System.Data.Common.DbParameter"/> object in the collection.</param>
+            <returns>The index of the <see cref="T:System.Data.Common.DbParameter"/> object with the specified name.</returns>
+        </member>
+        <member name="M:System.Data.Common.DbParameterCollection.Insert(System.Int32,System.Object)">
+            <summary>
+            Inserts the specified <see cref="T:System.Data.Common.DbParameter"/> object into the collection at the specified index.
+            </summary>
+            <param name="index">The index at which to insert the <see cref="T:System.Data.Common.DbParameter"/> object.</param>
+            <param name="value">The <see cref="T:System.Data.Common.DbParameter"/> object to insert into the collection.</param>
+        </member>
+        <member name="M:System.Data.Common.DbParameterCollection.Remove(System.Object)">
+            <summary>
+            Removes the specified <see cref="T:System.Data.Common.DbParameter"/> object from the collection.
+            </summary>
+            <param name="value">The <see cref="T:System.Data.Common.DbParameter"/> object to remove.</param>
+        </member>
+        <member name="M:System.Data.Common.DbParameterCollection.RemoveAt(System.Int32)">
+            <summary>
+            Removes the <see cref="T:System.Data.Common.DbParameter"/> object at the specified from the collection.
+            </summary>
+            <param name="index">The index where the <see cref="T:System.Data.Common.DbParameter"/> object is located.</param>
+        </member>
+        <member name="M:System.Data.Common.DbParameterCollection.RemoveAt(System.String)">
+            <summary>
+            Removes the <see cref="T:System.Data.Common.DbParameter"/> object with the specified name from the collection.
+            </summary>
+            <param name="parameterName">The name of the <see cref="T:System.Data.Common.DbParameter"/> object to remove.</param>
+        </member>
+        <member name="M:System.Data.Common.DbParameterCollection.SetParameter(System.Int32,System.Data.Common.DbParameter)">
+            <summary>
+            Sets the <see cref="T:System.Data.Common.DbParameter"/> object at the specified index to a new value. 
+            </summary>
+            <param name="index">The index where the <see cref="T:System.Data.Common.DbParameter"/> object is located.</param>
+            <param name="value">The new <see cref="T:System.Data.Common.DbParameter"/> value.</param>
+        </member>
+        <member name="M:System.Data.Common.DbParameterCollection.SetParameter(System.String,System.Data.Common.DbParameter)">
+            <summary>
+            Sets the <see cref="T:System.Data.Common.DbParameter"/> object with the specified name to a new value.
+            </summary>
+            <param name="parameterName">The name of the <see cref="T:System.Data.Common.DbParameter"/> object in the collection.</param>
+            <param name="value">The new <see cref="T:System.Data.Common.DbParameter"/> value.</param>
+        </member>
+        <member name="T:System.Data.Common.DbProviderFactories">
+            <summary>
+            Represents a set of static methods for creating one or more instances of <see cref="T:System.Data.Common.DbProviderFactory"/> classes.
+            </summary>
+        </member>
+        <member name="M:System.Data.Common.DbProviderFactories.GetFactory(System.Data.Common.DbConnection)">
+            <summary>
+            Returns the <see cref="T:System.Data.Common.DbProviderFactory"/> used by the specified connection.
+            </summary>
+            <param name="connection">The connection.</param>
+            <returns>An instance of a <see cref="T:System.Data.Common.DbProviderFactory"/> for a specified connection.</returns>
+        </member>
+        <member name="T:System.Data.Common.DbProviderFactory">
+            <summary>
+            Represents a set of methods for creating instances of a provider's implementation of the data source
+            classes.
+            </summary>
+        </member>
+        <member name="P:System.Data.Common.DbProviderFactory.CanCreateDataSourceEnumerator">
+            <summary>
+            Specifies whether the specific <see cref="T:System.Data.Common.DbProviderFactory" /> supports the <c>DbDataSourceEnumerator</c>
+            class.
+            </summary>
+            <value>
+            <c>true</c> if the instance of the <see cref="T:System.Data.Common.DbProviderFactory" /> supports the
+            <c>DbDataSourceEnumerator</c> class; otherwise <c>false</c>.
+            </value>
+        </member>
+        <member name="M:System.Data.Common.DbProviderFactory.CreateCommand">
+            <summary>
+            Returns a new instance of the provider's class that implements the <see cref="T:System.Data.Common.DbCommand" /> class.
+            </summary>
+            <returns>A new instance of <see cref="T:System.Data.Common.DbCommand" />.</returns>
+        </member>
+        <member name="M:System.Data.Common.DbProviderFactory.CreateConnection">
+            <summary>
+            Returns a new instance of the provider's class that implements the <see cref="T:System.Data.Common.DbConnection" /> class.
+            </summary>
+            <returns>A new instance of <see cref="T:System.Data.Common.DbConnection" />.</returns>
+        </member>
+        <member name="M:System.Data.Common.DbProviderFactory.CreateConnectionStringBuilder">
+            <summary>
+            Returns a new instance of the provider's class that implements the <see cref="T:System.Data.Common.DbConnectionStringBuilder" />
+            class.
+            </summary>
+            <returns>A new instance of <see cref="T:System.Data.Common.DbConnectionStringBuilder" />.</returns>
+        </member>
+        <member name="M:System.Data.Common.DbProviderFactory.CreateParameter">
+            <summary>
+            Returns a new instance of the provider's class that implements the <see cref="T:System.Data.Common.DbParameter" /> class.
+            </summary>
+            <returns>A new instance of <see cref="T:System.Data.Common.DbParameter" />.</returns>
+        </member>
+        <member name="T:System.Data.Common.DbTransaction">
+            <summary>
+            The base class for a transaction.
+            </summary>
+        </member>
+        <member name="M:System.Data.Common.DbTransaction.Finalize">
+            <summary>
+            Finalizes an instance of the <see cref="T:System.Data.Common.DbTransaction" /> class.
+            </summary>
+        </member>
+        <member name="P:System.Data.Common.DbTransaction.IsolationLevel">
+            <summary>
+            Specifies the <see cref="P:System.Data.Common.DbTransaction.IsolationLevel" /> for this transaction.
+            </summary>
+            <value>The <see cref="P:System.Data.Common.DbTransaction.IsolationLevel" /> for this transaction.</value>
+        </member>
+        <member name="P:System.Data.Common.DbTransaction.Connection">
+            <summary>
+            Specifies the <see cref="P:System.Data.Common.DbTransaction.DbConnection" /> object associated with the transaction.
+            </summary>
+            <value>The <see cref="P:System.Data.Common.DbTransaction.DbConnection" /> object associated with the transaction.</value>
+        </member>
+        <member name="P:System.Data.Common.DbTransaction.DbConnection">
+            <summary>
+            Specifies the <see cref="P:System.Data.Common.DbTransaction.DbConnection" /> object associated with the transaction.
+            </summary>
+            <value>The <see cref="P:System.Data.Common.DbTransaction.DbConnection" /> object associated with the transaction.</value>
+        </member>
+        <member name="M:System.Data.Common.DbTransaction.Commit">
+            <summary>
+            Commits the database transaction.
+            </summary>
+        </member>
+        <member name="M:System.Data.Common.DbTransaction.Rollback">
+            <summary>
+            Rolls back a transaction from a pending state.
+            </summary>
+        </member>
+        <member name="M:System.Data.Common.DbTransaction.Dispose">
+            <summary>
+            Releases the unmanaged resources used by the <see cref="T:System.Data.Common.DbTransaction" />.
+            </summary>
+        </member>
+        <member name="M:System.Data.Common.DbTransaction.Dispose(System.Boolean)">
+            <summary>
+            Releases the unmanaged resources used by the <see cref="T:System.Data.Common.DbTransaction" /> and optionally releases the
+            managed resources.
+            </summary>
+            <param name="disposing">
+            If true, this method releases all resources held by any managed objects that this
+            <see cref="T:System.Data.Common.DbTransaction" /> references.
+            </param>
+        </member>
+        <member name="T:System.DBNull">
+            <summary>
+            Represents a nonexistent value. This class cannot be inherited.
+            </summary>
+        </member>
+        <member name="F:System.DBNull.Value">
+            <summary>
+            Represents the sole instance of the <see cref="T:System.DBNull" /> class.
+            </summary>
+        </member>
+        <member name="M:System.DBNull.ToString">
+            <summary>
+            Returns an empty string (<see cref="F:System.String.Empty" />).
+            </summary>
+            <returns>An empty string (<see cref="F:System.String.Empty" />).</returns>
+        </member>
+        <member name="P:Microsoft.Data.Common.Strings.ArgumentIsNullOrWhitespace">
+            <summary>
+            The argument '{argumentName}' cannot be null, empty or contain only white space.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Common.Strings.FormatArgumentIsNullOrWhitespace(System.Object)">
+            <summary>
+            The argument '{argumentName}' cannot be null, empty or contain only white space.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Common.Strings.ConnectionStringInvalidSyntax">
+            <summary>
+            Format of the initialization string does not conform to specification starting at index {index}.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Common.Strings.FormatConnectionStringInvalidSyntax(System.Object)">
+            <summary>
+            Format of the initialization string does not conform to specification starting at index {index}.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Common.Strings.DefaultConstraintException">
+            <summary>
+            Constraint Exception.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Common.Strings.FormatDefaultConstraintException">
+            <summary>
+            Constraint Exception.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Common.Strings.DefaultDataException">
+            <summary>
+            Data Exception.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Common.Strings.FormatDefaultDataException">
+            <summary>
+            Data Exception.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Common.Strings.ExternalException">
+            <summary>
+            External component has thrown an exception.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Common.Strings.FormatExternalException">
+            <summary>
+            External component has thrown an exception.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Common.Strings.InternalError">
+            <summary>
+            Internal error.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Common.Strings.FormatInternalError">
+            <summary>
+            Internal error.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Common.Strings.InvalidKey">
+            <summary>
+            Invalid keyword, contain one or more of 'no characters', 'control characters', 'leading or trailing whitespace' or 'leading semicolons'.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Common.Strings.FormatInvalidKey">
+            <summary>
+            Invalid keyword, contain one or more of 'no characters', 'control characters', 'leading or trailing whitespace' or 'leading semicolons'.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Common.Strings.InvalidValue">
+            <summary>
+            The value contains embedded nulls (\u0000).
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Common.Strings.FormatInvalidValue">
+            <summary>
+            The value contains embedded nulls (\u0000).
+            </summary>
+        </member>
+        <member name="P:Microsoft.Data.Common.Strings.KeywordNotSupported">
+            <summary>
+            Keyword not supported: '{keyword}'.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Data.Common.Strings.FormatKeywordNotSupported(System.Object)">
+            <summary>
+            Keyword not supported: '{keyword}'.
+            </summary>
+        </member>
+    </members>
+</doc>
