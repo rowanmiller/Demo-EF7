@@ -1,0 +1,88 @@
+﻿@model CycleSales.CycleSalesModel.Bike
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>@Model.ModelNo</h2>
+
+<div>
+    <h4>@Model.Name</h4>
+    <p>
+        @Html.ActionLink("Back to Catalog", "Index") |
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Bike_Id }) |
+        @Html.ActionLink("Delete", "Delete", new { id = Model.Bike_Id })
+    </p>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModelNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModelNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Retail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Retail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+
+        </dt>
+
+        <dd>
+            <img src="@Url.Content(Model.ImageUrl)" width="200" />
+        </dd>
+
+    </dl>
+    <hr />
+    <h2>Warranty Lookup</h2>
+    @using (Html.BeginForm("Warranty", "Bikes", FormMethod.Post))
+    {
+        <div class="form-horizontal">
+            <div class="form-group">
+                @Html.Label("Model Number", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    <input class="form-control text-box single-line" id="modelNo" name="modelNo" type="text" value="@Model.ModelNo" />
+                    <span>Hint: TTT200 is a valid model number (avoid additional whitespace)</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.Label("Serial Number", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    <input class="form-control text-box single-line" id="serialNo" name="serialNo" type="text" />
+                    <span>Hint: FR12789 is a valid model number for TTT200 (avoid additional whitespace)</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Lookup" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
