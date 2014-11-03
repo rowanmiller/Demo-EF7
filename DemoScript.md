@@ -67,6 +67,29 @@ Setup SQLite context:
 * Implement OnConfiguring:
  * ```s_CreateSQLiteConnectionString``` code snippet
  * ```options.UseSQLite(connection);```
+ * 
+ 
+Implement game service:
+* Open ```GameService.cs```
+* Implement saving game
+```
+using (var db = new GameContext())
+{
+    db.Games.Add(game);
+    db.SaveChanges();
+}
+```
+* Implement querying games
+```
+using (var db = new GameContext())
+{
+    var topGames = db.Games
+        .OrderByDescending(g => g.ClicksPerSecond)
+        .Take(3);
+
+    return topGames;
+}
+```
  
 Use migrations to create database:
 * Good time to explain EF7 can target an existing database or create one for you (folks think we only support new databases when we demo migrations).
