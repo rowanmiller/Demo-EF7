@@ -7,8 +7,8 @@ You'll need the following installed:
 * [SQLite for Windows Runtime (Windows 8.1) ](http://visualstudiogallery.msdn.microsoft.com/1d04f82f-2fe9-4727-a2f9-a2db127ddc9a)
 * [Azure Storage Explorer](https://azurestorageexplorer.codeplex.com/)
  * Setup access to CycleSales storage account (details are in App/Web.config files of project)
-* The EF7 NuGet packages use some new metadata that isn't supported in currently released versions of NuGet. Until a version of NuGet 2.8.3 is released, here are the steps to install a pre-release build that can work with the latest EF7 packages:
- * Download and install the pre-release build of [NuGet 2.8.3](https://nuget.codeplex.com/releases/view/133091)
+* The EF7 NuGet packages use some new metadata that is only supported in NuGet 2.8.3 or later.
+ * Download and install VS2013 Update 4 or just install the [latest version of NuGet](https://visualstudiogallery.msdn.microsoft.com/4ec1526c-4a8c-4a84-b702-b21a8f5293ca)
  * Restart VS
 * SQL Server Profiler (or some other profiling tool)
  
