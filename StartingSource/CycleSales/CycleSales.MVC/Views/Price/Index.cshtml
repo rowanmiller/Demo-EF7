@@ -1,0 +1,24 @@
+﻿@model IEnumerable<CycleSales.CycleSalesModel.Bike>
+
+@{
+    ViewBag.Title = "Bikes";
+}
+
+<h2>Price Conversion</h2>
+@using (Html.BeginForm("Convert", "Price", FormMethod.Post))
+{
+    <div class="form-horizontal">
+        <div class="form-group">
+            @Html.Label("Exchange Rate", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input class="form-control text-box single-line" id="exchangeRate" name="exchangeRate" type="text" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Convert" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}

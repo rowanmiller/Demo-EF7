@@ -1,0 +1,30 @@
+﻿@model IEnumerable<CycleSales.CycleSalesModel.PriceService.ConversionResult>
+
+@{
+    ViewBag.Title = "Price Conversion";
+}
+
+<h2>Foreign Prices</h2>
+<table class="table">
+    <tr>
+        <th>Bike</th>
+        <th>US Price</th>
+        <th>Foreign Price</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @item.BikeName
+            </td>
+            <td>
+                @item.USPrice
+            </td>
+            <td>
+                @item.ForeignPrice
+            </td>
+        </tr>
+    }
+
+</table>
+
