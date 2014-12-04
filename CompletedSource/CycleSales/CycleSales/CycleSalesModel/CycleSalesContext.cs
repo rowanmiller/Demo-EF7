@@ -1,6 +1,7 @@
 ﻿using Microsoft.Data.Entity;
 using Microsoft.Data.Entity.Infrastructure;
 using Microsoft.Data.Entity.Metadata;
+using System;
 using System.Configuration;
 using System.Linq;
 
@@ -16,6 +17,17 @@ namespace CycleSales.CycleSalesModel
         { }
 
         public DbSet<Bike> Bikes { get; set; }
+
+        public override int SaveChanges()
+        {
+            foreach (var item in this.ChangeTracker.Entries<Bike>().Where(e => e.State == EntityState.Modified))
+            {
+                var prop = Model.GetEntityType(typeof(Bike)).GetProperty("LastUpdated");
+                item.StateEntry[prop] = DateTime.Now;
+            }
+
+            return base.SaveChanges();
+        }
 
         protected override void OnConfiguring(DbContextOptions options)
         {
@@ -36,6 +48,9 @@ namespace CycleSales.CycleSalesModel
             builder.Entity<Bike>()
                 .ForRelational()
                 .Table("Bikes");
+
+            builder.Entity<Bike>()
+                .Property<DateTime>("LastUpdated");
         }
     }
 }

@@ -159,9 +159,9 @@
     <Compile Include="Migrations\201410242232584_InitialSchema.Designer.cs">
       <DependentUpon>201410242232584_InitialSchema.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201412040013596_Notes.cs" />
-    <Compile Include="Migrations\201412040013596_Notes.designer.cs">
-      <DependentUpon>201412040013596_Notes.cs</DependentUpon>
+    <Compile Include="Migrations\201412040249075_LastUpdated.cs" />
+    <Compile Include="Migrations\201412040249075_LastUpdated.designer.cs">
+      <DependentUpon>201412040249075_LastUpdated.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\CycleSalesContextModelSnapshot.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

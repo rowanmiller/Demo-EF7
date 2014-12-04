@@ -20,9 +20,9 @@ namespace CycleSales.Migrations
                         b.Property<int>("Bike_Id");
                         b.Property<string>("Description");
                         b.Property<string>("ImageUrl");
+                        b.Property<DateTime>("LastUpdated");
                         b.Property<string>("ModelNo");
                         b.Property<string>("Name");
-                        b.Property<string>("Notes");
                         b.Property<decimal>("Retail");
                         b.Key("Bike_Id");
                         b.ForRelational().Table("Bikes");
