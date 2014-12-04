@@ -38,5 +38,21 @@
       </Code>
     </Snippet>
   </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+    <Header>
+      <Shortcut>s_SetLastUpdatedForModifiedBikes</Shortcut>
+    </Header>
+    <Snippet>
+      <Code Language="csharp">
+        <![CDATA[this.ChangeTracker.DetectChanges();
+
+            foreach (var item in this.ChangeTracker.Entries<Bike>().Where(e => e.State == EntityState.Modified))
+            {
+                var prop = this.Model.GetEntityType(typeof(Bike)).GetProperty("LastUpdated");
+                item.StateEntry[prop] = DateTime.Now;
+            }]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
 </CodeSnippets>
 

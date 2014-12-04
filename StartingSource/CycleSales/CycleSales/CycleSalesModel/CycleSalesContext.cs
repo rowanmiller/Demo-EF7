@@ -1,6 +1,7 @@
 ﻿using Microsoft.Data.Entity;
 using Microsoft.Data.Entity.Infrastructure;
 using Microsoft.Data.Entity.Metadata;
+using System;
 using System.Configuration;
 using System.Linq;
 
