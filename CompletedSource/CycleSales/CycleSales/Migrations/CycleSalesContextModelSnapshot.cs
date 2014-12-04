@@ -22,6 +22,7 @@ namespace CycleSales.Migrations
                         b.Property<string>("ImageUrl");
                         b.Property<string>("ModelNo");
                         b.Property<string>("Name");
+                        b.Property<string>("Notes");
                         b.Property<decimal>("Retail");
                         b.Key("Bike_Id");
                         b.ForRelational().Table("Bikes");
