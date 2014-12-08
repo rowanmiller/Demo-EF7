@@ -141,7 +141,28 @@ Batch updates
 * Swap to use the context constructor that takes options ```using (var db = new CycleSalesContext(options))```
 * Run test and show it passes
 
-### Demo 4: Azure Table Storage
+### Demo 4: Shadow State
+
+Add shadow state property
+* Explain wanting to add additional data without changing the domain classes
+* Add code in ```OnModelCreating``` method in ```CycleSalesContext.cs```
+ * ```builder.Entity<Bike>().Property<DateTime>("LastUpdated");```
+
+Add column to database
+* In Package Manager Console: ```Add-Migration LastUpdated```
+* Add default value to AddColumn call (to apply to existing data)
+ * ```....DateTime(nullable: false, defaultValue: DateTime.Now)...```
+* In Package Manager Console: ```Apply-Migration```
+
+Add code to populate on save
+* Overide ```SaveChanges``` in ```CycleSalesContext.cs```
+* Use ```s_SetLastUpdatedForModifiedBikes``` code snippet before calling ```base.SaveChanges()```
+
+Demo
+* Run app and modify a bike
+* Show in profiler that LastUpdated is updated
+
+### Demo 5: Azure Table Storage
 
 Intro:
 * Show CycleSales account in Azure Storage Explorer
