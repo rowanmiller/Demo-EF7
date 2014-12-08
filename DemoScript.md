@@ -1,7 +1,8 @@
 The demo is broken up into a series of sections that showcase a specific features. Each section has a corresponding slide in the slide deck, which you can use to provide a quick summary of the feature before demoing it. This also helps break up the long demo section of the talk into logical 5-10min chunks, which helps folks keep up to speed.
 
 ### One Time Setup
-You'll need the following installed:
+
+**Install Prerequisites**
 * Visual Studio 2013
 * [SQLite for Windows Phone 8.1](http://visualstudiogallery.msdn.microsoft.com/5d97faf6-39e3-4048-a0bc-adde2af75d1b)
 * [SQLite for Windows Runtime (Windows 8.1) ](http://visualstudiogallery.msdn.microsoft.com/1d04f82f-2fe9-4727-a2f9-a2db127ddc9a)
@@ -12,28 +13,33 @@ You'll need the following installed:
  * Restart VS
 * SQL Server Profiler (or some other profiling tool)
  
-Get the source:
+**Get the Source**
 * Clone this Git repo to your local machine
+* Note that there are two branches in this repo:
+ * **WithPackages** is set as the default branch and has all the required NuGet packages checked in. This allows you to easily setup a local NuGet feed to protect from network outages, slow WiFi, etc.
+ * **master** contains just the source. You'll need to do a bit of leg work if you want to actually run these samples, but it comes without all the bloat of having binaries checked in.
 
-Register the code snippets in Visual Studio:
+**Register the Code Snippets**
  * Open VS -> Tools -> Code Snippets Manager...
  * Make sure **Visual C#** is selected in the dropdown and add the **CodeSnippets** directory from your local clone of this repository
 
-Setup local NuGet Feed:
- * To insulate against network outages, slow WiFi, etc. the repo includes a local copy of the required NuGet packages. 
+**Setup Local NuGet Feed**
+ * To insulate against network outages, slow WiFi, etc. the WithPackages branch includes a local copy of the required NuGet packages. 
  * You need to [setup a local NuGet feed on your machine](http://docs.nuget.org/docs/creating-packages/hosting-your-own-nuget-feeds) that points to the **LocalNuGetFeed** folder in your local copy of this repo.
  * During the demo you should disable everything apart from the local feed - nothing worse than getting an unexpected package upgrade, or long pauses due to a slow network. 
  
-Optional: 
+**Optional**
 * Install [ZoomIt](http://technet.microsoft.com/en-us/sysinternals/bb897434.aspx) and get familiar with how to use it - it's a great tool for making you demos look professional.
 
 ### Every Time Setup
+
+**Reset the Repo**
 Reset the repo to ensure it's cleaned up from any previous run thrus of the demo. How you do this will depend on what Git tools you have installed. Here is how to do it using the Git command line:
  * Open a console to the local repo directoy and run the following commands 
  * `git reset --hard`
  * `git clean -fdx`
  
-Get the projects open:
+**Open the Solutions**
 * Open ```StartingSourceUnicornClicker\UnicornClicker.sln``` and ```StartingSource\CycleSales\CycleSales.sln``` in Visual Studio
 * Run **Get-ExecutionPolicy** in Package Manager Console (PMC) in both instances of VS and ensure it returns **RemoteSigned**
  * Occasionally PMC sets the **Restricted** execution policy and won't allow running install scripts from the NuGet packages. It's really hard to recover from, **don't skip this step, especially before your presentation!**
@@ -44,13 +50,12 @@ Get the projects open:
  * CycleSales: CycleSales.WinForms
 * Ctrl+F5 the UnicornClicker app so that the phone emulator is fired up and running the app.
  
-Reset databases:
+**Reset Databases**
+* Delete the CycleSales database from **(localdb)\v11.0** (the apps will recreate it when you run them).
 * If you are going to demo the Windows Store UnicornClicker app then delete any leftover SQLite databases
  * Go to %LOCALAPPDATA% in the file system, search for ```GameHistory.db```, and delete any results
-* If you want to reset the CycleSales database then just delete it from **(localdb)\v11.0** and the apps will recreate it.
- * This isn't mandatory, just do it if you want to original set of seed data back.
 
-Start SQL profiling
+**Start SQL profiling**
 * Open **SQL Server Profiler**
 * Start a trace against **(localdb)\v11.0)**
  
