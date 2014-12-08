@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Shortcut>s_CreateSQLiteConnectionString</Shortcut>
+    </Header>
+    <Snippet>
+      <Code Language="csharp">
+        <![CDATA[#if WINDOWS_PHONE_APP
+            var connection = "Filename=GameHistory.db";
+#else
+            var dir = Windows.Storage.ApplicationData.Current.LocalFolder.Path;
+            var connection = "Filename=" + System.IO.Path.Combine(dir, "GameHistory.db");
+#endif]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Shortcut>s_SetupInMemoryOptions</Shortcut>
+    </Header>
+    <Snippet>
+      <Code Language="csharp">
+        <![CDATA[var options = new DbContextOptions()
+                .UseInMemoryStore();]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Shortcut>s_ConfigurePartitionAndRowKey</Shortcut>
+    </Header>
+    <Snippet>
+      <Code Language="csharp">
+        <![CDATA[builder.Entity<WarrantyInfo>()
+                .ForAzureTableStorage()
+                .PartitionAndRowKey(w => w.BikeModelNo, w => w.BikeSerialNo);]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+    <Header>
+      <Shortcut>s_SetLastUpdatedForModifiedBikes</Shortcut>
+    </Header>
+    <Snippet>
+      <Code Language="csharp">
+        <![CDATA[this.ChangeTracker.DetectChanges();
+
+            foreach (var item in this.ChangeTracker.Entries<Bike>().Where(e => e.State == EntityState.Modified))
+            {
+			    // TODO: When supported, update to: item.Property("LastUpdated").CurrentValue = DateTime.Now;
+                var prop = this.Model.GetEntityType(typeof(Bike)).GetProperty("LastUpdated");
+                item.StateEntry[prop] = DateTime.Now;
+            }]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
+

@@ -1,0 +1,29 @@
+﻿<div>
+    <h2>Warranty Lookup</h2>
+    @using (Html.BeginForm("Warranty", "Bikes", FormMethod.Post))
+    {
+        <div class="form-horizontal">
+            <div class="form-group">
+                @Html.Label("Model Number", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    <input class="form-control text-box single-line" id="modelNo" name="modelNo" type="text" />
+                    <span>Hint: TTT200 is a valid model number (avoid additional whitespace)</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.Label("Serial Number", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    <input class="form-control text-box single-line" id="serialNo" name="serialNo" type="text" />
+                    <span>Hint: FR12789 is a valid model number for TTT200 (avoid additional whitespace)</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Lookup" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+    }
+</div>
