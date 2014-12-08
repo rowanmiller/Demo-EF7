@@ -21,7 +21,7 @@ namespace UnicornClicker.Migrations
                         b.Property<double>("ClicksPerSecond");
                         b.Property<int>("Duration");
                         b.Property<Guid>("GameId")
-                            .GenerateValueOnAdd();
+                            .GenerateValuesOnAdd();
                         b.Property<DateTime>("Played");
                         b.Key("GameId");
                     });

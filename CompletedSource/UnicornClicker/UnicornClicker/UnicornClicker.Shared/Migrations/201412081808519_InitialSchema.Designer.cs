@@ -7,13 +7,13 @@ using UnicornClicker;
 namespace UnicornClicker.Migrations
 {
     [ContextType(typeof(GameContext))]
-    public partial class IntialSchema : IMigrationMetadata
+    public partial class InitialSchema : IMigrationMetadata
     {
         string IMigrationMetadata.MigrationId
         {
             get
             {
-                return "201410311902518_IntialSchema";
+                return "201412081808519_InitialSchema";
             }
         }
         
@@ -21,7 +21,7 @@ namespace UnicornClicker.Migrations
         {
             get
             {
-                return "7.0.0-beta2-11512";
+                return "7.0.0-beta1-11518";
             }
         }
         
@@ -37,7 +37,7 @@ namespace UnicornClicker.Migrations
                         b.Property<double>("ClicksPerSecond");
                         b.Property<int>("Duration");
                         b.Property<Guid>("GameId")
-                            .GenerateValueOnAdd();
+                            .GenerateValuesOnAdd();
                         b.Property<DateTime>("Played");
                         b.Key("GameId");
                     });

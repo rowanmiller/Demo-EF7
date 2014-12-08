@@ -5,7 +5,7 @@ using System;
 
 namespace UnicornClicker.Migrations
 {
-    public partial class IntialSchema : Migration
+    public partial class InitialSchema : Migration
     {
         public override void Up(MigrationBuilder migrationBuilder)
         {

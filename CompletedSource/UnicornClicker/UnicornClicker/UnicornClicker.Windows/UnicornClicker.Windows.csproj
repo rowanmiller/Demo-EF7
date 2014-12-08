@@ -16,7 +16,7 @@
     <SynthesizeLinkMetadata>true</SynthesizeLinkMetadata>
     <ProjectTypeGuids>{BC8A1FFA-BEE3-4634-8014-F334798102B3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <PackageCertificateKeyFile>UnicornClicker.Windows_TemporaryKey.pfx</PackageCertificateKeyFile>
-    <NuGetPackageImportStamp>542f9e19</NuGetPackageImportStamp>
+    <NuGetPackageImportStamp>bbabfd66</NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>x64</PlatformTarget>
@@ -130,67 +130,6 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=7.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\EntityFramework.7.0.0-beta2-11514\lib\portable-net451+win81+wpa81\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.Migrations, Version=7.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\EntityFramework.Migrations.7.0.0-beta2-11514\lib\portable-net451+win81+wpa81\EntityFramework.Migrations.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.Relational, Version=7.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\EntityFramework.Relational.7.0.0-beta2-11514\lib\portable-net451+win81+wpa81\EntityFramework.Relational.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SQLite, Version=7.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\EntityFramework.SQLite.7.0.0-beta2-11514\lib\portable-net451+win81+wpa81\EntityFramework.SQLite.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Data.SQLite, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\Microsoft.Data.SQLite.1.0.0-beta2-10508\lib\portable-net451+win81+wpa81\Microsoft.Data.SQLite.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Framework.ConfigurationModel, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\Microsoft.Framework.ConfigurationModel.1.0.0-beta2-10510\lib\portable-net451+win81+wpa81\Microsoft.Framework.ConfigurationModel.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Framework.ConfigurationModel.Shared, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\Microsoft.Framework.ConfigurationModel.Shared.1.0.0-beta2-10510\lib\portable-net451+win81+wpa81\Microsoft.Framework.ConfigurationModel.Shared.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Framework.DependencyInjection, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\Microsoft.Framework.DependencyInjection.1.0.0-beta2-10527\lib\portable-net451+win81+wpa81\Microsoft.Framework.DependencyInjection.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Framework.Logging, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\Microsoft.Framework.Logging.1.0.0-beta2-10506\lib\portable-net451+win81+wpa81\Microsoft.Framework.Logging.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Framework.Logging.Interfaces, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\Microsoft.Framework.Logging.Interfaces.1.0.0-beta2-10506\lib\portable-net451+win81+wpa81\Microsoft.Framework.Logging.Interfaces.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Framework.OptionsModel, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\Microsoft.Framework.OptionsModel.1.0.0-beta2-10505\lib\portable-net451+win81+wpa81\Microsoft.Framework.OptionsModel.dll</HintPath>
-    </Reference>
-    <Reference Include="Remotion.Linq, Version=1.15.15.0, Culture=neutral, PublicKeyToken=fee00910d6e5f53b, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\Remotion.Linq.1.15.15.0\lib\portable-net45+wp80+wpa81+win\Remotion.Linq.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Collections.Immutable, Version=1.1.32.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\System.Collections.Immutable.1.1.32-beta\lib\portable-net45+win8+wp8+wpa81\System.Collections.Immutable.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Data.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\System.Data.Common.1.0.0-beta2-10488\lib\portable-net451+win81+wpa81\System.Data.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Interactive.Async">
-      <HintPath>..\..\packages\Ix-Async.1.2.3-beta\lib\portable-windows8+net45+wp8+wpa81\System.Interactive.Async.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
     <SDKReference Include="Microsoft.VCLibs, version=12.0">
       <Name>Microsoft Visual C++ 2013 Runtime Package for Windows</Name>
     </SDKReference>
@@ -198,18 +137,56 @@
       <Name>SQLite for Windows Runtime %28Windows 8.1%29</Name>
     </SDKReference>
   </ItemGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\..\packages\EntityFramework.7.0.0-beta1\lib\portable-net451+win81+wpa81\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.Migrations">
+      <HintPath>..\..\packages\EntityFramework.Migrations.7.0.0-beta1\lib\portable-net451+win81+wpa81\EntityFramework.Migrations.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.Relational">
+      <HintPath>..\..\packages\EntityFramework.Relational.7.0.0-beta1\lib\portable-net451+win81+wpa81\EntityFramework.Relational.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SQLite">
+      <HintPath>..\..\packages\EntityFramework.SQLite.7.0.0-beta1\lib\portable-net451+win81+wpa81\EntityFramework.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.SQLite">
+      <HintPath>..\..\packages\Microsoft.Data.SQLite.1.0.0-beta1\lib\portable-net451+win81+wpa81\Microsoft.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Framework.ConfigurationModel">
+      <HintPath>..\..\packages\Microsoft.Framework.ConfigurationModel.1.0.0-beta1\lib\portable-net451+win81+wpa81\Microsoft.Framework.ConfigurationModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Framework.DependencyInjection">
+      <HintPath>..\..\packages\Microsoft.Framework.DependencyInjection.1.0.0-beta1\lib\portable-net451+win81+wpa81\Microsoft.Framework.DependencyInjection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Framework.Logging">
+      <HintPath>..\..\packages\Microsoft.Framework.Logging.1.0.0-beta1\lib\portable-net451+win81+wpa81\Microsoft.Framework.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Framework.Logging.Interfaces">
+      <HintPath>..\..\packages\Microsoft.Framework.Logging.Interfaces.1.0.0-beta1\lib\portable-net451+win81+wpa81\Microsoft.Framework.Logging.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Framework.OptionsModel">
+      <HintPath>..\..\packages\Microsoft.Framework.OptionsModel.1.0.0-beta1\lib\portable-net451+win81+wpa81\Microsoft.Framework.OptionsModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Remotion.Linq">
+      <HintPath>..\..\packages\Remotion.Linq.1.15.15.0\lib\portable-net45+wp80+wpa81+win\Remotion.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Immutable">
+      <HintPath>..\..\packages\System.Collections.Immutable.1.1.32-beta\lib\portable-net45+win8+wp8+wpa81\System.Collections.Immutable.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.Common">
+      <HintPath>..\..\packages\System.Data.Common.1.0.0-beta1\lib\portable-net451+win81+wpa81\System.Data.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Interactive.Async">
+      <HintPath>..\..\packages\Ix-Async.1.2.3-beta\lib\portable-windows8+net45+wp8+wpa81\System.Interactive.Async.dll</HintPath>
+    </Reference>
+  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">
     <VisualStudioVersion>12.0</VisualStudioVersion>
   </PropertyGroup>
   <Import Project="..\UnicornClicker.Shared\UnicornClicker.Shared.projitems" Label="Shared" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
-  <Import Project="..\..\packages\EntityFramework.Commands.7.0.0-beta2-11514\build\portable-net451+win81+wpa81\EntityFramework.Commands.targets" Condition="Exists('..\..\packages\EntityFramework.Commands.7.0.0-beta2-11514\build\portable-net451+win81+wpa81\EntityFramework.Commands.targets')" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\..\packages\EntityFramework.Commands.7.0.0-beta2-11514\build\portable-net451+win81+wpa81\EntityFramework.Commands.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\EntityFramework.Commands.7.0.0-beta2-11514\build\portable-net451+win81+wpa81\EntityFramework.Commands.targets'))" />
-  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
