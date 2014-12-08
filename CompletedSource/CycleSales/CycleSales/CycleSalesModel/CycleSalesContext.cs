@@ -22,6 +22,7 @@ namespace CycleSales.CycleSalesModel
         {
             foreach (var item in this.ChangeTracker.Entries<Bike>().Where(e => e.State == EntityState.Modified))
             {
+                // TODO: When supported, update to: item.Property("LastUpdated").CurrentValue = DateTime.Now;
                 var prop = Model.GetEntityType(typeof(Bike)).GetProperty("LastUpdated");
                 item.StateEntry[prop] = DateTime.Now;
             }
