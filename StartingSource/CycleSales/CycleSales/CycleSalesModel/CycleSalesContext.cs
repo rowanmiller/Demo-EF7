@@ -20,11 +20,8 @@ namespace CycleSales.CycleSalesModel
 
         protected override void OnConfiguring(DbContextOptions options)
         {
-            // TODO: This check is so that we can pass in external options from tests
-            //       Need to come up with a better way to handle this scenario
-            if (!((IDbContextOptionsExtensions)options).Extensions.Any())
+            if (!options.IsAlreadyConfigured())
             {
-                // TODO: Connection string in code rather than config file because of temporary limitation with Migrations
                 options.UseSqlServer(@"Server=(localdb)\v11.0;Database=CycleSales;integrated security=True;");
             }
         }
@@ -37,6 +34,14 @@ namespace CycleSales.CycleSalesModel
             builder.Entity<Bike>()
                 .ForRelational()
                 .Table("Bikes");
+        }
+    }
+
+    public static class DbOptionsExtensions
+    {
+        public static bool IsAlreadyConfigured(this DbContextOptions options)
+        {
+            return ((IDbContextOptionsExtensions)options).Extensions.Any();
         }
     }
 }
