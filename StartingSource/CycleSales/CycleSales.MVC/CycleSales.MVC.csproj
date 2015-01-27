@@ -218,6 +218,7 @@
     <Content Include="Views\Bikes\WarrantyLookup.cshtml" />
     <Content Include="Views\Price\Index.cshtml" />
     <Content Include="Views\Price\Convert.cshtml" />
+    <Content Include="Views\Price\BulkUpdate.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

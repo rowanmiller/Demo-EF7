@@ -22,8 +22,14 @@ namespace CycleSalesPublicSite.Controllers
 
         public ActionResult Convert(decimal exchangeRate)
         {
-            var convertor = new PriceService(catalogDb);
-            return View(convertor.CalculateForeignPrices(exchangeRate));
+            var service = new PriceService(catalogDb);
+            return View(service.CalculateForeignPrices(exchangeRate));
+        }
+
+        public ActionResult BulkUpdate(decimal multiplier)
+        {
+            var service = new PriceService(catalogDb);
+            return View(service.UpdatePrices(multiplier));
         }
 
         protected override void Dispose(bool disposing)

@@ -13,6 +13,20 @@ namespace CycleSales.CycleSalesModel
             _context = context;
         }
 
+        public IEnumerable<Bike> UpdatePrices(decimal multiplier)
+        {
+            var bikes = _context.Bikes.ToList();
+
+            foreach (var item in bikes)
+            {
+                item.Retail = RoundPrice(item.Retail * multiplier);
+            }
+
+            _context.SaveChanges();
+
+            return bikes;
+        }
+
         public IEnumerable<ConversionResult> CalculateForeignPrices(decimal exchangeRate)
         {
             var query = from b in _context.Bikes
@@ -21,24 +35,22 @@ namespace CycleSales.CycleSalesModel
                         {
                             BikeName = b.Name,
                             USPrice = b.Retail,
-                            ForeignPrice = CalculatePrice(b.Retail, exchangeRate)
+                            ForeignPrice = RoundPrice(b.Retail * exchangeRate)
                         };
 
             return query.ToList();
         }
 
-        public static decimal CalculatePrice(decimal price, decimal multiplier)
+        private static decimal RoundPrice(decimal price)
         {
-            var unrounded = price * multiplier;
+            var rounded = Math.Round(price * 20, 0) / 20;
 
-            var roundedToFiveCents = Math.Round(unrounded * 20, 0) / 20;
-
-            if (roundedToFiveCents % 1 == 0)
+            if (rounded % 1 == 0)
             {
-                roundedToFiveCents -= 0.05M;
+                rounded -= 0.05M;
             }
 
-            return roundedToFiveCents;
+            return rounded;
         }
 
         public class ConversionResult

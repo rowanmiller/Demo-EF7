@@ -1,0 +1,26 @@
+﻿@model IEnumerable<CycleSales.CycleSalesModel.Bike>
+
+@{
+    ViewBag.Title = "Price Update Applied";
+}
+
+<h2>Price Update Applied</h2>
+<table class="table">
+    <tr>
+        <th>Bike</th>
+        <th>New Price</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @item.Name
+            </td>
+            <td>
+                @item.Retail
+            </td>
+        </tr>
+    }
+
+</table>
+
