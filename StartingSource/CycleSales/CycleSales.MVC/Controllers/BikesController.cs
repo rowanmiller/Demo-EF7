@@ -27,11 +27,16 @@ namespace CycleSalesPublicSite.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Bike bike = catalogDb.Bikes.Single(b => b.Bike_Id == id);
+
+            var bike = (from b in catalogDb.Bikes
+                        where b.Bike_Id == id
+                        select b).Single();
+
             if (bike == null)
             {
                 return HttpNotFound();
             }
+
             return View(bike);
         }
 
@@ -47,11 +52,16 @@ namespace CycleSalesPublicSite.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            var warranty = warrantyDb.Warranties.SingleOrDefault(w => w.BikeModelNo == modelNo && w.BikeSerialNo == serialNo);
+            var warranty = (from w in warrantyDb.Warranties
+                            where w.BikeModelNo == modelNo 
+                                   && w.BikeSerialNo == serialNo
+                            select w).SingleOrDefault();
+
             if (warranty == null)
             {
                 return HttpNotFound();
             }
+
             return View(warranty);
         }
 
@@ -80,11 +90,11 @@ namespace CycleSalesPublicSite.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Bike bike = catalogDb.Bikes.Single(b => b.Bike_Id == id);
-            if (bike == null)
-            {
-                return HttpNotFound();
-            }
+
+            var bike = (from b in catalogDb.Bikes
+                        where b.Bike_Id == id
+                        select b).Single();
+
             return View(bike);
         }
 
@@ -94,7 +104,7 @@ namespace CycleSalesPublicSite.Controllers
         {
             if (ModelState.IsValid)
             {
-                catalogDb.ChangeTracker.Entry(bike).State = EntityState.Modified;
+                catalogDb.Bikes.Update(bike);
                 catalogDb.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -107,11 +117,11 @@ namespace CycleSalesPublicSite.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Bike bike = catalogDb.Bikes.Single(b => b.Bike_Id == id);
-            if (bike == null)
-            {
-                return HttpNotFound();
-            }
+
+            var bike = (from b in catalogDb.Bikes
+                        where b.Bike_Id == id
+                        select b).Single();
+
             return View(bike);
         }
 
