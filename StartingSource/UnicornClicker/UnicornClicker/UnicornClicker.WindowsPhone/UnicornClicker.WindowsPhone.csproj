@@ -90,11 +90,6 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201501262255466_GameTable.cs" />
-    <Compile Include="Migrations\201501262255466_GameTable.designer.cs">
-      <DependentUpon>201501262255466_GameTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\GameContextModelSnapshot.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
