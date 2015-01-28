@@ -141,9 +141,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\EntityFramework.Relational.7.0.0-beta1\lib\portable-net451+win81+wpa81\EntityFramework.Relational.dll</HintPath>
     </Reference>
-    <Reference Include="EntityFramework.SQLite">
-      <HintPath>..\..\packages\EntityFramework.SQLite.7.0.0-beta1\lib\portable-net451+win81+wpa81\EntityFramework.SQLite.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.Data.SQLite, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\Microsoft.Data.SQLite.1.0.0-beta1\lib\portable-net451+win81+wpa81\Microsoft.Data.SQLite.dll</HintPath>
