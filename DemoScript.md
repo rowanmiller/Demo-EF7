@@ -41,10 +41,9 @@ Reset the repo to ensure it's cleaned up from any previous run thrus of the demo
  
 **Open the Solutions**
 * Open ```StartingSourceUnicornClicker\UnicornClicker.sln``` and ```StartingSource\CycleSales\CycleSales.sln``` in Visual Studio
-* Run **Get-ExecutionPolicy** in Package Manager Console (PMC) in both instances of VS and ensure it returns **RemoteSigned**
- * Occasionally PMC sets the **Restricted** execution policy and won't allow running install scripts from the NuGet packages. It's really hard to recover from, **don't skip this step, especially before your presentation!**
- * Running VS as an administrator seems to minimize occurrences of this issue, so you may want to do that.
 * In both instances, click **Restore Packages** in Package Manager Console
+* Type ```Add-Mi``` in Package Manager Console and press TAB to ensure it completes to ```Add-Migration```
+ * If it doesn't, the migrations commands did not register and you should close and reopen the solution. This sometimes happens during package restore or when Package Manager Console picks up a bad execution ploicy.
 * Make sure the correct startup projects are selected:
  * UnicornClicker: UnicornClicker.WindowsPhone
  * CycleSales: CycleSales.WinForms
@@ -150,6 +149,9 @@ Add shadow state property
 
 Add column to database
 * In Package Manager Console: ```Add-Migration LastUpdated```
+ * Error shown because of multiple contexts
+ * Run ```Use-DbContext CycleSalesContext``` (new command in EF7)
+ * Note you can just type ```Use-DbContext ``` and then use tab completion (also new in EF7)
 * Add default value to AddColumn call (to apply to existing data)
  * ```....DateTime(nullable: false, defaultValue: DateTime.Now)...```
 * In Package Manager Console: ```Apply-Migration```
