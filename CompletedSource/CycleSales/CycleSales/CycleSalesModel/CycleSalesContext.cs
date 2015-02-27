@@ -20,7 +20,10 @@ namespace CycleSales.CycleSalesModel
 
         public override int SaveChanges()
         {
-            foreach (var item in this.ChangeTracker.Entries<Bike>().Where(e => e.State == EntityState.Modified))
+            this.ChangeTracker.DetectChanges();
+
+            foreach (var item in this.ChangeTracker.Entries<Bike>()
+                .Where(e => e.State == EntityState.Modified || e.State == EntityState.Added))
             {
                 // TODO: When supported, update to: item.Property("LastUpdated").CurrentValue = DateTime.Now;
                 var prop = Model.GetEntityType(typeof(Bike)).GetProperty("LastUpdated");
@@ -34,7 +37,7 @@ namespace CycleSales.CycleSalesModel
         {
             // TODO: This check is so that we can pass in external options from tests
             //       Need to come up with a better way to handle this scenario
-            if (!((IDbContextOptionsExtensions)options).Extensions.Any())
+            if (!options.IsAlreadyConfigured())
             {
                 // TODO: Connection string in code rather than config file because of temporary limitation with Migrations
                 options.UseSqlServer(@"Server=(localdb)\v11.0;Database=CycleSales;integrated security=True;");
@@ -52,6 +55,14 @@ namespace CycleSales.CycleSalesModel
 
             builder.Entity<Bike>()
                 .Property<DateTime>("LastUpdated");
+        }
+    }
+
+    public static class DbOptionsExtensions
+    {
+        public static bool IsAlreadyConfigured(this DbContextOptions options)
+        {
+            return ((IDbContextOptionsExtensions)options).Extensions.Any();
         }
     }
 }
